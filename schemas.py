@@ -1,13 +1,28 @@
-from pydantyc import BaseModel
+"""
+Документация модуля
+"""
+
+from pydantic import BaseModel
 
 
 class STaskAdd(BaseModel):
-  name: str
-  description: str | None
+    """
+    Документация класса
+    """
+    name: str
+    description: str | None
+
 
 class STask(STaskAdd):
-  id: int
+    """
+    Документация класса
+    """
+    id: int
+
 
 class STaskId(BaseModel):
-  ok: bool = True
-  task_id: int
+    """
+    Документация класса
+    """
+    ok: bool = True
+    task_id: int

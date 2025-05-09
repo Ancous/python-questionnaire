@@ -1,1 +1,1 @@
-# pet-proect
+# pet-project
