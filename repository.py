@@ -1,5 +1,5 @@
 from database import new_session, TaskORM
-from main import STaskAdd
+from schemas import STaskAdd
 
 class TaskRepository:
 
