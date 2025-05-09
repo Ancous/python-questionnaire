@@ -1,5 +1,5 @@
 from database import new_session, TaskORM
-from schemas import STaskAdd
+from schemas import STaskAdd, STask
 
 class TaskRepository:
 
@@ -20,4 +20,5 @@ class TaskRepository:
         query = select(TaskORM)
         result = await session.execute(query)
         task_mosels = result.scalars().all()
-        return task_mosels
+        tasks_schemas = [STask.mosel_validate(task_model) for task_model in task_mosels]
+        return tasks_schemas
