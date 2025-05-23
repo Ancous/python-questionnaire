@@ -18,12 +18,12 @@ class Questions(Base):
     __tablename__ = 'questions'
 
     id = Column(Integer, primary_key=True)
-    questions = Column(String)
+    question = Column(String)
     add_question = Column(String)
     answer = Column(String)
 
     def __repr__(self):
-        return f"<User(questions='{self.questions}', add_question={self.add_question}, answer={self.answer})>"
+        return f"<User(questions='{self.question}', add_question={self.add_question}, answer={self.answer})>"
 
 
 Session = sessionmaker(engine)

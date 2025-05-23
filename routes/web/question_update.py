@@ -4,15 +4,15 @@
 
 from flask import Blueprint, flash, redirect, url_for
 
-questions_update_bp = Blueprint(
-    "questions_update",
+question_update_bp = Blueprint(
+    "question_update",
     __name__,
-    url_prefix="/questions_update"
+    url_prefix="/question_update"
 )
 
 
-@questions_update_bp.route("/", methods=["GET"])
-def questions_update():
+@question_update_bp.route("/", methods=["GET"])
+def question_update():
     """
     Документация функции
     """

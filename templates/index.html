@@ -43,7 +43,7 @@
         Отвечено на 100 из 200 вопросов
     </div>
     <div class="main">
-        <form action="/questions_update" method="get">
+        <form action="/question_update" method="get">
             <button type="submit">
                 Обновить мою историю вопросов
             </button>
@@ -59,14 +59,14 @@
         {% endwith %}
     </div>
     <div>
-        <form action="http://localhost:5000/questions" method="get">
+        <form action="http://localhost:5000/question" method="get">
             <button type="submit">
                 Погнали к вопросам
             </button>
         </form>
     </div>
     <div>
-        <form action="http://localhost:5000/statistics" method="get">
+        <form action="http://localhost:5000/statistic" method="get">
             <button type="submit">
                 Статистика ответов
             </button>

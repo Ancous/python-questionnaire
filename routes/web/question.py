@@ -4,15 +4,15 @@
 
 from flask import Blueprint, render_template
 
-questions_bp = Blueprint(
-    "questions",
+question_bp = Blueprint(
+    "question",
     __name__,
-    url_prefix="/questions"
+    url_prefix="/question"
 )
 
 
-@questions_bp.route("/", methods=["GET"])
-def questions():
+@question_bp.route("/", methods=["GET"])
+def question():
     """
     Документация функции
     """
