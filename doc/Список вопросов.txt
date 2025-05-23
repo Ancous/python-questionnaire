@@ -1,0 +1,527 @@
+### 1. Что такое python? &nbsp; &nbsp; &nbsp;<small>[Ответ](Ответы/Что%20такое%20python.md)</small>
+
+### 2. В каком году написана первая статья про python? &nbsp; &nbsp; &nbsp;<small>[Ответ](Ответы/В%20каком%20году%20написана%20первая%20статья%20про%20python.md)</small>
+
+### 3. Какие типы данных есть в python? На какие классы делятся? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%9A%D0%B0%D0%BA%D0%B8%D0%B5%20%D1%82%D0%B8%D0%BF%D1%8B%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85%20%D0%B5%D1%81%D1%82%D1%8C%20%D0%B2%20python.%20%D0%9D%D0%B0%20%D0%BA%D0%B0%D0%BA%D0%B8%D0%B5%20%D0%BA%D0%BB%D0%B0%D1%81%D1%81%D1%8B%20%D0%B4%D0%B5%D0%BB%D1%8F%D1%82%D1%81%D1%8F.md)</small>
+
+### 4. Что такое лямбда-функция? Какое у неё назначение? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%A7%D1%82%D0%BE%20%D1%82%D0%B0%D0%BA%D0%BE%D0%B5%20%D0%BB%D1%8F%D0%BC%D0%B1%D0%B4%D0%B0-%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F.%20%D0%9A%D0%B0%D0%BA%D0%BE%D0%B5%20%D1%83%20%D0%BD%D0%B5%D1%91%20%D0%BD%D0%B0%D0%B7%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0%B8%D0%B5.md)</small>
+
+### 5. Что такое PEP 8? &nbsp; &nbsp; &nbsp;<small>[Ответ](Ответы/Что%20такое%20PEP%208.md)</small>
+
+### 6. Как получить документацию по атрибутам объекта? &nbsp; &nbsp; &nbsp;<small>[Ответ](Ответы/Как%20получить%20документацию%20по%20атрибутам%20объекта.md)</small>
+
+### 7. Что такое docstring? &nbsp; &nbsp; &nbsp;<small>[Ответ](Ответы/Что%20такое%20docstring.md)</small>
+
+### 8. В чём разница между типами list и tuple? &nbsp; &nbsp; &nbsp;<small>[Ответ](Ответы/В%20чём%20разница%20между%20типами%20list%20и%20tuple.md)</small>
+
+### 9. Может ли быть индекс списка отрицательным? &nbsp; &nbsp; &nbsp;<small>[Ответ](Ответы/Может%20ли%20быть%20индекс%20списка%20отрицательным.md)</small>
+
+### 10. Что значит конструкция pass? &nbsp; &nbsp; &nbsp;<small>[Ответ](Ответы/Что%20значит%20конструкция%20pass.md)</small>
+
+### 11. Чем отличаются многопроцессорное и многопоточное приложение? &nbsp; &nbsp; &nbsp;<small>[Ответ](Ответы/Чем%20отличаются%20многопоточное%20и%20многопроцессорное%20приложение.md)</small>
+
+### 12. Как просмотреть методы объекта? &nbsp; &nbsp; &nbsp;<small>[Ответ](Ответы/Как%20просмотреть%20методы%20объекта.md)</small>
+
+### 13. Что такое *args и **kwargs в определении функции? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%A7%D1%82%D0%BE%20%D1%82%D0%B0%D0%BA%D0%BE%D0%B5%20args%20%D0%B8%20kwargs%20%D0%B2%20%D0%BE%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D0%B8%20%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%B8.md)</small>
+
+### 14. Python полностью поддерживает ООП? &nbsp; &nbsp; &nbsp;<small>[Ответ](Ответы/Python%20полностью%20поддерживает%20ООП.md)</small>
+
+### 15. Что такое globals() и locals()? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%A7%D1%82%D0%BE%20%D1%82%D0%B0%D0%BA%D0%BE%D0%B5%20globals%28%29%20%D0%B8%20locals%28%29.md)</small>
+
+### 16. Что хранится в атрибуте __dict__? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%A7%D1%82%D0%BE%20%D1%85%D1%80%D0%B0%D0%BD%D0%B8%D1%82%D1%81%D1%8F%20%D0%B2%20%D0%B0%D1%82%D1%80%D0%B8%D0%B1%D1%83%D1%82%D0%B5%20__dict__.md)</small>
+
+### 17. Как проверить файл .py на синтаксические ошибки, не запуская его? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%9A%D0%B0%D0%BA%20%D0%BF%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%B8%D1%82%D1%8C%20%D1%84%D0%B0%D0%B9%D0%BB%20.py%20%D0%BD%D0%B0%20%D1%81%D0%B8%D0%BD%D1%82%D0%B0%D0%BA%D1%81%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B5%20%D0%BE%D1%88%D0%B8%D0%B1%D0%BA%D0%B8%2C%20%D0%BD%D0%B5%20%D0%B7%D0%B0%D0%BF%D1%83%D1%81%D0%BA%D0%B0%D1%8F%20%D0%B5%D0%B3%D0%BE.md)</small>
+
+### 18. Зачем в python используется ключевое слово self? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%97%D0%B0%D1%87%D0%B5%D0%BC%20%D0%B2%20python%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D1%83%D0%B5%D1%82%D1%81%D1%8F%20%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%B2%D0%BE%D0%B5%20%D1%81%D0%BB%D0%BE%D0%B2%D0%BE%20self.md)</small>
+
+### 19. Что такое декоратор? Как написать собственный? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%A7%D1%82%D0%BE%20%D1%82%D0%B0%D0%BA%D0%BE%D0%B5%20%D0%B4%D0%B5%D0%BA%D0%BE%D1%80%D0%B0%D1%82%D0%BE%D1%80%20%D0%9A%D0%B0%D0%BA%20%D0%BD%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C%20%D1%81%D0%BE%D0%B1%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9.md)</small>
+
+### 20. Что может быть ключом в словаре? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%A7%D1%82%D0%BE%20%D0%BC%D0%BE%D0%B6%D0%B5%D1%82%20%D0%B1%D1%8B%D1%82%D1%8C%20%D0%BA%D0%BB%D1%8E%D1%87%D0%BE%D0%BC%20%D0%B2%20%D1%81%D0%BB%D0%BE%D0%B2%D0%B0%D1%80%D0%B5.md)</small>
+
+### 21. В чём разница между пакетами и модулями? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%92%20%D1%87%D1%91%D0%BC%20%D1%80%D0%B0%D0%B7%D0%BD%D0%B8%D1%86%D0%B0%20%D0%BC%D0%B5%D0%B6%D0%B4%D1%83%20%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%B0%D0%BC%D0%B8%20%D0%B8%20%D0%BC%D0%BE%D0%B4%D1%83%D0%BB%D1%8F%D0%BC%D0%B8.md)</small>
+
+### 22. Как перевести строку, содержащую двоичный код (1 и 0), в число? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%9A%D0%B0%D0%BA%20%D0%BF%D0%B5%D1%80%D0%B5%D0%B2%D0%B5%D1%81%D1%82%D0%B8%20%D1%81%D1%82%D1%80%D0%BE%D0%BA%D1%83%2C%20%D1%81%D0%BE%D0%B4%D0%B5%D1%80%D0%B6%D0%B0%D1%89%D1%83%D1%8E%20%D0%B4%D0%B2%D0%BE%D0%B8%D1%87%D0%BD%D1%8B%D0%B9%20%D0%BA%D0%BE%D0%B4%20%281%20%D0%B8%200%29%2C%20%D0%B2%20%D1%87%D0%B8%D1%81%D0%BB%D0%BE.md)</small>
+
+### 23. Для чего используется функция __init__? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%94%D0%BB%D1%8F%20%D1%87%D0%B5%D0%B3%D0%BE%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D1%83%D0%B5%D1%82%D1%81%D1%8F%20%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F%20__init__.md)</small>
+
+### 24. Что такое слайс(slice)? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%A7%D1%82%D0%BE%20%D1%82%D0%B0%D0%BA%D0%BE%D0%B5%20%D1%81%D0%BB%D0%B0%D0%B9%D1%81%28slice%29.md)</small>
+
+### 25. Как проверить, что один кортеж содержит все элементы другого кортежа? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%9A%D0%B0%D0%BA%20%D0%BF%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%B8%D1%82%D1%8C%2C%20%D1%87%D1%82%D0%BE%20%D0%BE%D0%B4%D0%B8%D0%BD%20%D0%BA%D0%BE%D1%80%D1%82%D0%B5%D0%B6%20%D1%81%D0%BE%D0%B4%D0%B5%D1%80%D0%B6%D0%B8%D1%82%20%D0%B2%D1%81%D0%B5%20%D1%8D%D0%BB%D0%B5%D0%BC%D0%B5%D0%BD%D1%82%D1%8B%20%D0%B4%D1%80%D1%83%D0%B3%D0%BE%D0%B3%D0%BE%20%D0%BA%D0%BE%D1%80%D1%82%D0%B5%D0%B6%D0%B0.md)</small>
+
+### 26. Почему пустой список нельзя использовать как аргумент по умолчанию? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%9F%D0%BE%D1%87%D0%B5%D0%BC%D1%83%20%D0%BF%D1%83%D1%81%D1%82%D0%BE%D0%B9%20%D1%81%D0%BF%D0%B8%D1%81%D0%BE%D0%BA%20%D0%BD%D0%B5%D0%BB%D1%8C%D0%B7%D1%8F%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D1%8C%20%D0%BA%D0%B0%D0%BA%20%D0%B0%D1%80%D0%B3%D1%83%D0%BC%D0%B5%D0%BD%D1%82%20%D0%BF%D0%BE%20%D1%83%D0%BC%D0%BE%D0%BB%D1%87%D0%B0%D0%BD%D0%B8%D1%8E.md)</small>
+
+### 27. Что такое @classmethod, @staticmethod, @property? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%A7%D1%82%D0%BE%20%D1%82%D0%B0%D0%BA%D0%BE%D0%B5%20%40classmethod%2C%20%40staticmethod%2C%20%40property.md)</small>
+
+### 28. Что такое синхронный код? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%A7%D1%82%D0%BE%20%D1%82%D0%B0%D0%BA%D0%BE%D0%B5%20%D1%81%D0%B8%D0%BD%D1%85%D1%80%D0%BE%D0%BD%D0%BD%D1%8B%D0%B9%20%D0%BA%D0%BE%D0%B4.md)</small>
+
+### 29. Что такое асинхронный код? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%A7%D1%82%D0%BE%20%D1%82%D0%B0%D0%BA%D0%BE%D0%B5%20%D1%81%D0%B8%D0%BD%D1%85%D1%80%D0%BE%D0%BD%D0%BD%D1%8B%D0%B9%20%D0%BA%D0%BE%D0%B4.md)</small>
+
+### 30. Что будет в результате выполнения следующего кода? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%A7%D1%82%D0%BE%20%D0%B1%D1%83%D0%B4%D0%B5%D1%82%20%D0%B2%20%D1%80%D0%B5%D0%B7%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%82%D0%B5%20%D0%B2%D1%8B%D0%BF%D0%BE%D0%BB%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F%20%D1%81%D0%BB%D0%B5%D0%B4%D1%83%D1%8E%D1%89%D0%B5%D0%B3%D0%BE%20%D0%BA%D0%BE%D0%B4%D0%B0%201.md)</small>
+
+```python
+print(-30 % 10)
+```
+
+### 31. Для чего нужен метод id()? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%94%D0%BB%D1%8F%20%D1%87%D0%B5%D0%B3%D0%BE%20%D0%BD%D1%83%D0%B6%D0%B5%D0%BD%20%D0%BC%D0%B5%D1%82%D0%BE%D0%B4%20id%28%29.md)</small>
+
+### 32. Что такое итератор? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%A7%D1%82%D0%BE%20%D1%82%D0%B0%D0%BA%D0%BE%D0%B5%20%D0%B8%D1%82%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80.md)</small>
+
+### 33. Что такое генератор? Чем отличается от итератора? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%A7%D1%82%D0%BE%20%D1%82%D0%B0%D0%BA%D0%BE%D0%B5%20%D0%B3%D0%B5%D0%BD%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80%20%D0%A7%D0%B5%D0%BC%20%D0%BE%D1%82%D0%BB%D0%B8%D1%87%D0%B0%D0%B5%D1%82%D1%81%D1%8F%20%D0%BE%D1%82%20%D0%B8%D1%82%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80%D0%B0.md)</small>
+
+### 34. Для чего используется ключевое слово yield? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%94%D0%BB%D1%8F%20%D1%87%D0%B5%D0%B3%D0%BE%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D1%83%D0%B5%D1%82%D1%81%D1%8F%20%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%B2%D0%BE%D0%B5%20%D1%81%D0%BB%D0%BE%D0%B2%D0%BE%20yield.md)</small>
+
+### 35. Чем отличаются `__iter__` и `__next__`? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%A7%D0%B5%D0%BC%20%D0%BE%D1%82%D0%BB%D0%B8%D1%87%D0%B0%D1%8E%D1%82%D1%81%D1%8F%20__iter__%20%D0%B8%20__next__.md)</small>
+
+### 36. Что такое контекстный менеджер? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%A7%D1%82%D0%BE%20%D1%82%D0%B0%D0%BA%D0%BE%D0%B5%20%D0%BA%D0%BE%D0%BD%D1%82%D0%B5%D0%BA%D1%81%D1%82%D0%BD%D1%8B%D0%B9%20%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80.md)</small>
+
+### 37. Как сделать python-скрипт исполняемым в различных операционных системах? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%9A%D0%B0%D0%BA%20%D1%81%D0%B4%D0%B5%D0%BB%D0%B0%D1%82%D1%8C%20python-%D1%81%D0%BA%D1%80%D0%B8%D0%BF%D1%82%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D0%BD%D1%8F%D0%B5%D0%BC%D1%8B%D0%BC%20%D0%B2%20%D1%80%D0%B0%D0%B7%D0%BB%D0%B8%D1%87%D0%BD%D1%8B%D1%85%20%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D1%8B%D1%85%20%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0%D1%85.md)</small>
+
+### 38. Как сделать копию объекта? Как сделать глубокую копию объекта? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%9A%D0%B0%D0%BA%20%D1%81%D0%B4%D0%B5%D0%BB%D0%B0%D1%82%D1%8C%20%D0%BA%D0%BE%D0%BF%D0%B8%D1%8E%20%D0%BE%D0%B1%D1%8A%D0%B5%D0%BA%D1%82%D0%B0%20%D0%9A%D0%B0%D0%BA%20%D1%81%D0%B4%D0%B5%D0%BB%D0%B0%D1%82%D1%8C%20%D0%B3%D0%BB%D1%83%D0%B1%D0%BE%D0%BA%D1%83%D1%8E%20%D0%BA%D0%BE%D0%BF%D0%B8%D1%8E%20%D0%BE%D0%B1%D1%8A%D0%B5%D0%BA%D1%82%D0%B0.md)</small>
+
+### 39. Опишите принцип работы сборщика мусора в python. &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%9E%D0%BF%D0%B8%D1%88%D0%B8%D1%82%D0%B5%20%D0%BF%D1%80%D0%B8%D0%BD%D1%86%D0%B8%D0%BF%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B%20%D1%81%D0%B1%D0%BE%D1%80%D1%89%D0%B8%D0%BA%D0%B0%20%D0%BC%D1%83%D1%81%D0%BE%D1%80%D0%B0%20%D0%B2%20python.md)</small>
+
+### 40. Как использовать глобальные переменные? Это хорошая идея? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%9A%D0%B0%D0%BA%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D1%8C%20%D0%B3%D0%BB%D0%BE%D0%B1%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5%20%D0%BF%D0%B5%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%BD%D1%8B%D0%B5%20%D0%AD%D1%82%D0%BE%20%D1%85%D0%BE%D1%80%D0%BE%D1%88%D0%B0%D1%8F%20%D0%B8%D0%B4%D0%B5%D1%8F.md)</small>
+
+### 41. Для чего в классе используется атрибут __slots__? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%94%D0%BB%D1%8F%20%D1%87%D0%B5%D0%B3%D0%BE%20%D0%B2%20%D0%BA%D0%BB%D0%B0%D1%81%D1%81%D0%B5%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D1%83%D0%B5%D1%82%D1%81%D1%8F%20%D0%B0%D1%82%D1%80%D0%B8%D0%B1%D1%83%D1%82%20__slots__.md)</small>
+
+### 42. Какие пространства имен существуют в python? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%9A%D0%B0%D0%BA%D0%B8%D0%B5%20%D0%BF%D1%80%D0%BE%D1%81%D1%82%D1%80%D0%B0%D0%BD%D1%81%D1%82%D0%B2%D0%B0%20%D0%B8%D0%BC%D0%B5%D0%BD%20%D1%81%D1%83%D1%89%D0%B5%D1%81%D1%82%D0%B2%D1%83%D1%8E%D1%82%20%D0%B2%20python.md)</small>
+
+### 43. Как реализуется управление памятью в python? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%9A%D0%B0%D0%BA%20%D1%80%D0%B5%D0%B0%D0%BB%D0%B8%D0%B7%D1%83%D0%B5%D1%82%D1%81%D1%8F%20%D1%83%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BF%D0%B0%D0%BC%D1%8F%D1%82%D1%8C%D1%8E%20%D0%B2%20python.md)</small>
+
+### 44. Что такое метаклассы и в каких случаях их следует использовать? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%A7%D1%82%D0%BE%20%D1%82%D0%B0%D0%BA%D0%BE%D0%B5%20%D0%BC%D0%B5%D1%82%D0%B0%D0%BA%D0%BB%D0%B0%D1%81%D1%81%D1%8B%20%D0%B8%20%D0%B2%20%D0%BA%D0%B0%D0%BA%D0%B8%D1%85%20%D1%81%D0%BB%D1%83%D1%87%D0%B0%D1%8F%D1%85%20%D0%B8%D1%85%20%D1%81%D0%BB%D0%B5%D0%B4%D1%83%D0%B5%D1%82%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D1%8C.md)</small>
+
+### 45. Зачем нужен pdb? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%97%D0%B0%D1%87%D0%B5%D0%BC%20%D0%BD%D1%83%D0%B6%D0%B5%D0%BD%20pdb.md)</small>
+
+### 46. Что будет в результате выполнения следующего кода? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%A7%D1%82%D0%BE%20%D0%B1%D1%83%D0%B4%D0%B5%D1%82%20%D0%B2%20%D1%80%D0%B5%D0%B7%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%82%D0%B5%20%D0%B2%D1%8B%D0%BF%D0%BE%D0%BB%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F%20%D1%81%D0%BB%D0%B5%D0%B4%D1%83%D1%8E%D1%89%D0%B5%D0%B3%D0%BE%20%D0%BA%D0%BE%D0%B4%D0%B0%202.md)</small>
+
+```python
+print([0, 1][10:])
+```
+
+### 47. Как создать класс без слова class? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%9A%D0%B0%D0%BA%20%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D1%82%D1%8C%20%D0%BA%D0%BB%D0%B0%D1%81%D1%81%20%D0%B1%D0%B5%D0%B7%20%D1%81%D0%BB%D0%BE%D0%B2%D0%B0%20class.md)</small>
+
+### 48. Как перезагрузить импортированный модуль? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%9A%D0%B0%D0%BA%20%D0%BF%D0%B5%D1%80%D0%B5%D0%B7%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D0%B8%D1%82%D1%8C%20%D0%B8%D0%BC%D0%BF%D0%BE%D1%80%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D0%B9%20%D0%BC%D0%BE%D0%B4%D1%83%D0%BB%D1%8C.md)</small>
+
+### 49. Напишите декоратор, который будет перехватывать ошибки и повторять функцию максимум N раз. &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%92%D0%BE%D0%BF%D1%80%D0%BE%D1%81%2049.md)</small>
+
+### 50. Что будет в результате выполнения следующего кода? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%A7%D1%82%D0%BE%20%D0%B1%D1%83%D0%B4%D0%B5%D1%82%20%D0%B2%20%D1%80%D0%B5%D0%B7%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%82%D0%B5%20%D0%B2%D1%8B%D0%BF%D0%BE%D0%BB%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F%20%D1%81%D0%BB%D0%B5%D0%B4%D1%83%D1%8E%D1%89%D0%B5%D0%B3%D0%BE%20%D0%BA%D0%BE%D0%B4%D0%B0%203.md)</small>
+
+```python
+print(len(' '.join(list(map(str, [[0], [1]])))))
+```
+
+### 51. Python — легкий язык. Согласны? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/Python%20%E2%80%94%20%D0%BB%D0%B5%D0%B3%D0%BA%D0%B8%D0%B9%20%D1%8F%D0%B7%D1%8B%D0%BA.%20%D0%A1%D0%BE%D0%B3%D0%BB%D0%B0%D1%81%D0%BD%D1%8B.md)</small>
+
+### 52. Какие проблемы есть в python? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%9A%D0%B0%D0%BA%D0%B8%D0%B5%20%D0%BF%D1%80%D0%BE%D0%B1%D0%BB%D0%B5%D0%BC%D1%8B%20%D0%B5%D1%81%D1%82%D1%8C%20%D0%B2%20python.md)</small>
+
+### 53. Когда будет выполнена ветка else в конструкции try…except…else? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%9A%D0%BE%D0%B3%D0%B4%D0%B0%20%D0%B1%D1%83%D0%B4%D0%B5%D1%82%20%D0%B2%D1%8B%D0%BF%D0%BE%D0%BB%D0%BD%D0%B5%D0%BD%D0%B0%20%D0%B2%D0%B5%D1%82%D0%BA%D0%B0%20else%20%D0%B2%20%D0%BA%D0%BE%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BA%D1%86%D0%B8%D0%B8%20try%E2%80%A6except%E2%80%A6else.md)</small>
+
+### 54. Поддерживает ли python множественное наследование? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%9F%D0%BE%D0%B4%D0%B4%D0%B5%D1%80%D0%B6%D0%B8%D0%B2%D0%B0%D0%B5%D1%82%20%D0%BB%D0%B8%20python%20%D0%BC%D0%BD%D0%BE%D0%B6%D0%B5%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%BE%D0%B5%20%D0%BD%D0%B0%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5.md)</small>
+
+### 55. Как dict и set реализованы внутри? Какова сложность получения элемента? Сколько памяти потребляет каждая структура? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%92%D0%BE%D0%BF%D1%80%D0%BE%D1%81%2055.md)</small>
+
+### 56. Что такое MRO? Как это работает? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%A7%D1%82%D0%BE%20%D1%82%D0%B0%D0%BA%D0%BE%D0%B5%20MRO%20%D0%9A%D0%B0%D0%BA%20%D1%8D%D1%82%D0%BE%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0%D0%B5%D1%82.md)</small>
+
+### 57. Как аргументы передаются в функции: по значению или по ссылке? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%9A%D0%B0%D0%BA%20%D0%B0%D1%80%D0%B3%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D1%8B%20%D0%BF%D0%B5%D1%80%D0%B5%D0%B4%D0%B0%D1%8E%D1%82%D1%81%D1%8F%20%D0%B2%20%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%B8%20%D0%BF%D0%BE%20%D0%B7%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0%B8%D1%8E%20%D0%B8%D0%BB%D0%B8%20%D0%BF%D0%BE%20%D1%81%D1%81%D1%8B%D0%BB%D0%BA%D0%B5.md)</small>
+
+### 58. С помощью каких инструментов можно выполнить статический анализ кода? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%A1%20%D0%BF%D0%BE%D0%BC%D0%BE%D1%89%D1%8C%D1%8E%20%D0%BA%D0%B0%D0%BA%D0%B8%D1%85%20%D0%B8%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%BE%D0%B2%20%D0%BC%D0%BE%D0%B6%D0%BD%D0%BE%20%D0%B2%D1%8B%D0%BF%D0%BE%D0%BB%D0%BD%D0%B8%D1%82%D1%8C%20%D1%81%D1%82%D0%B0%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9%20%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%20%D0%BA%D0%BE%D0%B4%D0%B0.md)</small>
+
+### 59. Что будет в результате выполнения следующего кода? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%A7%D1%82%D0%BE%20%D0%B1%D1%83%D0%B4%D0%B5%D1%82%20%D0%B2%20%D1%80%D0%B5%D0%B7%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%82%D0%B5%20%D0%B2%D1%8B%D0%BF%D0%BE%D0%BB%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F%20%D1%81%D0%BB%D0%B5%D0%B4%D1%83%D1%8E%D1%89%D0%B5%D0%B3%D0%BE%20%D0%BA%D0%BE%D0%B4%D0%B0%204.md)</small>
+
+```python
+import sys
+arr_1 = []
+arr_2 = arr_1
+print(sys.getrefcount(arr_1))
+```
+
+### 60. Что такое GIL? Почему GIL всё ещё существует? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%A7%D1%82%D0%BE%20%D1%82%D0%B0%D0%BA%D0%BE%D0%B5%20GIL%20%D0%9F%D0%BE%D1%87%D0%B5%D0%BC%D1%83%20GIL%20%D0%B2%D1%81%D1%91%20%D0%B5%D1%89%D1%91%20%D1%81%D1%83%D1%89%D0%B5%D1%81%D1%82%D0%B2%D1%83%D0%B5%D1%82.md)</small>
+
+### 61. Опишите процесс компиляции в python. &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%9E%D0%BF%D0%B8%D1%88%D0%B8%D1%82%D0%B5%20%D0%BF%D1%80%D0%BE%D1%86%D0%B5%D1%81%D1%81%20%D0%BA%D0%BE%D0%BC%D0%BF%D0%B8%D0%BB%D1%8F%D1%86%D0%B8%D0%B8%20%D0%B2%20python.md)</small>
+
+### 62. Как тиражировать python код? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%9A%D0%B0%D0%BA%20%D1%82%D0%B8%D1%80%D0%B0%D0%B6%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D1%82%D1%8C%20python%20%D0%BA%D0%BE%D0%B4.md)</small>
+
+### 63. Что такое дескрипторы? Есть ли разница между дескриптором и декоратором? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%A7%D1%82%D0%BE%20%D1%82%D0%B0%D0%BA%D0%BE%D0%B5%20%D0%B4%D0%B5%D1%81%D0%BA%D1%80%D0%B8%D0%BF%D1%82%D0%BE%D1%80%D1%8B%20%D0%95%D1%81%D1%82%D1%8C%20%D0%BB%D0%B8%20%D1%80%D0%B0%D0%B7%D0%BD%D0%B8%D1%86%D0%B0%20%D0%BC%D0%B5%D0%B6%D0%B4%D1%83%20%D0%B4%D0%B5%D1%81%D0%BA%D1%80%D0%B8%D0%BF%D1%82%D0%BE%D1%80%D0%BE%D0%BC%20%D0%B8%20%D0%B4%D0%B5%D0%BA%D0%BE%D1%80%D0%B0%D1%82%D0%BE%D1%80%D0%BE%D0%BC.md)</small>
+
+### 64. Почему всякий раз, когда python завершает работу, не освобождается вся память? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%9F%D0%BE%D1%87%D0%B5%D0%BC%D1%83%20%D0%B2%D1%81%D1%8F%D0%BA%D0%B8%D0%B9%20%D1%80%D0%B0%D0%B7%2C%20%D0%BA%D0%BE%D0%B3%D0%B4%D0%B0%20python%20%D0%B7%D0%B0%D0%B2%D0%B5%D1%80%D1%88%D0%B0%D0%B5%D1%82%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%83%2C%20%D0%BD%D0%B5%20%D0%BE%D1%81%D0%B2%D0%BE%D0%B1%D0%BE%D0%B6%D0%B4%D0%B0%D0%B5%D1%82%D1%81%D1%8F%20%D0%B2%D1%81%D1%8F%20%D0%BF%D0%B0%D0%BC%D1%8F%D1%82%D1%8C.md)</small>
+
+### 65. Что будет в результате выполнения следующего кода? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%A7%D1%82%D0%BE%20%D0%B1%D1%83%D0%B4%D0%B5%D1%82%20%D0%B2%20%D1%80%D0%B5%D0%B7%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%82%D0%B5%20%D0%B2%D1%8B%D0%BF%D0%BE%D0%BB%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F%20%D1%81%D0%BB%D0%B5%D0%B4%D1%83%D1%8E%D1%89%D0%B5%D0%B3%D0%BE%20%D0%BA%D0%BE%D0%B4%D0%B0%205.md)</small>
+
+```python
+class Variable:
+
+def __init__(self, name, value):
+    self._name = name
+    self._value = value
+
+@property
+def value(self):
+    print(self._name, 'GET', self._value)
+    return self._value
+
+@value.setter
+def value(self, value):
+    print(self._name, 'SET', self._value)
+    self._value = value
+
+var_1 = Variable('var_1', 'val_1')
+var_2 = Variable('var_2', 'val_2')
+var_1.value, var_2.value = var_2.value, var_1.value
+```
+
+### 66. Что такое интернирование строк? Почему это есть в python? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%A7%D1%82%D0%BE%20%D1%82%D0%B0%D0%BA%D0%BE%D0%B5%20%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D1%81%D1%82%D1%80%D0%BE%D0%BA%20%D0%9F%D0%BE%D1%87%D0%B5%D0%BC%D1%83%20%D1%8D%D1%82%D0%BE%20%D0%B5%D1%81%D1%82%D1%8C%20%D0%B2%20python.md)</small>
+
+### 67. Как упаковать бинарные зависимости? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%9A%D0%B0%D0%BA%20%D1%83%D0%BF%D0%B0%D0%BA%D0%BE%D0%B2%D0%B0%D1%82%D1%8C%20%D0%B1%D0%B8%D0%BD%D0%B0%D1%80%D0%BD%D1%8B%D0%B5%20%D0%B7%D0%B0%D0%B2%D0%B8%D1%81%D0%B8%D0%BC%D0%BE%D1%81%D1%82%D0%B8.md)</small>
+
+### 68. Почему в python нет оптимизации хвостовой рекурсии? Как это реализовать? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%9F%D0%BE%D1%87%D0%B5%D0%BC%D1%83%20%D0%B2%20python%20%D0%BD%D0%B5%D1%82%20%D0%BE%D0%BF%D1%82%D0%B8%D0%BC%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8%20%D1%85%D0%B2%D0%BE%D1%81%D1%82%D0%BE%D0%B2%D0%BE%D0%B9%20%D1%80%D0%B5%D0%BA%D1%83%D1%80%D1%81%D0%B8%D0%B8%20%D0%9A%D0%B0%D0%BA%20%D1%8D%D1%82%D0%BE%20%D1%80%D0%B5%D0%B0%D0%BB%D0%B8%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D1%8C.md)</small>
+
+### 69. Что такое wheels и eggs? В чём разница? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%A7%D1%82%D0%BE%20%D1%82%D0%B0%D0%BA%D0%BE%D0%B5%20wheels%20%D0%B8%20eggs%20%D0%92%20%D1%87%D1%91%D0%BC%20%D1%80%D0%B0%D0%B7%D0%BD%D0%B8%D1%86%D0%B0.md)</small>
+
+### 70. Как получить доступ к модулю, написанному на python из C и наоборот? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%9A%D0%B0%D0%BA%20%D0%BF%D0%BE%D0%BB%D1%83%D1%87%D0%B8%D1%82%D1%8C%20%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%20%D0%BA%20%D0%BC%D0%BE%D0%B4%D1%83%D0%BB%D1%8E%2C%20%D0%BD%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%BD%D0%BE%D0%BC%D1%83%20%D0%BD%D0%B0%20python%20%D0%B8%D0%B7%20C%20%D0%B8%20%D0%BD%D0%B0%D0%BE%D0%B1%D0%BE%D1%80%D0%BE%D1%82.md)</small>
+
+### 71. Как ускорить существующий код python? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%9A%D0%B0%D0%BA%20%D1%83%D1%81%D0%BA%D0%BE%D1%80%D0%B8%D1%82%D1%8C%20%D1%81%D1%83%D1%89%D0%B5%D1%81%D1%82%D0%B2%D1%83%D1%8E%D1%89%D0%B8%D0%B9%20%D0%BA%D0%BE%D0%B4%20python.md)</small>
+
+### 72. Что такое `__pycache__`? Что такое файлы .pyc? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%A7%D1%82%D0%BE%20%D1%82%D0%B0%D0%BA%D0%BE%D0%B5%20__pycache__%20%D0%A7%D1%82%D0%BE%20%D1%82%D0%B0%D0%BA%D0%BE%D0%B5%20%D1%84%D0%B0%D0%B9%D0%BB%D1%8B%20.pyc.md)</small>
+
+### 73. Что такое виртуальное окружение? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%A7%D1%82%D0%BE%20%D1%82%D0%B0%D0%BA%D0%BE%D0%B5%20%D0%B2%D0%B8%D1%80%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5%20%D0%BE%D0%BA%D1%80%D1%83%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5.md)</small>
+
+### 74. Python — это императивный или декларативный язык? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/Python%20%E2%80%94%20%D1%8D%D1%82%D0%BE%20%D0%B8%D0%BC%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D0%B8%D0%B2%D0%BD%D1%8B%D0%B9%20%D0%B8%D0%BB%D0%B8%20%D0%B4%D0%B5%D0%BA%D0%BB%D0%B0%D1%80%D0%B0%D1%82%D0%B8%D0%B2%D0%BD%D1%8B%D0%B9%20%D1%8F%D0%B7%D1%8B%D0%BA.md)</small>
+
+### 75. Что такое менеджер пакетов? Какие менеджеры пакетов вы знаете? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%A7%D1%82%D0%BE%20%D1%82%D0%B0%D0%BA%D0%BE%D0%B5%20%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80%20%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%BE%D0%B2%20%D0%9A%D0%B0%D0%BA%D0%B8%D0%B5%20%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80%D1%8B%20%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%BE%D0%B2%20%D0%B2%D1%8B%20%D0%B7%D0%BD%D0%B0%D0%B5%D1%82%D0%B5.md)</small>
+
+### 76. В чём преимущества массивов numpy по сравнению с (вложенными) списками python? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%92%20%D1%87%D1%91%D0%BC%20%D0%BF%D1%80%D0%B5%D0%B8%D0%BC%D1%83%D1%89%D0%B5%D1%81%D1%82%D0%B2%D0%B0%20%D0%BC%D0%B0%D1%81%D1%81%D0%B8%D0%B2%D0%BE%D0%B2%20numpy%20%D0%BF%D0%BE%20%D1%81%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D1%8E%20%D1%81%20%28%D0%B2%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%BD%D1%8B%D0%BC%D0%B8%29%20%D1%81%D0%BF%D0%B8%D1%81%D0%BA%D0%B0%D0%BC%D0%B8%20python.md)</small>
+
+### 77. Вам нужно реализовать функцию, которая должна использовать статическую переменную. Вы не можете писать код вне функции и у вас нет информации о внешних переменных (вне вашей функции). Как это сделать? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%92%D0%BE%D0%BF%D1%80%D0%BE%D1%81%2077.md)</small>
+
+### 78. Что будет в результате выполнения следующего кода? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%A7%D1%82%D0%BE%20%D0%B1%D1%83%D0%B4%D0%B5%D1%82%20%D0%B2%20%D1%80%D0%B5%D0%B7%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%82%D0%B5%20%D0%B2%D1%8B%D0%BF%D0%BE%D0%BB%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F%20%D1%81%D0%BB%D0%B5%D0%B4%D1%83%D1%8E%D1%89%D0%B5%D0%B3%D0%BE%20%D0%BA%D0%BE%D0%B4%D0%B0%206.md)</small>
+
+```python
+def f_g():
+    yield 43
+    return 66
+
+print(f_g())
+```
+
+### 79. Как имплементировать словарь с нуля? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%9A%D0%B0%D0%BA%20%D0%B8%D0%BC%D0%BF%D0%BB%D0%B5%D0%BC%D0%B5%D0%BD%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D1%82%D1%8C%20%D1%81%D0%BB%D0%BE%D0%B2%D0%B0%D1%80%D1%8C%20%D1%81%20%D0%BD%D1%83%D0%BB%D1%8F.md)</small>
+
+### 80. Напишите однострочник, который будет подсчитывать количество заглавных букв в файле. &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%9D%D0%B0%D0%BF%D0%B8%D1%88%D0%B8%D1%82%D0%B5%20%D0%BE%D0%B4%D0%BD%D0%BE%D1%81%D1%82%D1%80%D0%BE%D1%87%D0%BD%D0%B8%D0%BA%2C%20%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%8B%D0%B9%20%D0%B1%D1%83%D0%B4%D0%B5%D1%82%20%D0%BF%D0%BE%D0%B4%D1%81%D1%87%D0%B8%D1%82%D1%8B%D0%B2%D0%B0%D1%82%D1%8C%20%D0%BA%D0%BE%D0%BB%D0%B8%D1%87%D0%B5%D1%81%D1%82%D0%B2%D0%BE%20%D0%B7%D0%B0%D0%B3%D0%BB%D0%B0%D0%B2%D0%BD%D1%8B%D1%85%20%D0%B1%D1%83%D0%BA%D0%B2%20%D0%B2%20%D1%84%D0%B0%D0%B9%D0%BB%D0%B5.md)</small>
+
+### 81. Что такое файлы .pth? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%A7%D1%82%D0%BE%20%D1%82%D0%B0%D0%BA%D0%BE%D0%B5%20%D1%84%D0%B0%D0%B9%D0%BB%D1%8B%20.pth.md)</small>
+
+### 82. Какие функции из collections и itertools вы используете? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%9A%D0%B0%D0%BA%D0%B8%D0%B5%20%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%B8%20%D0%B8%D0%B7%20collections%20%D0%B8%20itertools%20%D0%B2%D1%8B%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D1%83%D0%B5%D1%82%D0%B5.md)</small>
+
+### 83. Что делает флаг PYTHONOPTIMIZE? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%A7%D1%82%D0%BE%20%D0%B4%D0%B5%D0%BB%D0%B0%D0%B5%D1%82%20%D1%84%D0%BB%D0%B0%D0%B3%20PYTHONOPTIMIZE.md)</small>
+
+### 84. Что будет напечатано в результате выполнения следующего кода? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%A7%D1%82%D0%BE%20%D0%B1%D1%83%D0%B4%D0%B5%D1%82%20%D0%B2%20%D1%80%D0%B5%D0%B7%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%82%D0%B5%20%D0%B2%D1%8B%D0%BF%D0%BE%D0%BB%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F%20%D1%81%D0%BB%D0%B5%D0%B4%D1%83%D1%8E%D1%89%D0%B5%D0%B3%D0%BE%20%D0%BA%D0%BE%D0%B4%D0%B0%207.md)</small>
+
+```python
+arr = [[]] * 5
+arr_1, arr_2 = arr, arr
+for k, arr in enumerate((arr_1, arr_2)):
+    arr[0].append(k)
+arr = (arr_1, 5, arr_2)
+print(arr)
+```
+
+### 85. Какие переменные среды, влияющие на поведение интерпретатора python, вы знаете? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%9A%D0%B0%D0%BA%D0%B8%D0%B5%20%D0%BF%D0%B5%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%BD%D1%8B%D0%B5%20%D1%81%D1%80%D0%B5%D0%B4%D1%8B%2C%20%D0%B2%D0%BB%D0%B8%D1%8F%D1%8E%D1%89%D0%B8%D0%B5%20%D0%BD%D0%B0%20%D0%BF%D0%BE%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%BF%D1%80%D0%B5%D1%82%D0%B0%D1%82%D0%BE%D1%80%D0%B0%20python%2C%20%D0%B2%D1%8B%20%D0%B7%D0%BD%D0%B0%D0%B5%D1%82%D0%B5.md)</small>
+
+### 86. Что такое Cython? Что такое IronPython? Что такое PyPy? Почему они до сих пор существуют и зачем? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%92%D0%BE%D0%BF%D1%80%D0%BE%D1%81%2086.md)</small>
+
+### 87. Как перевернуть генератор? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%9A%D0%B0%D0%BA%20%D0%BF%D0%B5%D1%80%D0%B5%D0%B2%D0%B5%D1%80%D0%BD%D1%83%D1%82%D1%8C%20%D0%B3%D0%B5%D0%BD%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80.md)</small>
+
+### 88. Приведите пример использования filter и reduce над итерируемым объектом. &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D0%B4%D0%B8%D1%82%D0%B5%20%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D1%80%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20filter%20%D0%B8%20reduce%20%D0%BD%D0%B0%D0%B4%20%D0%B8%D1%82%D0%B5%D1%80%D0%B8%D1%80%D1%83%D0%B5%D0%BC%D1%8B%D0%BC%20%D0%BE%D0%B1%D1%8A%D0%B5%D0%BA%D1%82%D0%BE%D0%BC.md)</small>
+
+### 89. Что будет напечатано в результате выполнения кода? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%A7%D1%82%D0%BE%20%D0%B1%D1%83%D0%B4%D0%B5%D1%82%20%D0%B2%20%D1%80%D0%B5%D0%B7%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%82%D0%B5%20%D0%B2%D1%8B%D0%BF%D0%BE%D0%BB%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F%20%D1%81%D0%BB%D0%B5%D0%B4%D1%83%D1%8E%D1%89%D0%B5%D0%B3%D0%BE%20%D0%BA%D0%BE%D0%B4%D0%B0%208.md)</small>
+
+```python
+print(_)
+```
+
+### 90. Чем фреймворк отличается от библиотеки? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%A7%D0%B5%D0%BC%20%D1%84%D1%80%D0%B5%D0%B9%D0%BC%D0%B2%D0%BE%D1%80%D0%BA%20%D0%BE%D1%82%D0%BB%D0%B8%D1%87%D0%B0%D0%B5%D1%82%D1%81%D1%8F%20%D0%BE%D1%82%20%D0%B1%D0%B8%D0%B1%D0%BB%D0%B8%D0%BE%D1%82%D0%B5%D0%BA%D0%B8.md)</small>
+
+### 91. Расположите функции в порядке эффективности, объясните выбор. &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%A0%D0%B0%D1%81%D0%BF%D0%BE%D0%BB%D0%BE%D0%B6%D0%B8%D1%82%D0%B5%20%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%B8%20%D0%B2%20%D0%BF%D0%BE%D1%80%D1%8F%D0%B4%D0%BA%D0%B5%20%D1%8D%D1%84%D1%84%D0%B5%D0%BA%D1%82%D0%B8%D0%B2%D0%BD%D0%BE%D1%81%D1%82%D0%B8%2C%20%D0%BE%D0%B1%D1%8A%D1%8F%D1%81%D0%BD%D0%B8%D1%82%D0%B5%20%D0%B2%D1%8B%D0%B1%D0%BE%D1%80.md)</small>
+
+```python
+def f1(arr):
+    l1 = sorted(arr)
+    l2 = [i for i in l1 if i < .5]
+    return [i * i for i in l2]
+
+def f2(arr):
+    l1 = [i for i in arr if i < .5]
+    l2 = sorted(l1)
+    return [i * i for i in l2]
+
+def f3(arr):
+    l1 = [i * i for i in arr]
+    l2 = sorted(l1)
+    return [i for i in l1 if i < (.5 * .5)]
+```
+
+### 92. Произошла утечка памяти в рабочем приложении. Как бы вы начали отладку? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%9F%D1%80%D0%BE%D0%B8%D0%B7%D0%BE%D1%88%D0%BB%D0%B0%20%D1%83%D1%82%D0%B5%D1%87%D0%BA%D0%B0%20%D0%BF%D0%B0%D0%BC%D1%8F%D1%82%D0%B8%20%D0%B2%20%D1%80%D0%B0%D0%B1%D0%BE%D1%87%D0%B5%D0%BC%20%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B8.%20%D0%9A%D0%B0%D0%BA%20%D0%B1%D1%8B%20%D0%B2%D1%8B%20%D0%BD%D0%B0%D1%87%D0%B0%D0%BB%D0%B8%20%D0%BE%D1%82%D0%BB%D0%B0%D0%B4%D0%BA%D1%83.md)</small>
+
+### 93. В каких ситуациях возникает исключение NotImplementedError? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%92%20%D0%BA%D0%B0%D0%BA%D0%B8%D1%85%20%D1%81%D0%B8%D1%82%D1%83%D0%B0%D1%86%D0%B8%D1%8F%D1%85%20%D0%B2%D0%BE%D0%B7%D0%BD%D0%B8%D0%BA%D0%B0%D0%B5%D1%82%20%D0%B8%D1%81%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D0%B5%20NotImplementedError.md)</small>
+
+### 94. Что не так с этим кодом? Зачем это нужно? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%A7%D1%82%D0%BE%20%D0%BD%D0%B5%20%D1%82%D0%B0%D0%BA%20%D1%81%20%D1%8D%D1%82%D0%B8%D0%BC%20%D0%BA%D0%BE%D0%B4%D0%BE%D0%BC%20%D0%97%D0%B0%D1%87%D0%B5%D0%BC%20%D1%8D%D1%82%D0%BE%20%D0%BD%D1%83%D0%B6%D0%BD%D0%BE.md)</small>
+
+```python
+if __debug__:
+    assert False, ("error")
+```
+
+### 95. Что такое магические методы(dunder)? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%A7%D1%82%D0%BE%20%D1%82%D0%B0%D0%BA%D0%BE%D0%B5%20%D0%BC%D0%B0%D0%B3%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B5%20%D0%BC%D0%B5%D1%82%D0%BE%D0%B4%D1%8B%28dunder%29.md)</small>
+
+### 96. Объясните, почему такое возможно? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%9E%D0%B1%D1%8A%D1%8F%D1%81%D0%BD%D0%B8%D1%82%D0%B5%2C%20%D0%BF%D0%BE%D1%87%D0%B5%D0%BC%D1%83%20%D1%82%D0%B0%D0%BA%D0%BE%D0%B5%20%D0%B2%D0%BE%D0%B7%D0%BC%D0%BE%D0%B6%D0%BD%D0%BE.md)</small>
+
+```python
+
+_MangledGlobal__mangled = "^_^"
+
+class MangledGlobal:
+
+    def test(self):
+        return __mangled
+
+assert MangledGlobal().test() == "^_^"
+```
+
+### 97. Что такое monkey patching? Приведите пример использования. &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%A7%D1%82%D0%BE%20%D1%82%D0%B0%D0%BA%D0%BE%D0%B5%20monkey%20patching%20%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D0%B4%D0%B8%D1%82%D0%B5%20%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D1%80%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F.md)</small>
+
+### 98. Как работать с транзитивными зависимостями? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%9A%D0%B0%D0%BA%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0%D1%82%D1%8C%20%D1%81%20%D1%82%D1%80%D0%B0%D0%BD%D0%B7%D0%B8%D1%82%D0%B8%D0%B2%D0%BD%D1%8B%D0%BC%D0%B8%20%D0%B7%D0%B0%D0%B2%D0%B8%D1%81%D0%B8%D0%BC%D0%BE%D1%81%D1%82%D1%8F%D0%BC%D0%B8.md)</small>
+
+### 99. Что будет напечатано в окне браузера? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%A7%D1%82%D0%BE%20%D0%B1%D1%83%D0%B4%D0%B5%D1%82%20%D0%BD%D0%B0%D0%BF%D0%B5%D1%87%D0%B0%D1%82%D0%B0%D0%BD%D0%BE%20%D0%B2%20%D0%BE%D0%BA%D0%BD%D0%B5%20%D0%B1%D1%80%D0%B0%D1%83%D0%B7%D0%B5%D1%80%D0%B0.md)</small>
+
+```html
+<html>
+   <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+   <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+   <body>
+      <py-script>
+         print(__name__)
+         print(__file__)
+      </py-script>
+   </body>
+</html>
+```
+
+### 100. Какие новые функции добавлены в python 3.10? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%9A%D0%B0%D0%BA%D0%B8%D0%B5%20%D0%BD%D0%BE%D0%B2%D1%8B%D0%B5%20%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%B8%20%D0%B4%D0%BE%D0%B1%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D1%8B%20%D0%B2%20python%203.10.md)</small>
+
+### 101. Почему иногда python так долго запускается (в Windows)? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%9F%D0%BE%D1%87%D0%B5%D0%BC%D1%83%20%D0%B8%D0%BD%D0%BE%D0%B3%D0%B4%D0%B0%20python%20%D1%82%D0%B0%D0%BA%20%D0%B4%D0%BE%D0%BB%D0%B3%D0%BE%20%D0%B7%D0%B0%D0%BF%D1%83%D1%81%D0%BA%D0%B0%D0%B5%D1%82%D1%81%D1%8F%20%28%D0%B2%20Windows%29.md)</small>
+
+### 102. Когда использование Python является «правильным выбором» для проекта? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%9A%D0%BE%D0%B3%D0%B4%D0%B0%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20Python%20%D1%8F%D0%B2%D0%BB%D1%8F%D0%B5%D1%82%D1%81%D1%8F%20%C2%AB%D0%BF%D1%80%D0%B0%D0%B2%D0%B8%D0%BB%D1%8C%D0%BD%D1%8B%D0%BC%20%D0%B2%D1%8B%D0%B1%D0%BE%D1%80%D0%BE%D0%BC%C2%BB%20%D0%B4%D0%BB%D1%8F%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B0.md)</small>
+
+### 103. Каковы некоторые недостатки языка Python? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%9A%D0%B0%D0%BA%D0%BE%D0%B2%D1%8B%20%D0%BD%D0%B5%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%8B%D0%B5%20%D0%BD%D0%B5%D0%B4%D0%BE%D1%81%D1%82%D0%B0%D1%82%D0%BA%D0%B8%20%D1%8F%D0%B7%D1%8B%D0%BA%D0%B0%20Python.md)</small>
+
+### 104. Мы знаем, что Python сейчас в моде. Но чтобы по-настоящему принять великую технологию, вы должны знать и ее подводные камни? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%92%D0%BE%D0%BF%D1%80%D0%BE%D1%81%20104.md)</small>
+
+### 105. Каковы основные различия между Python 2 и 3? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%9A%D0%B0%D0%BA%D0%BE%D0%B2%D1%8B%20%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D1%8B%D0%B5%20%D1%80%D0%B0%D0%B7%D0%BB%D0%B8%D1%87%D0%B8%D1%8F%20%D0%BC%D0%B5%D0%B6%D0%B4%D1%83%20Python%202%20%D0%B8%203.md)</small>
+
+### 106. Что такое метод? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%A7%D1%82%D0%BE%20%D1%82%D0%B0%D0%BA%D0%BE%D0%B5%20%D0%BC%D0%B5%D1%82%D0%BE%D0%B4.md)</small>
+
+### 107. Как вызвать метод, определенный в базовом классе, из производного класса, который переопределяет его? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%92%D0%BE%D0%BF%D1%80%D0%BE%D1%81%20107.md)</small>
+
+### 108. Как организовать код, чтобы упростить изменение базового класса? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%9A%D0%B0%D0%BA%20%D0%BE%D1%80%D0%B3%D0%B0%D0%BD%D0%B8%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D1%8C%20%D0%BA%D0%BE%D0%B4%2C%20%D1%87%D1%82%D0%BE%D0%B1%D1%8B%20%D1%83%D0%BF%D1%80%D0%BE%D1%81%D1%82%D0%B8%D1%82%D1%8C%20%D0%B8%D0%B7%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B1%D0%B0%D0%B7%D0%BE%D0%B2%D0%BE%D0%B3%D0%BE%20%D0%BA%D0%BB%D0%B0%D1%81%D1%81%D0%B0.md)</small>
+
+### 109. Как узнать текущее имя модуля? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%9A%D0%B0%D0%BA%20%D1%83%D0%B7%D0%BD%D0%B0%D1%82%D1%8C%20%D1%82%D0%B5%D0%BA%D1%83%D1%89%D0%B5%D0%B5%20%D0%B8%D0%BC%D1%8F%20%D0%BC%D0%BE%D0%B4%D1%83%D0%BB%D1%8F.md)</small>
+
+### 110. Как мне получить доступ к модулю, написанному на C, из  Python? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%9A%D0%B0%D0%BA%20%D0%BC%D0%BD%D0%B5%20%D0%BF%D0%BE%D0%BB%D1%83%D1%87%D0%B8%D1%82%D1%8C%20%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%20%D0%BA%20%D0%BC%D0%BE%D0%B4%D1%83%D0%BB%D1%8E%2C%20%D0%BD%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%BD%D0%BE%D0%BC%D1%83%20%D0%BD%D0%B0%20C%2C%20%D0%B8%D0%B7%20%20Python.md)</small>
+
+### 111. Как преобразовать число в строку? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%9A%D0%B0%D0%BA%20%D0%BF%D1%80%D0%B5%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D1%8C%20%D1%87%D0%B8%D1%81%D0%BB%D0%BE%20%D0%B2%20%D1%81%D1%82%D1%80%D0%BE%D0%BA%D1%83.md)</small>
+
+### 112. Как выполняется реализация словарей Python? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%9A%D0%B0%D0%BA%20%D0%B2%D1%8B%D0%BF%D0%BE%D0%BB%D0%BD%D1%8F%D0%B5%D1%82%D1%81%D1%8F%20%D1%80%D0%B5%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F%20%D1%81%D0%BB%D0%BE%D0%B2%D0%B0%D1%80%D0%B5%D0%B9%20Python.md)</small>
+
+### 113. Что используется для создания строки Unicode в Python? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%A7%D1%82%D0%BE%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D1%83%D0%B5%D1%82%D1%81%D1%8F%20%D0%B4%D0%BB%D1%8F%20%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D1%8F%20%D1%81%D1%82%D1%80%D0%BE%D0%BA%D0%B8%20Unicode%20%D0%B2%20Python.md)</small>
+
+### 114. Какая встроенная функция используется в Python для перебора последовательности чисел? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%92%D0%BE%D0%BF%D1%80%D0%BE%D1%81%20114.md)</small>
+
+### 115. Есть ли в Python оператор switch-case? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%95%D1%81%D1%82%D1%8C%20%D0%BB%D0%B8%20%D0%B2%20Python%20%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80%20switch-case.md)</small>
+
+### 116. Какие ключевые отличия следует учитывать при написании кода на Python и Java? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%9A%D0%B0%D0%BA%D0%B8%D0%B5%20%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%B2%D1%8B%D0%B5%20%D0%BE%D1%82%D0%BB%D0%B8%D1%87%D0%B8%D1%8F%20%D1%81%D0%BB%D0%B5%D0%B4%D1%83%D0%B5%D1%82%20%D1%83%D1%87%D0%B8%D1%82%D1%8B%D0%B2%D0%B0%D1%82%D1%8C%20%D0%BF%D1%80%D0%B8%20%D0%BD%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B8%20%D0%BA%D0%BE%D0%B4%D0%B0%20%D0%BD%D0%B0%20Python%20%D0%B8%20Java%D1%8E.md)</small>
+
+### 117. Какой оператор можно использовать в Python, если оператор требуется синтаксически, но программа не требует никаких действий? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%92%D0%BE%D0%BF%D1%80%D0%BE%D1%81%20117.md)</small>
+
+### 118. Поддерживает ли Python регулярные выражения? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%9F%D0%BE%D0%B4%D0%B4%D0%B5%D1%80%D0%B6%D0%B8%D0%B2%D0%B0%D0%B5%D1%82%20%D0%BB%D0%B8%20Python%20%D1%80%D0%B5%D0%B3%D1%83%D0%BB%D1%8F%D1%80%D0%BD%D1%8B%D0%B5%20%D0%B2%D1%8B%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F.md)</small>
+
+### 119. Как вы выполняете сопоставление с образцом в Python? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%9A%D0%B0%D0%BA%20%D0%B2%D1%8B%20%D0%B2%D1%8B%D0%BF%D0%BE%D0%BB%D0%BD%D1%8F%D0%B5%D1%82%D0%B5%20%D1%81%D0%BE%D0%BF%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5%20%D1%81%20%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D1%86%D0%BE%D0%BC%20%D0%B2%20Python.md)</small>
+
+### 120. Напишите регулярное выражение, которое будет принимать идентификатор электронной почты. Используйте модуль re. &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%92%D0%BE%D0%BF%D1%80%D0%BE%D1%81%20120.md)</small>
+
+### 121. Что такое сборка мусора? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%A7%D1%82%D0%BE%20%D1%82%D0%B0%D0%BA%D0%BE%D0%B5%20%D1%81%D0%B1%D0%BE%D1%80%D0%BA%D0%B0%20%D0%BC%D1%83%D1%81%D0%BE%D1%80%D0%B0.md)</small>
+
+### 122. Как в Python управляется память? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%9A%D0%B0%D0%BA%20%D0%B2%20Python%20%D1%83%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D1%8F%D0%B5%D1%82%D1%81%D1%8F%20%D0%BF%D0%B0%D0%BC%D1%8F%D1%82%D1%8C.md)</small>
+
+### 123. Почему не вся память освобождается при выходе из Python? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%9F%D0%BE%D1%87%D0%B5%D0%BC%D1%83%20%D0%BD%D0%B5%20%D0%B2%D1%81%D1%8F%20%D0%BF%D0%B0%D0%BC%D1%8F%D1%82%D1%8C%20%D0%BE%D1%81%D0%B2%D0%BE%D0%B1%D0%BE%D0%B6%D0%B4%D0%B0%D0%B5%D1%82%D1%81%D1%8F%20%D0%BF%D1%80%D0%B8%20%D0%B2%D1%8B%D1%85%D0%BE%D0%B4%D0%B5%20%D0%B8%D0%B7%20Python.md)</small>
+
+### 124. Всякий раз, когда вы выходите из Python, освобождается ли вся память? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%92%D1%81%D1%8F%D0%BA%D0%B8%D0%B9%20%D1%80%D0%B0%D0%B7%2C%20%D0%BA%D0%BE%D0%B3%D0%B4%D0%B0%20%D0%B2%D1%8B%20%D0%B2%D1%8B%D1%85%D0%BE%D0%B4%D0%B8%D1%82%D0%B5%20%D0%B8%D0%B7%20Python%2C%20%D0%BE%D1%81%D0%B2%D0%BE%D0%B1%D0%BE%D0%B6%D0%B4%D0%B0%D0%B5%D1%82%D1%81%D1%8F%20%D0%BB%D0%B8%20%D0%B2%D1%81%D1%8F%20%D0%BF%D0%B0%D0%BC%D1%8F%D1%82%D1%8C.md)</small>
+
+### 125. Можно ли присвоить несколько переменных значениям в списке? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%9C%D0%BE%D0%B6%D0%BD%D0%BE%20%D0%BB%D0%B8%20%D0%BF%D1%80%D0%B8%D1%81%D0%B2%D0%BE%D0%B8%D1%82%D1%8C%20%D0%BD%D0%B5%D1%81%D0%BA%D0%BE%D0%BB%D1%8C%D0%BA%D0%BE%20%D0%BF%D0%B5%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%BD%D1%8B%D1%85%20%D0%B7%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0%B8%D1%8F%D0%BC%20%D0%B2%20%D1%81%D0%BF%D0%B8%D1%81%D0%BA%D0%B5.md)</small>
+
+### 126. Объясните механизм передачи параметров в python? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%9E%D0%B1%D1%8A%D1%8F%D1%81%D0%BD%D0%B8%D1%82%D0%B5%20%D0%BC%D0%B5%D1%85%D0%B0%D0%BD%D0%B8%D0%B7%D0%BC%20%D0%BF%D0%B5%D1%80%D0%B5%D0%B4%D0%B0%D1%87%D0%B8%20%D0%BF%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80%D0%BE%D0%B2%20%D0%B2%20python.md)</small>
+
+### 127. Что такое *args, **kwargs? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%A7%D1%82%D0%BE%20%D1%82%D0%B0%D0%BA%D0%BE%D0%B5%20args%2C%20kwargs.md)</small>
+
+### 128. Как передать необязательные или ключевые параметры из одной функции в другую? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%9A%D0%B0%D0%BA%20%D0%BF%D0%B5%D1%80%D0%B5%D0%B4%D0%B0%D1%82%D1%8C%20%D0%BD%D0%B5%D0%BE%D0%B1%D1%8F%D0%B7%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5%20%D0%B8%D0%BB%D0%B8%20%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%B2%D1%8B%D0%B5%20%D0%BF%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80%D1%8B%20%D0%B8%D0%B7%20%D0%BE%D0%B4%D0%BD%D0%BE%D0%B9%20%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%B8%20%D0%B2%20%D0%B4%D1%80%D1%83%D0%B3%D1%83%D1%8E.md)</small>
+
+### 129. Что такое лямбда? Что такое лямбда-функции? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%A7%D1%82%D0%BE%20%D1%82%D0%B0%D0%BA%D0%BE%D0%B5%20%D0%BB%D1%8F%D0%BC%D0%B1%D0%B4%D0%B0%20%D0%A7%D1%82%D0%BE%20%D1%82%D0%B0%D0%BA%D0%BE%D0%B5%20%D0%BB%D1%8F%D0%BC%D0%B1%D0%B4%D0%B0-%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%B8.md)</small>
+
+### 130. Как вы создаете свой собственный пакет в Python? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%9A%D0%B0%D0%BA%20%D0%B2%D1%8B%20%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%B5%D1%82%D0%B5%20%D1%81%D0%B2%D0%BE%D0%B9%20%D1%81%D0%BE%D0%B1%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9%20%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%20%D0%B2%20Python.md)</small>
+
+### 131. Объясните использование оператора with в python? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%9E%D0%B1%D1%8A%D1%8F%D1%81%D0%BD%D0%B8%D1%82%D0%B5%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80%D0%B0%20with%20%D0%B2%20python.md)</small>
+
+### 132. Что такое исправление Monkey? Приведи пример? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%A7%D1%82%D0%BE%20%D1%82%D0%B0%D0%BA%D0%BE%D0%B5%20%D0%B8%D1%81%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5%20Monkey%20%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D0%B4%D0%B8%20%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D1%80.md)</small>
+
+### 133. Объясните сериализацию и десериализацию(маринование и распаковку)? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%9E%D0%B1%D1%8A%D1%8F%D1%81%D0%BD%D0%B8%D1%82%D0%B5%20%D1%81%D0%B5%D1%80%D0%B8%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8E%20%D0%B8%20%D0%B4%D0%B5%D1%81%D0%B5%D1%80%D0%B8%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8E%28%D0%BC%D0%B0%D1%80%D0%B8%D0%BD%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%B8%20%D1%80%D0%B0%D1%81%D0%BF%D0%B0%D0%BA%D0%BE%D0%B2%D0%BA%D1%83%29.md)</small>
+
+### 134. Что такое функции высшего порядка? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%A7%D1%82%D0%BE%20%D1%82%D0%B0%D0%BA%D0%BE%D0%B5%20%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%B8%20%D0%B2%D1%8B%D1%81%D1%88%D0%B5%D0%B3%D0%BE%20%D0%BF%D0%BE%D1%80%D1%8F%D0%B4%D0%BA%D0%B0.md)</small>
+
+### 135. Как скопировать файл? Как скопировать объект в Python? Разница между поверхностной копией и глубокой копией? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%92%D0%BE%D0%BF%D1%80%D0%BE%D1%81%20135.md)</small>
+
+### 136. Объясните наследование в Python на примере? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%9E%D0%B1%D1%8A%D1%8F%D1%81%D0%BD%D0%B8%D1%82%D0%B5%20%D0%BD%D0%B0%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%B2%20Python%20%D0%BD%D0%B0%20%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D1%80%D0%B5.md)</small>
+
+### 137. Что такое иерархическое наследование? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%A7%D1%82%D0%BE%20%D1%82%D0%B0%D0%BA%D0%BE%D0%B5%20%D0%B8%D0%B5%D1%80%D0%B0%D1%80%D1%85%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B5%20%D0%BD%D0%B0%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5.md)</small>
+
+### 138. Какие методы(функции) мы используем для определения типа экземпляра и наследования? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%9A%D0%B0%D0%BA%D0%B8%D0%B5%20%D0%BC%D0%B5%D1%82%D0%BE%D0%B4%D1%8B%28%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%B8%29%20%D0%BC%D1%8B%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D1%83%D0%B5%D0%BC%20%D0%B4%D0%BB%D1%8F%20%D0%BE%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F%20%D1%82%D0%B8%D0%BF%D0%B0%20%D1%8D%D0%BA%D0%B7%D0%B5%D0%BC%D0%BF%D0%BB%D1%8F%D1%80%D0%B0%20%D0%B8%20%D0%BD%D0%B0%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F.md)</small>
+
+### 139. Написать алгоритм сортировки числового набора данных на Python? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%9D%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C%20%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%20%D1%81%D0%BE%D1%80%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D0%B8%20%D1%87%D0%B8%D1%81%D0%BB%D0%BE%D0%B2%D0%BE%D0%B3%D0%BE%20%D0%BD%D0%B0%D0%B1%D0%BE%D1%80%D0%B0%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85%20%D0%BD%D0%B0%20Python.md)</small>
+
+### 140. Как вы удалите последний объект из списка? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%9A%D0%B0%D0%BA%20%D0%B2%D1%8B%20%D1%83%D0%B4%D0%B0%D0%BB%D0%B8%D1%82%D0%B5%20%D0%BF%D0%BE%D1%81%D0%BB%D0%B5%D0%B4%D0%BD%D0%B8%D0%B9%20%D0%BE%D0%B1%D1%8A%D0%B5%D0%BA%D1%82%20%D0%B8%D0%B7%20%D1%81%D0%BF%D0%B8%D1%81%D0%BA%D0%B0.md)</small>
+
+### 141. Что такое отрицательные индексы и для чего они используются? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%A7%D1%82%D0%BE%20%D1%82%D0%B0%D0%BA%D0%BE%D0%B5%20%D0%BE%D1%82%D1%80%D0%B8%D1%86%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5%20%D0%B8%D0%BD%D0%B4%D0%B5%D0%BA%D1%81%D1%8B%20%D0%B8%20%D0%B4%D0%BB%D1%8F%20%D1%87%D0%B5%D0%B3%D0%BE%20%D0%BE%D0%BD%D0%B8%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D1%83%D1%8E%D1%82%D1%81%D1%8F.md)</small>
+
+### 142. Объясните методы split(), sub(), subn() модуля re в Python. &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%9E%D0%B1%D1%8A%D1%8F%D1%81%D0%BD%D0%B8%D1%82%D0%B5%20%D0%BC%D0%B5%D1%82%D0%BE%D0%B4%D1%8B%20split%28%29%2C%20sub%28%29%2C%20subn%28%29%20%D0%BC%D0%BE%D0%B4%D1%83%D0%BB%D1%8F%20re%20%D0%B2%20Python.md)</small>
+
+### 143. Что такое функция map в Python? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%A7%D1%82%D0%BE%20%D1%82%D0%B0%D0%BA%D0%BE%D0%B5%20%D0%BE%D1%82%D1%80%D0%B8%D1%86%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5%20%D0%B8%D0%BD%D0%B4%D0%B5%D0%BA%D1%81%D1%8B%20%D0%B8%20%D0%B4%D0%BB%D1%8F%20%D1%87%D0%B5%D0%B3%D0%BE%20%D0%BE%D0%BD%D0%B8%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D1%83%D1%8E%D1%82%D1%81%D1%8F.md)</small>
+
+### 144. Как получить индексы N максимальных значений в массиве NumPy? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%9A%D0%B0%D0%BA%20%D0%BF%D0%BE%D0%BB%D1%83%D1%87%D0%B8%D1%82%D1%8C%20%D0%B8%D0%BD%D0%B4%D0%B5%D0%BA%D1%81%D1%8B%20N%20%D0%BC%D0%B0%D0%BA%D1%81%D0%B8%D0%BC%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D1%85%20%D0%B7%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0%B8%D0%B9%20%D0%B2%20%D0%BC%D0%B0%D1%81%D1%81%D0%B8%D0%B2%D0%B5%20NumPy.md)</small>
+
+### 145. Что такое модуль Python? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%A7%D1%82%D0%BE%20%D1%82%D0%B0%D0%BA%D0%BE%D0%B5%20%D0%BC%D0%BE%D0%B4%D1%83%D0%BB%D1%8C%20Python.md)</small>
+
+### 146. Назовите модули, связанные с файлами, в Python? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%9D%D0%B0%D0%B7%D0%BE%D0%B2%D0%B8%D1%82%D0%B5%20%D0%BC%D0%BE%D0%B4%D1%83%D0%BB%D0%B8%2C%20%D1%81%D0%B2%D1%8F%D0%B7%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5%20%D1%81%20%D1%84%D0%B0%D0%B9%D0%BB%D0%B0%D0%BC%D0%B8%2C%20%D0%B2%20Python.md)</small>
+
+### 147. Сколько типов последовательностей поддерживает Python? Какие они? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%A1%D0%BA%D0%BE%D0%BB%D1%8C%D0%BA%D0%BE%20%D1%82%D0%B8%D0%BF%D0%BE%D0%B2%20%D0%BF%D0%BE%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B5%D0%B9%20%D0%BF%D0%BE%D0%B4%D0%B4%D0%B5%D1%80%D0%B6%D0%B8%D0%B2%D0%B0%D0%B5%D1%82%20Python%20%D0%9A%D0%B0%D0%BA%D0%B8%D0%B5%20%D0%BE%D0%BD%D0%B8.md)</small>
+
+### 148. Как отобразить содержимое текстового файла в обратном порядке? Как перевернуть список? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%92%D0%BE%D0%BF%D1%80%D0%BE%D1%81%20148.md)</small>
+
+### 149. В чем разница между NumPy и SciPy? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%92%20%D1%87%D0%B5%D0%BC%20%D1%80%D0%B0%D0%B7%D0%BD%D0%B8%D1%86%D0%B0%20%D0%BC%D0%B5%D0%B6%D0%B4%D1%83%20NumPy%20%D0%B8%20SciPy.md)</small>
+
+### 150. Предположим, что list1 равен [2, 33, 222, 14, 25]. Что такое list1[-1]? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%9F%D1%80%D0%B5%D0%B4%D0%BF%D0%BE%D0%BB%D0%BE%D0%B6%D0%B8%D0%BC%2C%20%D1%87%D1%82%D0%BE%20list1%20%D1%80%D0%B0%D0%B2%D0%B5%D0%BD%20%5B2%2C%2033%2C%20222%2C%2014%2C%2025%5D.%20%D0%A7%D1%82%D0%BE%20%D1%82%D0%B0%D0%BA%D0%BE%D0%B5%20list1%5B-1%5D.md)</small>
+
+### 151. Как открыть файл c:\scores.txt для записи? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%92%D0%BE%D0%BF%D1%80%D0%BE%D1%81%20151.md)</small>
+
+### 152. Назовите несколько модулей Python для статистических, числовых и научных вычислений? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%92%D0%BE%D0%BF%D1%80%D0%BE%D1%81%20152.md)</small>
+
+### 153. Что такое TkInter? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%A7%D1%82%D0%BE%20%D1%82%D0%B0%D0%BA%D0%BE%D0%B5%20TkInter.md)</small>
+
+### 154. Является ли Python объектно-ориентированным? Что такое объектно-ориентированное программирование? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%92%D0%BE%D0%BF%D1%80%D0%BE%D1%81%20154.md)</small>
+
+### 155. Поддерживает ли Python интерфейсы, как в Java &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%9F%D0%BE%D0%B4%D0%B4%D0%B5%D1%80%D0%B6%D0%B8%D0%B2%D0%B0%D0%B5%D1%82%20%D0%BB%D0%B8%20Python%20%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D1%84%D0%B5%D0%B9%D1%81%D1%8B%2C%20%D0%BA%D0%B0%D0%BA%20%D0%B2%20Java.md)</small>
+
+### 156. Что такое аксессоры, мутаторы, @property? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%A7%D1%82%D0%BE%20%D1%82%D0%B0%D0%BA%D0%BE%D0%B5%20%D0%B0%D0%BA%D1%81%D0%B5%D1%81%D1%81%D0%BE%D1%80%D1%8B%2C%20%D0%BC%D1%83%D1%82%D0%B0%D1%82%D0%BE%D1%80%D1%8B%2C%20%40property.md)</small>
+
+### 157. Различия методов append() и extend().? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%A0%D0%B0%D0%B7%D0%BB%D0%B8%D1%87%D0%B8%D1%8F%20%D0%BC%D0%B5%D1%82%D0%BE%D0%B4%D0%BE%D0%B2%20append%28%29%20%D0%B8%20extend%28%29.md)</small>
+
+### 158. Назовите несколько методов, которые используются для реализации функционально-ориентированного программирования в Python? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%92%D0%BE%D0%BF%D1%80%D0%BE%D1%81%20158.md)</small>
+
+### 159. Что будет напечатано в результате выполнения следующего кода? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%A7%D1%82%D0%BE%20%D0%B1%D1%83%D0%B4%D0%B5%D1%82%20%D0%B2%20%D1%80%D0%B5%D0%B7%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%82%D0%B5%20%D0%B2%D1%8B%D0%BF%D0%BE%D0%BB%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F%20%D1%81%D0%BB%D0%B5%D0%B4%D1%83%D1%8E%D1%89%D0%B5%D0%B3%D0%BE%20%D0%BA%D0%BE%D0%B4%D0%B0%209.md)</small>
+
+```python
+
+x = ['ab', 'cd']
+print(len(map(list, x)))
+```
+
+### 160. Что будет напечатано в результате выполнения следующего кода? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%A7%D1%82%D0%BE%20%D0%B1%D1%83%D0%B4%D0%B5%D1%82%20%D0%B2%20%D1%80%D0%B5%D0%B7%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%82%D0%B5%20%D0%B2%D1%8B%D0%BF%D0%BE%D0%BB%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F%20%D1%81%D0%BB%D0%B5%D0%B4%D1%83%D1%8E%D1%89%D0%B5%D0%B3%D0%BE%20%D0%BA%D0%BE%D0%B4%D0%B0%2010.md)</small>
+
+```python
+
+x = ['ab', 'cd']
+print(len(list(map(list, x))))
+```
+
+### 161. Что из следующего не является правильным синтаксисом для создания множества? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%A7%D1%82%D0%BE%20%D0%B8%D0%B7%20%D1%81%D0%BB%D0%B5%D0%B4%D1%83%D1%8E%D1%89%D0%B5%D0%B3%D0%BE%20%D0%BD%D0%B5%20%D1%8F%D0%B2%D0%BB%D1%8F%D0%B5%D1%82%D1%81%D1%8F%20%D0%BF%D1%80%D0%B0%D0%B2%D0%B8%D0%BB%D1%8C%D0%BD%D1%8B%D0%BC%20%D1%81%D0%B8%D0%BD%D1%82%D0%B0%D0%BA%D1%81%D0%B8%D1%81%D0%BE%D0%BC%20%D0%B4%D0%BB%D1%8F%20%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D1%8F%20%D0%BC%D0%BD%D0%BE%D0%B6%D0%B5%D1%81%D1%82%D0%B2%D0%B0.md)</small>
+
+```text
+a) set([[1,2],[3,4]])
+b) set([1,2,2,3,4])
+c) set((1,2,3,4))
+d) {1,2,3,4}
+```
+
+### 162. Напишите функцию Python, которая проверяет, является ли переданная строка палиндромом или нет? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%92%D0%BE%D0%BF%D1%80%D0%BE%D1%81%20162.md)</small>
+
+### 163. Написать программу на Python для вычисления суммы списка чисел? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%9D%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C%20%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D1%83%20%D0%BD%D0%B0%20Python%20%D0%B4%D0%BB%D1%8F%20%D0%B2%D1%8B%D1%87%D0%B8%D1%81%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F%20%D1%81%D1%83%D0%BC%D0%BC%D1%8B%20%D1%81%D0%BF%D0%B8%D1%81%D0%BA%D0%B0%20%D1%87%D0%B8%D1%81%D0%B5%D0%BB.md)</small>
+
+### 164. Как получить данные из таблицы в базе данных MySQL с помощью кода Python? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%9A%D0%B0%D0%BA%20%D0%BF%D0%BE%D0%BB%D1%83%D1%87%D0%B8%D1%82%D1%8C%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5%20%D0%B8%D0%B7%20%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86%D1%8B%20%D0%B2%20%D0%B1%D0%B0%D0%B7%D0%B5%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85%20MySQL%20%D1%81%20%D0%BF%D0%BE%D0%BC%D0%BE%D1%89%D1%8C%D1%8E%20%D0%BA%D0%BE%D0%B4%D0%B0%20Python.md)</small>
+
+### 165. Напишите программу на Python для чтения случайной строки из файла. &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%9D%D0%B0%D0%BF%D0%B8%D1%88%D0%B8%D1%82%D0%B5%20%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D1%83%20%D0%BD%D0%B0%20Python%20%D0%B4%D0%BB%D1%8F%20%D1%87%D1%82%D0%B5%D0%BD%D0%B8%D1%8F%20%D1%81%D0%BB%D1%83%D1%87%D0%B0%D0%B9%D0%BD%D0%BE%D0%B9%20%D1%81%D1%82%D1%80%D0%BE%D0%BA%D0%B8%20%D0%B8%D0%B7%20%D1%84%D0%B0%D0%B9%D0%BB%D0%B0.md)</small>
+
+### 166. Написать программу на Python для подсчета количества строк в текстовом файле? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%9D%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C%20%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D1%83%20%D0%BD%D0%B0%20Python%20%D0%B4%D0%BB%D1%8F%20%D0%BF%D0%BE%D0%B4%D1%81%D1%87%D0%B5%D1%82%D0%B0%20%D0%BA%D0%BE%D0%BB%D0%B8%D1%87%D0%B5%D1%81%D1%82%D0%B2%D0%B0%20%D1%81%D1%82%D1%80%D0%BE%D0%BA%20%D0%B2%20%D1%82%D0%B5%D0%BA%D1%81%D1%82%D0%BE%D0%B2%D0%BE%D0%BC%20%D1%84%D0%B0%D0%B9%D0%BB%D0%B5.md)</small>
+
+### 167. Каковы ключевые особенности Python? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%9A%D0%B0%D0%BA%D0%BE%D0%B2%D1%8B%20%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%B2%D1%8B%D0%B5%20%D0%BE%D1%81%D0%BE%D0%B1%D0%B5%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D0%B8%20Python.md)</small>
+
+### 168. Объясните тернарный оператор в Python? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%9E%D0%B1%D1%8A%D1%8F%D1%81%D0%BD%D0%B8%D1%82%D0%B5%20%D1%82%D0%B5%D1%80%D0%BD%D0%B0%D1%80%D0%BD%D1%8B%D0%B9%20%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80%20%D0%B2%20Python.md)</small>
+
+### 169. Что такое многопоточность? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%A7%D1%82%D0%BE%20%D1%82%D0%B0%D0%BA%D0%BE%D0%B5%20%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE%D0%BF%D0%BE%D1%82%D0%BE%D1%87%D0%BD%D0%BE%D1%81%D1%82%D1%8C.md)</small>
+
+### 170. Расскажите о функциях help() и dir() в Python? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%A0%D0%B0%D1%81%D1%81%D0%BA%D0%B0%D0%B6%D0%B8%D1%82%D0%B5%20%D0%BE%20%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F%D1%85%20help%28%29%20%D0%B8%20dir%28%29%20%D0%B2%20Python.md)</small>
+
+### 171. Что такое словарь в Python? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%A7%D1%82%D0%BE%20%D1%82%D0%B0%D0%BA%D0%BE%D0%B5%20%D1%81%D0%BB%D0%BE%D0%B2%D0%B0%D1%80%D1%8C%20%D0%B2%20Python.md)</small>
+
+### 172. Как получить список всех ключей словаря? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%9A%D0%B0%D0%BA%20%D0%BF%D0%BE%D0%BB%D1%83%D1%87%D0%B8%D1%82%D1%8C%20%D1%81%D0%BF%D0%B8%D1%81%D0%BE%D0%BA%20%D0%B2%D1%81%D0%B5%D1%85%20%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%B9%20%D1%81%D0%BB%D0%BE%D0%B2%D0%B0%D1%80%D1%8F.md)</small>
+
+### 173. Написать логику Python для подсчета количества заглавных букв в файле? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%9D%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C%20%D0%BB%D0%BE%D0%B3%D0%B8%D0%BA%D1%83%20Python%20%D0%B4%D0%BB%D1%8F%20%D0%BF%D0%BE%D0%B4%D1%81%D1%87%D0%B5%D1%82%D0%B0%20%D0%BA%D0%BE%D0%BB%D0%B8%D1%87%D0%B5%D1%81%D1%82%D0%B2%D0%B0%20%D0%B7%D0%B0%D0%B3%D0%BB%D0%B0%D0%B2%D0%BD%D1%8B%D1%85%20%D0%B1%D1%83%D0%BA%D0%B2%20%D0%B2%20%D1%84%D0%B0%D0%B9%D0%BB%D0%B5.md)</small>
+
+### 174. Как бы вы рандомизировали содержимое списка на месте? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%9A%D0%B0%D0%BA%20%D0%B1%D1%8B%20%D0%B2%D1%8B%20%D1%80%D0%B0%D0%BD%D0%B4%D0%BE%D0%BC%D0%B8%D0%B7%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BB%D0%B8%20%D1%81%D0%BE%D0%B4%D0%B5%D1%80%D0%B6%D0%B8%D0%BC%D0%BE%D0%B5%20%D1%81%D0%BF%D0%B8%D1%81%D0%BA%D0%B0%20%D0%BD%D0%B0%20%D0%BC%D0%B5%D1%81%D1%82%D0%B5.md)</small>
+
+### 175. Объясните join() и split() в Python? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%9E%D0%B1%D1%8A%D1%8F%D1%81%D0%BD%D0%B8%D1%82%D0%B5%20join%28%29%20%D0%B8%20split%28%29%20%D0%B2%20Python.md)</small>
+
+### 176. Является ли Python чувствительным к регистру? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%AF%D0%B2%D0%BB%D1%8F%D0%B5%D1%82%D1%81%D1%8F%20%D0%BB%D0%B8%20Python%20%D1%87%D1%83%D0%B2%D1%81%D1%82%D0%B2%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%BC%20%D0%BA%20%D1%80%D0%B5%D0%B3%D0%B8%D1%81%D1%82%D1%80%D1%83.md)</small>
+
+### 177. Как удалить начальный пробел в строке? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%9A%D0%B0%D0%BA%20%D1%83%D0%B4%D0%B0%D0%BB%D0%B8%D1%82%D1%8C%20%D0%BD%D0%B0%D1%87%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%BF%D1%80%D0%BE%D0%B1%D0%B5%D0%BB%20%D0%B2%20%D1%81%D1%82%D1%80%D0%BE%D0%BA%D0%B5.md)</small>
+
+### 178. Что такое оператор pass в Python? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%A7%D1%82%D0%BE%20%D1%82%D0%B0%D0%BA%D0%BE%D0%B5%20%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80%20pass%20%D0%B2%20Python.md)</small>
+
+### 179. Что такое замыкание в Python? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%A7%D1%82%D0%BE%20%D1%82%D0%B0%D0%BA%D0%BE%D0%B5%20%D0%B7%D0%B0%D0%BC%D1%8B%D0%BA%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%B2%20Python.md)</small>
+
+### 180. Объясните операторы // % и ** в Python. &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%92%D0%BE%D0%BF%D1%80%D0%BE%D1%81%20180.md)</small>
+
+### 181. Сколько видов операторов есть в Python? Объясните арифметические операторы. &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%A1%D0%BA%D0%BE%D0%BB%D1%8C%D0%BA%D0%BE%20%D0%B2%D0%B8%D0%B4%D0%BE%D0%B2%20%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80%D0%BE%D0%B2%20%D0%B5%D1%81%D1%82%D1%8C%20%D0%B2%20Python%20%D0%9E%D0%B1%D1%8A%D1%8F%D1%81%D0%BD%D0%B8%D1%82%D0%B5%20%D0%B0%D1%80%D0%B8%D1%84%D0%BC%D0%B5%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B5%20%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80%D1%8B.md)</small>
+
+### 182. Объясните операторы сравнения (отношения) в Python? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%9E%D0%B1%D1%8A%D1%8F%D1%81%D0%BD%D0%B8%D1%82%D0%B5%20%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80%D1%8B%20%D1%81%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F%20%28%D0%BE%D1%82%D0%BD%D0%BE%D1%88%D0%B5%D0%BD%D0%B8%D1%8F%29%20%D0%B2%20Python.md)</small>
+
+### 183. Что такое операторы присваивания в Python? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%A7%D1%82%D0%BE%20%D1%82%D0%B0%D0%BA%D0%BE%D0%B5%20%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80%D1%8B%20%D0%BF%D1%80%D0%B8%D1%81%D0%B2%D0%B0%D0%B8%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%D0%B2%20Python.md)</small>
+
+### 184. Объясните логические операторы в Python. &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%9E%D0%B1%D1%8A%D1%8F%D1%81%D0%BD%D0%B8%D1%82%D0%B5%20%D0%BB%D0%BE%D0%B3%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B5%20%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80%D1%8B%20%D0%B2%20Python.md)</small>
+
+### 185. Что такое оператор членства? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%A7%D1%82%D0%BE%20%D1%82%D0%B0%D0%BA%D0%BE%D0%B5%20%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80%20%D1%87%D0%BB%D0%B5%D0%BD%D1%81%D1%82%D0%B2%D0%B0.md)</small>
+
+### 186. Объясните операторы идентификации в Python. &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%9E%D0%B1%D1%8A%D1%8F%D1%81%D0%BD%D0%B8%D1%82%D0%B5%20%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80%D1%8B%20%D0%B8%D0%B4%D0%B5%D0%BD%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8%20%D0%B2%20Python.md)</small>
+
+### 187. Расскажите о побитовых операторах в Python. &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%A0%D0%B0%D1%81%D1%81%D0%BA%D0%B0%D0%B6%D0%B8%D1%82%D0%B5%20%D0%BE%20%D0%BF%D0%BE%D0%B1%D0%B8%D1%82%D0%BE%D0%B2%D1%8B%D1%85%20%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80%D0%B0%D1%85%20%D0%B2%20Python.md)</small>
+
+### 188. Как бы вы работали с числами, отличными от десятичной системы счисления? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%9A%D0%B0%D0%BA%20%D0%B1%D1%8B%20%D0%B2%D1%8B%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0%D0%BB%D0%B8%20%D1%81%20%D1%87%D0%B8%D1%81%D0%BB%D0%B0%D0%BC%D0%B8%2C%20%D0%BE%D1%82%D0%BB%D0%B8%D1%87%D0%BD%D1%8B%D0%BC%D0%B8%20%D0%BE%D1%82%20%D0%B4%D0%B5%D1%81%D1%8F%D1%82%D0%B8%D1%87%D0%BD%D0%BE%D0%B9%20%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B%20%D1%81%D1%87%D0%B8%D1%81%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F.md)</small>
+
+### 189. Почему имена идентификаторов с символом подчеркивания в начале не приветствуются? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%9F%D0%BE%D1%87%D0%B5%D0%BC%D1%83%20%D0%B8%D0%BC%D0%B5%D0%BD%D0%B0%20%D0%B8%D0%B4%D0%B5%D0%BD%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%82%D0%BE%D1%80%D0%BE%D0%B2%20%D1%81%20%D1%81%D0%B8%D0%BC%D0%B2%D0%BE%D0%BB%D0%BE%D0%BC%20%D0%BF%D0%BE%D0%B4%D1%87%D0%B5%D1%80%D0%BA%D0%B8%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%D0%B2%20%D0%BD%D0%B0%D1%87%D0%B0%D0%BB%D0%B5%20%D0%BD%D0%B5%20%D0%BF%D1%80%D0%B8%D0%B2%D0%B5%D1%82%D1%81%D1%82%D0%B2%D1%83%D1%8E%D1%82%D1%81%D1%8F.md)</small>
+
+### 190. Как можно объявить несколько присваиваний в одном операторе? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%9A%D0%B0%D0%BA%20%D0%BC%D0%BE%D0%B6%D0%BD%D0%BE%20%D0%BE%D0%B1%D1%8A%D1%8F%D0%B2%D0%B8%D1%82%D1%8C%20%D0%BD%D0%B5%D1%81%D0%BA%D0%BE%D0%BB%D1%8C%D0%BA%D0%BE%20%D0%BF%D1%80%D0%B8%D1%81%D0%B2%D0%B0%D0%B8%D0%B2%D0%B0%D0%BD%D0%B8%D0%B9%20%D0%B2%20%D0%BE%D0%B4%D0%BD%D0%BE%D0%BC%20%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80%D0%B5.md)</small>
+
+### 191. Что такое распаковка кортежа? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%A7%D1%82%D0%BE%20%D1%82%D0%B0%D0%BA%D0%BE%D0%B5%20%D1%80%D0%B0%D1%81%D0%BF%D0%B0%D0%BA%D0%BE%D0%B2%D0%BA%D0%B0%20%D0%BA%D0%BE%D1%80%D1%82%D0%B5%D0%B6%D0%B0.md)</small>
+
+### 192. Что такое slice (срез)? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%A7%D1%82%D0%BE%20%D1%82%D0%B0%D0%BA%D0%BE%D0%B5%20slice%20%28%D1%81%D1%80%D0%B5%D0%B7%29.md)</small>
+
+### 193. Что такое именованный кортеж? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%A7%D1%82%D0%BE%20%D1%82%D0%B0%D0%BA%D0%BE%D0%B5%20%D0%B8%D0%BC%D0%B5%D0%BD%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D0%B9%20%D0%BA%D0%BE%D1%80%D1%82%D0%B5%D0%B6.md)</small>
+
+### 194. Как бы вы преобразовали строку в целое число в Python? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%9A%D0%B0%D0%BA%20%D0%B1%D1%8B%20%D0%B2%D1%8B%20%D0%BF%D1%80%D0%B5%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D0%BB%D0%B8%20%D1%81%D1%82%D1%80%D0%BE%D0%BA%D1%83%20%D0%B2%20%D1%86%D0%B5%D0%BB%D0%BE%D0%B5%20%D1%87%D0%B8%D1%81%D0%BB%D0%BE%20%D0%B2%20Python.md)</small>
+
+### 195. Как вы вводите данные в Python? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%9A%D0%B0%D0%BA%20%D0%B2%D1%8B%20%D0%B2%D0%B2%D0%BE%D0%B4%D0%B8%D1%82%D0%B5%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5%20%D0%B2%20Python.md)</small>
+
+### 196. Что такое замороженный набор в Python? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%A7%D1%82%D0%BE%20%D1%82%D0%B0%D0%BA%D0%BE%D0%B5%20%D0%B7%D0%B0%D0%BC%D0%BE%D1%80%D0%BE%D0%B6%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9%20%D0%BD%D0%B0%D0%B1%D0%BE%D1%80%20%D0%B2%20Python.md)</small>
+
+### 197. Как бы вы сгенерировали случайное число в Python? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%9A%D0%B0%D0%BA%20%D0%B1%D1%8B%20%D0%B2%D1%8B%20%D1%81%D0%B3%D0%B5%D0%BD%D0%B5%D1%80%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BB%D0%B8%20%D1%81%D0%BB%D1%83%D1%87%D0%B0%D0%B9%D0%BD%D0%BE%D0%B5%20%D1%87%D0%B8%D1%81%D0%BB%D0%BE%20%D0%B2%20Python.md)</small>
+
+### 198. Как сделать заглавной первую букву строки? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%9A%D0%B0%D0%BA%20%D1%81%D0%B4%D0%B5%D0%BB%D0%B0%D1%82%D1%8C%20%D0%B7%D0%B0%D0%B3%D0%BB%D0%B0%D0%B2%D0%BD%D0%BE%D0%B9%20%D0%BF%D0%B5%D1%80%D0%B2%D1%83%D1%8E%20%D0%B1%D1%83%D0%BA%D0%B2%D1%83%20%D1%81%D1%82%D1%80%D0%BE%D0%BA%D0%B8.md)</small>
+
+### 199. Как проверить, все ли символы в строке буквенно-цифровые? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%9A%D0%B0%D0%BA%20%D0%BF%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%B8%D1%82%D1%8C%2C%20%D0%B2%D1%81%D0%B5%20%D0%BB%D0%B8%20%D1%81%D0%B8%D0%BC%D0%B2%D0%BE%D0%BB%D1%8B%20%D0%B2%20%D1%81%D1%82%D1%80%D0%BE%D0%BA%D0%B5%20%D0%B1%D1%83%D0%BA%D0%B2%D0%B5%D0%BD%D0%BD%D0%BE-%D1%86%D0%B8%D1%84%D1%80%D0%BE%D0%B2%D1%8B%D0%B5.md)</small>
+
+### 200. Что такое конкатенация? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%A7%D1%82%D0%BE%20%D1%82%D0%B0%D0%BA%D0%BE%D0%B5%20%D0%BA%D0%BE%D0%BD%D0%BA%D0%B0%D1%82%D0%B5%D0%BD%D0%B0%D1%86%D0%B8%D1%8F.md)</small>
