@@ -1,16 +1,22 @@
 """
 Документация модуля
 """
+import json
 
-from flask import jsonify, Blueprint
+from flask import Blueprint, jsonify
 
 from models.models import Session, Questions
-from utils.data_processing import parse_question_file
 
 api_questions_bp = Blueprint(
     "questions",
     __name__,
     url_prefix="/api/question"
+)
+
+api_question_bp = Blueprint(
+    "question_id",
+    __name__,
+    url_prefix="/api/question/<int:id>"
 )
 
 
@@ -19,9 +25,11 @@ def questions_get():
     """
     Документация функции
     """
-    ...
-
-    return ..., 200
+    with Session() as se:
+        result = Questions.search_questions(se)
+        print(type(result))
+        print(result)
+    return jsonify({"task_group": result}), 200
 
 
 @api_questions_bp.route("/", methods=["POST"])
@@ -39,19 +47,53 @@ def questions_put():
     """
     Документация функции
     """
-    with Session() as se:
-        add_list = list()
-        for data in parse_question_file():
-            new_user = Questions(id=data[0], questions=data[1], add_question=data[3], answer=data[2])
-            add_list.append(new_user)
-        se.add_all(add_list)
-        se.commit()
+    ...
 
-    return jsonify({"message": "Таблица с вопросами обновлена"}), 200
+    return ..., 200
 
 
 @api_questions_bp.route("/", methods=["DELETE"])
 def questions_delete():
+    """
+    Документация функции
+    """
+    ...
+
+    return ..., 200
+
+
+@api_question_bp.route("/", methods=["GET"])
+def question_get(id):
+    """
+    Документация функции
+    """
+    ...
+
+    return ..., 200
+
+
+@api_question_bp.route("/", methods=["POST"])
+def question_post(id):
+    """
+    Документация функции
+    """
+    ...
+
+    return ..., 200
+
+
+@api_question_bp.route("/", methods=["PUT"])
+def question_put(id):
+    """
+    Документация функции
+    """
+    ...
+
+    return ..., 200
+
+
+@api_question_bp.route("/", methods=["DELETE"])
+def question_delete(id):
     """
     Документация функции
     """

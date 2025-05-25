@@ -38,7 +38,7 @@ def parse_question_file():
     current_question = None
     current_code = []
     file_path = 'doc/Список вопросов.txt'
-    answer_file_path = "../"
+    answer_file_path = "doc/"
 
     with open(file_path, encoding='utf-8') as file:
         for line in file:

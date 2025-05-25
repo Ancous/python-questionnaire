@@ -13,6 +13,12 @@ api_tables_bp = Blueprint(
     url_prefix="/api/table"
 )
 
+api_table_bp = Blueprint(
+    "table_name",
+    __name__,
+    url_prefix="/api/table/<string:name>"
+)
+
 
 @api_tables_bp.route("/", methods=["GET"])
 def tables_get():
@@ -54,3 +60,43 @@ def tables_delete():
     metadata.drop_all(bind=engine)
 
     return jsonify({"message": "Все таблицы успешно удалены."}), 200
+
+
+@api_table_bp.route("/", methods=["GET"])
+def table_get(name):
+    """
+    Документация функции
+    """
+    ...
+
+    return ..., 200
+
+
+@api_table_bp.route("/", methods=["POST"])
+def table_post(name):
+    """
+    Документация функции
+    """
+    ...
+
+    return ..., 200
+
+
+@api_table_bp.route("/", methods=["PUT"])
+def table_put(name):
+    """
+    Документация функции
+    """
+    ...
+
+    return ..., 200
+
+
+@api_table_bp.route("/", methods=["DELETE"])
+def table_delete(name):
+    """
+    Документация функции
+    """
+    ...
+
+    return ..., 200
