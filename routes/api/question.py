@@ -1,102 +1,158 @@
 """
 Документация модуля
 """
-import json
 
-from flask import Blueprint, jsonify
-
-from models.models import Session, Questions
-
-api_questions_bp = Blueprint(
-    "questions",
-    __name__,
-    url_prefix="/api/question"
-)
-
-api_question_bp = Blueprint(
-    "question_id",
-    __name__,
-    url_prefix="/api/question/<int:id>"
-)
+from flask import request
+from flask_restful import Resource
+from marshmallow import ValidationError
 
 
-@api_questions_bp.route("/", methods=["GET"])
-def questions_get():
+from models.initialize_db import Session
+from models.question import Questions
+from schemas.question import QuestionSchema, QuestionDeleteSchema
+
+
+class QuestionsApi(Resource):
     """
-    Документация функции
+    Документация класса
     """
-    with Session() as se:
-        result = Questions.search_questions(se)
-        print(type(result))
-        print(result)
-    return jsonify({"task_group": result}), 200
+
+    @staticmethod
+    def get():
+        """
+        Документация метода
+        """
+        with Session() as se:
+            questions = Questions.all_questions(se)
+            schema = QuestionSchema(many=True)
+            result = schema.dump(questions)
+            return {"message": result}, 200
+
+    @staticmethod
+    def post():
+        """
+        Документация метода
+        """
+        data = request.get_json()
+
+        if not isinstance(data, list):
+            return {"error": "На вход ожидается список словарей с данными"}, 400
+
+        schema = QuestionSchema(many=True)
+
+        try:
+            questions_data = schema.load(data)
+            with Session() as se:
+                Questions.add_questions(se, questions_data)
+        except ValidationError as err:
+            return {'errors': err.messages}, 400
+        except ValueError as err:
+            return {'errors': err.__str__()}, 400
+
+        return {"message": "Данные добавлены"}, 200
+
+    @staticmethod
+    def put():
+        """
+        Документация метода
+        """
+        data = request.get_json()
+
+        if not isinstance(data, list):
+            return {"error": "На вход ожидается список словарей с данными"}, 400
+
+        schema = QuestionSchema(many=True)
+
+        try:
+            questions_data = schema.load(data)
+            with Session() as se:
+                Questions.update_questions(se, questions_data)
+        except ValidationError as err:
+            return {'errors': err.messages}, 400
+        except ValueError as err:
+            return {'errors': err.__str__()}, 400
+
+        return {"message": "Данные обновлены"}, 200
+
+    @staticmethod
+    def delete():
+        """
+        Документация метода
+        """
+        data = request.get_json()
+
+        if not isinstance(data, list):
+            return {"error": "На вход ожидается список словарей с данными"}, 400
+
+        schema = QuestionDeleteSchema(many=True)
+
+        try:
+            questions_data = schema.load(data)
+            with Session() as se:
+                Questions.delete_questions(se, questions_data)
+        except ValidationError as err:
+            return {'errors': err.messages}, 400
+        except ValueError as err:
+            return {'errors': err.__str__()}, 400
+
+        return {"message": "Данные удалены"}, 200
 
 
-@api_questions_bp.route("/", methods=["POST"])
-def questions_post():
+class QuestionApi(Resource):
     """
-    Документация функции
+    Документация класса
     """
-    ...
 
-    return ..., 200
+    @staticmethod
+    def get(id):
+        """
+        Документация метода
+        """
+        with Session() as se:
+            questions = Questions.get_question(se, id)
+            schema = QuestionSchema()
+            result = schema.dump(questions)
+            return {"message": result}, 200
 
+    @staticmethod
+    def post(id):
+        """
+        Документация метода
+        """
+        pass
 
-@api_questions_bp.route("/", methods=["PUT"])
-def questions_put():
-    """
-    Документация функции
-    """
-    ...
+    @staticmethod
+    def put(id):
+        """
+        Документация метода
+        """
+        data = request.get_json()
 
-    return ..., 200
+        if not isinstance(data, dict):
+            return {"error": "На вход ожидается словарь с данными"}, 400
 
+        schema = QuestionSchema()
 
-@api_questions_bp.route("/", methods=["DELETE"])
-def questions_delete():
-    """
-    Документация функции
-    """
-    ...
+        try:
+            questions_data = schema.load(data)
+            with Session() as se:
+                Questions.update_question(se, id, questions_data)
+        except ValidationError as err:
+            return {'errors': err.messages}, 400
+        except ValueError as err:
+            return {'errors': err.__str__()}, 400
 
-    return ..., 200
+        return {"message": "Данные обновлены"}, 200
 
+    @staticmethod
+    def delete(id):
+        """
+        Документация метода
+        """
+        try:
+            with Session() as se:
+                Questions.delete_question(se, id)
+        except ValueError as err:
+            return {'errors': err.__str__()}, 400
 
-@api_question_bp.route("/", methods=["GET"])
-def question_get(id):
-    """
-    Документация функции
-    """
-    ...
-
-    return ..., 200
-
-
-@api_question_bp.route("/", methods=["POST"])
-def question_post(id):
-    """
-    Документация функции
-    """
-    ...
-
-    return ..., 200
-
-
-@api_question_bp.route("/", methods=["PUT"])
-def question_put(id):
-    """
-    Документация функции
-    """
-    ...
-
-    return ..., 200
-
-
-@api_question_bp.route("/", methods=["DELETE"])
-def question_delete(id):
-    """
-    Документация функции
-    """
-    ...
-
-    return ..., 200
+        return {"message": "Данные удалены"}, 200

@@ -5,7 +5,7 @@
 from flask import jsonify, Blueprint
 from sqlalchemy import MetaData
 
-from models.models import engine
+from models.initialize_db import engine
 
 api_tables_bp = Blueprint(
     "tables",
