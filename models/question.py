@@ -35,8 +35,8 @@ class Questions(BaseModel):
             select(Questions)
         )
         result = sesh.execute(query)
-        all_books_objects = result.scalars().all()
-        return all_books_objects
+        all_questions_objects = result.scalars().all()
+        return all_questions_objects
 
     @classmethod
     def add_questions(cls, sesh, questions_data):
@@ -84,8 +84,11 @@ class Questions(BaseModel):
         """
         Документация метода
         """
-        questions_objects = sesh.get(Questions, question_id)
-        return questions_objects
+        question_object = sesh.get(Questions, question_id)
+        if question_object is None:
+            raise ValueError(f"id {question_id} не найден.")
+
+        return question_object
 
     @classmethod
     def create_question(cls, sesh, question_data):

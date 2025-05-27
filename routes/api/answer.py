@@ -6,12 +6,13 @@ from flask import request
 from flask_restful import Resource
 from marshmallow import ValidationError
 
+from models.answer import Answers
 from models.initialize_db import Session
-from models.question import Questions
-from schemas.question import QuestionSchema, QuestionDeleteSchema
+
+from schemas.answer import AnswerSchema, AnswerDeleteSchema
 
 
-class QuestionsApi(Resource):
+class AnswersApi(Resource):
     """
     Документация класса
     """
@@ -22,8 +23,8 @@ class QuestionsApi(Resource):
         Документация метода
         """
         with Session() as se:
-            questions = Questions.all_questions(se)
-            schema = QuestionSchema(many=True)
+            questions = Answers.all_answers(se)
+            schema = AnswerSchema(many=True)
             result = schema.dump(questions)
             return {"message": result}, 200
 
@@ -37,12 +38,12 @@ class QuestionsApi(Resource):
         if not isinstance(data, list):
             return {"error": "На вход ожидается список словарей с данными"}, 400
 
-        schema = QuestionSchema(many=True)
+        schema = AnswerSchema(many=True)
 
         try:
-            questions_data = schema.load(data)
+            answer_data = schema.load(data)
             with Session() as se:
-                Questions.add_questions(se, questions_data)
+                Answers.add_answers(se, answer_data)
         except ValidationError as err:
             return {'errors': err.messages}, 400
         except ValueError as err:
@@ -60,12 +61,12 @@ class QuestionsApi(Resource):
         if not isinstance(data, list):
             return {"error": "На вход ожидается список словарей с данными"}, 400
 
-        schema = QuestionSchema(many=True)
+        schema = AnswerSchema(many=True)
 
         try:
-            questions_data = schema.load(data)
+            answer_data = schema.load(data)
             with Session() as se:
-                Questions.update_questions(se, questions_data)
+                Answers.update_answers(se, answer_data)
         except ValidationError as err:
             return {'errors': err.messages}, 400
         except ValueError as err:
@@ -83,12 +84,12 @@ class QuestionsApi(Resource):
         if not isinstance(data, list):
             return {"error": "На вход ожидается список словарей с данными"}, 400
 
-        schema = QuestionDeleteSchema(many=True)
+        schema = AnswerDeleteSchema(many=True)
 
         try:
-            questions_data = schema.load(data)
+            answer_data = schema.load(data)
             with Session() as se:
-                Questions.delete_questions(se, questions_data)
+                Answers.delete_answers(se, answer_data)
         except ValidationError as err:
             return {'errors': err.messages}, 400
         except ValueError as err:
@@ -97,7 +98,7 @@ class QuestionsApi(Resource):
         return {"message": "Данные удалены"}, 200
 
 
-class QuestionApi(Resource):
+class AnswerApi(Resource):
     """
     Документация класса
     """
@@ -109,9 +110,9 @@ class QuestionApi(Resource):
         """
         try:
             with Session() as se:
-                questions = Questions.get_question(se, id)
-                schema = QuestionSchema()
-                result = schema.dump(questions)
+                answer = Answers.get_answer(se, id)
+                schema = AnswerSchema()
+                result = schema.dump(answer)
                 return {"message": result}, 200
         except ValueError as err:
             return {'errors': err.__str__()}, 400
@@ -133,12 +134,12 @@ class QuestionApi(Resource):
         if not isinstance(data, dict):
             return {"error": "На вход ожидается словарь с данными"}, 400
 
-        schema = QuestionSchema()
+        schema = AnswerSchema()
 
         try:
-            questions_data = schema.load(data)
+            answer_data = schema.load(data)
             with Session() as se:
-                Questions.update_question(se, id, questions_data)
+                Answers.update_answer(se, id, answer_data)
         except ValidationError as err:
             return {'errors': err.messages}, 400
         except ValueError as err:
@@ -153,7 +154,7 @@ class QuestionApi(Resource):
         """
         try:
             with Session() as se:
-                Questions.delete_question(se, id)
+                Answers.delete_answer(se, id)
         except ValueError as err:
             return {'errors': err.__str__()}, 400
 
