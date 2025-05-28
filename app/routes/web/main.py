@@ -11,9 +11,9 @@ main_bp = Blueprint(
 )
 
 
-@main_bp.route("/", methods=["GET"])
+@main_bp.route("/", methods=["GET", "POST"])
 def main():
     """
     Документация функции
     """
-    return render_template(template_name_or_list='index.html', message=None)
+    return render_template(template_name_or_list='index.html')

@@ -7,6 +7,7 @@ from sqlalchemy import inspect, exists
 from app.models import engine, Session, Base
 from app.models.answer import Answers
 from app.models.question import Questions
+from app.models.user import Users  # noqa
 from app.utils.data_processing import parse_question_file
 
 

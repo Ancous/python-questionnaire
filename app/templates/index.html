@@ -12,7 +12,7 @@
     <script>
         function hideMessage() {
             setTimeout(() => {
-                const message = document.querySelector('.flash-message');
+                const message = document.querySelector('.flash-message-update');
                 if (message) {
                     message.style.display = 'none';
                 }
@@ -48,14 +48,18 @@
                 Обновить мою историю вопросов
             </button>
         </form>
-        {% with messages = get_flashed_messages() %}
-        {% if messages %}
-        <div class="flash-message" style="display: block;">
-            {% for message in messages %}
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% for category, message in messages %}
+        {% if category == 'register' %}
+        <div class="flash-message-register">
             {{ message }}
-            {% endfor %}
+        </div>
+        {% elif category == 'update' %}
+        <div class="flash-message-update" style="display: block;">
+            {{ message }}
         </div>
         {% endif %}
+        {% endfor %}
         {% endwith %}
     </div>
     <div>
@@ -69,6 +73,20 @@
         <form action="http://localhost:5000/statistic" method="get">
             <button type="submit">
                 Статистика ответов
+            </button>
+        </form>
+    </div>
+    <div>
+        <form action="http://localhost:5000/register" method="get">
+            <button type="submit">
+                Регистрация
+            </button>
+        </form>
+    </div>
+    <div>
+        <form action="http://localhost:5000/login" method="get">
+            <button type="submit">
+                Вход
             </button>
         </form>
     </div>
