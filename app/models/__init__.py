@@ -5,7 +5,7 @@
 from sqlalchemy import event, create_engine
 from sqlalchemy.orm import DeclarativeBase, sessionmaker
 
-from config.config import DATABASE_URL
+from app.config.config import DATABASE_URL
 
 
 class Base(DeclarativeBase):

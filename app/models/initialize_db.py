@@ -4,10 +4,10 @@
 
 from sqlalchemy import inspect, exists
 
-from models import engine, Session, Base
-from models.answer import Answers
-from models.question import Questions
-from utils.data_processing import parse_question_file
+from app.models import engine, Session, Base
+from app.models.answer import Answers
+from app.models.question import Questions
+from app.utils.data_processing import parse_question_file
 
 
 def insert_initial_records():

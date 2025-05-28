@@ -5,7 +5,7 @@
 from sqlalchemy.orm import relationship
 from sqlalchemy import Column, Integer, String, select
 
-from models import BaseModel
+from app.models import BaseModel
 
 
 class Questions(BaseModel):

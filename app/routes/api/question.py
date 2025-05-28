@@ -6,9 +6,9 @@ from flask import request
 from flask_restful import Resource
 from marshmallow import ValidationError
 
-from models.initialize_db import Session
-from models.question import Questions
-from schemas.question import QuestionSchema, QuestionDeleteSchema
+from app.models.initialize_db import Session
+from app.models.question import Questions
+from app.schemas.question import QuestionSchema, QuestionDeleteSchema
 
 
 class QuestionsApi(Resource):
@@ -44,7 +44,7 @@ class QuestionsApi(Resource):
             with Session() as se:
                 Questions.add_questions(se, questions_data)
         except ValidationError as err:
-            return {'errors': err.messages}, 400
+            return {'errors': err.messages}, 422
         except ValueError as err:
             return {'errors': err.__str__()}, 400
 
@@ -67,7 +67,7 @@ class QuestionsApi(Resource):
             with Session() as se:
                 Questions.update_questions(se, questions_data)
         except ValidationError as err:
-            return {'errors': err.messages}, 400
+            return {'errors': err.messages}, 422
         except ValueError as err:
             return {'errors': err.__str__()}, 400
 
@@ -90,7 +90,7 @@ class QuestionsApi(Resource):
             with Session() as se:
                 Questions.delete_questions(se, questions_data)
         except ValidationError as err:
-            return {'errors': err.messages}, 400
+            return {'errors': err.messages}, 422
         except ValueError as err:
             return {'errors': err.__str__()}, 400
 
@@ -123,6 +123,8 @@ class QuestionApi(Resource):
         """
         pass
 
+        return {"error": "endpoint в разработке"}, 501
+
     @staticmethod
     def put(id):
         """
@@ -140,7 +142,7 @@ class QuestionApi(Resource):
             with Session() as se:
                 Questions.update_question(se, id, questions_data)
         except ValidationError as err:
-            return {'errors': err.messages}, 400
+            return {'errors': err.messages}, 422
         except ValueError as err:
             return {'errors': err.__str__()}, 400
 

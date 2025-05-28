@@ -4,9 +4,9 @@
 
 from marshmallow import Schema, fields, ValidationError, validates
 
-from models import Session
-from models.answer import Answers
-from models.question import Questions
+from app.models import Session
+from app.models.answer import Answers
+from app.models.question import Questions
 
 
 class AnswerSchema(Schema):

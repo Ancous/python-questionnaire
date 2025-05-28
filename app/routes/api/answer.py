@@ -6,10 +6,10 @@ from flask import request
 from flask_restful import Resource
 from marshmallow import ValidationError
 
-from models.answer import Answers
-from models.initialize_db import Session
+from app.models.answer import Answers
+from app.models.initialize_db import Session
 
-from schemas.answer import AnswerSchema, AnswerDeleteSchema
+from app.schemas.answer import AnswerSchema, AnswerDeleteSchema
 
 
 class AnswersApi(Resource):
@@ -45,7 +45,7 @@ class AnswersApi(Resource):
             with Session() as se:
                 Answers.add_answers(se, answer_data)
         except ValidationError as err:
-            return {'errors': err.messages}, 400
+            return {'errors': err.messages}, 422
         except ValueError as err:
             return {'errors': err.__str__()}, 400
 
@@ -68,7 +68,7 @@ class AnswersApi(Resource):
             with Session() as se:
                 Answers.update_answers(se, answer_data)
         except ValidationError as err:
-            return {'errors': err.messages}, 400
+            return {'errors': err.messages}, 422
         except ValueError as err:
             return {'errors': err.__str__()}, 400
 
@@ -91,7 +91,7 @@ class AnswersApi(Resource):
             with Session() as se:
                 Answers.delete_answers(se, answer_data)
         except ValidationError as err:
-            return {'errors': err.messages}, 400
+            return {'errors': err.messages}, 422
         except ValueError as err:
             return {'errors': err.__str__()}, 400
 
@@ -124,6 +124,8 @@ class AnswerApi(Resource):
         """
         pass
 
+        return {"error": "endpoint в разработке"}, 501
+
     @staticmethod
     def put(id):
         """
@@ -141,7 +143,7 @@ class AnswerApi(Resource):
             with Session() as se:
                 Answers.update_answer(se, id, answer_data)
         except ValidationError as err:
-            return {'errors': err.messages}, 400
+            return {'errors': err.messages}, 422
         except ValueError as err:
             return {'errors': err.__str__()}, 400
 

@@ -26,16 +26,19 @@
       <assistant-state connection-id="78ea3885-d1d1-4106-a829-48e16d910244" default-profile-name="" selected-profile-name="" selected-model-name="" assistant-type="GENERIC" selected-action="SHOW_SQL" availability="UNAVAILABLE" acknowledgement="NONE">
         <messages />
       </assistant-state>
+      <assistant-state connection-id="197d0daf-4073-4e4f-84f7-09be34af71d0" default-profile-name="" selected-profile-name="" selected-model-name="" assistant-type="GENERIC" selected-action="SHOW_SQL" availability="UNAVAILABLE" acknowledgement="NONE">
+        <messages />
+      </assistant-state>
     </assistants>
   </component>
   <component name="DBNavigator.Project.DatabaseBrowserManager">
     <autoscroll-to-editor value="false" />
     <autoscroll-from-editor value="true" />
-    <show-object-properties value="false" />
+    <show-object-properties value="true" />
     <loaded-nodes />
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
-    <connection id="78ea3885-d1d1-4106-a829-48e16d910244">
+    <connection id="197d0daf-4073-4e4f-84f7-09be34af71d0">
       <console name="Connection" type="STANDARD" schema="python_interview" session="Main" />
     </connection>
   </component>
@@ -43,14 +46,16 @@
     <last-used-providers />
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files />
+    <open-files>
+      <object connection-id="197d0daf-4073-4e4f-84f7-09be34af71d0" object-ref="schemas/public/tables/answers" />
+    </open-files>
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
-    <connection id="78ea3885-d1d1-4106-a829-48e16d910244" />
+    <connection id="197d0daf-4073-4e4f-84f7-09be34af71d0" />
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
-    <filter-actions connection-id="78ea3885-d1d1-4106-a829-48e16d910244" dataset="public.answers" active-filter-id="EMPTY_FILTER" />
-    <filter-actions connection-id="78ea3885-d1d1-4106-a829-48e16d910244" dataset="public.questions" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="197d0daf-4073-4e4f-84f7-09be34af71d0" dataset="public.answers" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="197d0daf-4073-4e4f-84f7-09be34af71d0" dataset="public.questions" active-filter-id="EMPTY_FILTER" />
   </component>
   <component name="DBNavigator.Project.ExecutionManager">
     <retain-sticky-names value="false" />
@@ -69,7 +74,7 @@
   </component>
   <component name="DBNavigator.Project.Settings">
     <connections>
-      <connection id="78ea3885-d1d1-4106-a829-48e16d910244" active="true" signed="true">
+      <connection id="197d0daf-4073-4e4f-84f7-09be34af71d0" active="true" signed="true">
         <database>
           <name value="Connection" />
           <description value="" />
@@ -93,7 +98,7 @@
           <session-user value="root" />
         </database>
         <properties>
-          <auto-commit value="true" />
+          <auto-commit value="false" />
         </properties>
         <ssh-settings>
           <active value="false" />
@@ -133,7 +138,7 @@
           <tcp-port-to value="4999" />
           <debugger-type value="JDBC" />
         </debugger>
-        <object-filters hide-empty-schemas="false" hide-pseudo-columns="false" hide-audit-columns="false">
+        <object-filters hide-empty-schemas="true" hide-pseudo-columns="false" hide-audit-columns="false">
           <object-filters />
           <object-type-filter use-master-settings="true">
             <object-type name="SCHEMA" enabled="true" />

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
-    <file url="file://$PROJECT_DIR$/doc/Ответы/Python полностью поддерживает ООП.md" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/doc/Ответы/Python — легкий язык. Согласны.md" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/doc/Ответы/Python — это императивный или декларативный язык.md" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/doc/Ответы/В каких ситуациях возникает исключение NotImplementedError.md" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/doc/Ответы/В каком году написана первая статья про python.md" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/doc/Ответы/Что такое конкатенация.md" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/app/doc/Ответы/Python полностью поддерживает ООП.md" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/app/doc/Ответы/Python — легкий язык. Согласны.md" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/app/doc/Ответы/Python — это императивный или декларативный язык.md" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/app/doc/Ответы/В каких ситуациях возникает исключение NotImplementedError.md" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/app/doc/Ответы/В каком году написана первая статья про python.md" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/app/doc/Ответы/Что такое конкатенация.md" charset="windows-1251" />
   </component>
 </project>

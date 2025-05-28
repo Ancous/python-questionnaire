@@ -1,0 +1,42 @@
+"""
+Документация модуля
+"""
+
+import secrets
+
+from flask import Flask
+from flask_restful import Api
+
+from .routes.api.answer import AnswersApi, AnswerApi
+from .routes.api.database import TablesApi, TableApi
+from .routes.api.question import QuestionsApi, QuestionApi
+
+from .routes.web.main import main_bp
+from .routes.web.answer import answer_bp
+from .routes.web.question import question_bp
+from .routes.web.statistic import statistic_bp
+from .routes.web.question_update import question_update_bp
+
+
+def create_app():
+    """
+    Документация функции
+    """
+    app = Flask(__name__)
+    app.secret_key = secrets.token_hex(16)
+    api = Api(app)
+
+    api.add_resource(QuestionsApi, '/api/questions')
+    api.add_resource(QuestionApi, '/api/questions/<int:id>')
+    api.add_resource(AnswersApi, '/api/answers')
+    api.add_resource(AnswerApi, '/api/answers/<int:id>')
+    api.add_resource(TablesApi, '/api/tables')
+    api.add_resource(TableApi, '/api/tables/<string:name>')
+
+    app.register_blueprint(main_bp)
+    app.register_blueprint(answer_bp)
+    app.register_blueprint(question_bp)
+    app.register_blueprint(question_update_bp)
+    app.register_blueprint(statistic_bp)
+
+    return app
