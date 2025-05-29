@@ -2,7 +2,7 @@
 Документация модуля
 """
 
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, session
 
 question_bp = Blueprint(
     "question",
@@ -16,4 +16,7 @@ def question():
     """
     Документация функции
     """
-    return render_template(template_name_or_list='question_index.html')
+    authorization = False
+    if session.get('logged_in'):
+        authorization = True
+    return render_template(template_name_or_list='question.html', authorization=authorization)

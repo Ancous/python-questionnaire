@@ -2,11 +2,10 @@
 Документация модуля
 """
 
-import secrets
-
 from flask import Flask
 from flask_restful import Api
 
+from .config.config import FLASK_SECRET_KEY
 from .routes.api.answer import AnswersApi, AnswerApi
 from .routes.api.database import TablesApi, TableApi
 from .routes.api.question import QuestionsApi, QuestionApi
@@ -14,6 +13,7 @@ from .routes.api.question import QuestionsApi, QuestionApi
 from .routes.web.main import main_bp
 from .routes.web.login import login_bp
 from .routes.web.answer import answer_bp
+from .routes.web.logout import logout_bp
 from .routes.web.question import question_bp
 from .routes.web.register import register_bp
 from .routes.web.statistic import statistic_bp
@@ -25,7 +25,7 @@ def create_app():
     Документация функции
     """
     app = Flask(__name__)
-    app.secret_key = secrets.token_hex(16)
+    app.secret_key = FLASK_SECRET_KEY
     api = Api(app)
 
     api.add_resource(QuestionsApi, '/api/questions')
@@ -38,6 +38,7 @@ def create_app():
     app.register_blueprint(main_bp)
     app.register_blueprint(login_bp)
     app.register_blueprint(answer_bp)
+    app.register_blueprint(logout_bp)
     app.register_blueprint(register_bp)
     app.register_blueprint(question_bp)
     app.register_blueprint(statistic_bp)

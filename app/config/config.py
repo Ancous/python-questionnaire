@@ -3,6 +3,7 @@
 """
 
 import os
+import secrets
 
 from dotenv import load_dotenv
 
@@ -16,3 +17,5 @@ DATABASE_URL = (
     f"{os.getenv("DB_PORT")}/"
     f"{os.getenv("DB_NAME")}"
 )
+
+FLASK_SECRET_KEY = secrets.token_hex(16)

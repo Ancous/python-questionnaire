@@ -32,23 +32,41 @@
         <p>
             {{ form.username.label }}
             <br>
-            {{ form.username() }}
+            {{ form.username(class="validate") }}
+            {% for error in form.username.errors %}
+            <span class="error-message" style="color: red;">{{ error }}</span>
+            {% endfor %}
         </p>
         <p>
             {{ form.password.label }}
             <br>
-            {{ form.password() }}
+            {{ form.password(class="validate") }}
+            {% for error in form.username.errors %}
+            <span class="error-message" style="color: red;">{{ error }}</span>
+            {% endfor %}
         </p>
         <p>
             {{ form.submit() }}
         </p>
     </form>
 </div>
-{% if error %}
-<p style="color:red;">
-    {{ error }}
-</p>
-{% endif %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('input.validate').forEach(function(input) {
+            input.addEventListener('input', function() {
+                // Получаем родительский <p> и все error-message внутри него
+                let p = input.closest('p');
+                if (!p) return;
+                let errors = p.querySelectorAll('.error-message');
+                if (input.value.trim() !== '') {
+                    errors.forEach(span => span.style.display = 'none');
+                } else {
+                    errors.forEach(span => span.style.display = 'inline');
+                }
+            });
+        });
+    });
+</script>
 </body>
 <footer>
     <div>

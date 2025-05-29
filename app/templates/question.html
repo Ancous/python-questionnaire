@@ -1,13 +1,13 @@
 <!doctype html>
 <html lang="ru">
 <head>
-    <meta
-        charset="UTF-8">
+    <meta charset="UTF-8">
     <meta
         name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta
-        http-equiv="X-UA-Compatible" content="ie=edge">
+        http-equiv="X-UA-Compatible"
+        content="ie=edge">
     <title>Ancous</title>
     <link
         rel="icon"
@@ -23,42 +23,45 @@
         <h1>
             Вопросики к собеседованию на Python
         </h1>
+
     </div>
+
 </header>
 <main>
     <div>
-        <form action="http://localhost:5000" method="get">
-            <button type="submit">
-                Вернуться на главную
-            </button>
-        </form>
+        <button onclick="window.location.href='/'">
+            Вернуться на главную
+        </button>
     </div>
     <div>
-        <p>
-            Вопросы отвеченные
-        </p>
-        <div>
-            ...
-        </div>
-        <p>
-            Вопросы, которые следует повторить
-        </p>
-        <div>
-            ...
-        </div>
-        <p>
-            Вопросы, которые надо изучить
-        </p>
-        <div>
-            ...
-        </div>
+        <h2>
+            Вопрос № <124>
+        </h2>
     </div>
+    <div>
+        Вопрос
+    </div>
+    <div>
+        Дополнение к вопросам
+    </div>
+    <div>
+        <button onclick="window.location.href='/answer'">
+            Ответ
+        </button>
+    </div>
+    {% if authorization %}
+    <div>
+        <button onclick="window.location.href='/logout'">
+            Выйти
+        </button>
+    </div>
+    {% endif %}
 </main>
 <footer>
     <div>
-        <h2>
+        <h3>
             Здесь будет информация
-        </h2>
+        </h3>
     </div>
 </footer>
 </body>

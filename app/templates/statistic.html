@@ -27,31 +27,37 @@
 </header>
 <main>
     <div>
-        <form action="http://localhost:5000" method="get">
-            <button type="submit">
-                Вернуться на главную
-            </button>
-        </form>
+        <button onclick="window.location.href='/'">
+            Вернуться на главную
+        </button>
     </div>
     <div>
-        Ответ
+        <p>
+            Вопросы отвеченные
+        </p>
+        <div>
+            ...
+        </div>
+        <p>
+            Вопросы, которые следует повторить
+        </p>
+        <div>
+            ...
+        </div>
+        <p>
+            Вопросы, которые надо изучить
+        </p>
+        <div>
+            ...
+        </div>
     </div>
+    {% if authorization %}
     <div>
-        Оцените свой ответ
+        <button onclick="window.location.href='/logout'">
+            Выйти
+        </button>
     </div>
-    <div>
-        <form action="http://localhost:5000/question" method="get">
-            <button type="submit">
-                Ответил
-            </button>
-            <button type="submit">
-                Ответил не полностью, надо повторить
-            </button>
-            <button type="submit">
-                Не ответил
-            </button>
-        </form>
-    </div>
+    {% endif %}
 </main>
 <footer>
     <div>

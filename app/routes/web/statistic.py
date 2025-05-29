@@ -2,7 +2,7 @@
 Документация модуля
 """
 
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, session
 
 statistic_bp = Blueprint(
     "statistic",
@@ -16,4 +16,7 @@ def statistic():
     """
     Документация функции
     """
-    return render_template(template_name_or_list='statistic_index.html')
+    authorization = False
+    if session.get('logged_in'):
+        authorization = True
+    return render_template(template_name_or_list='statistic.html', authorization=authorization)

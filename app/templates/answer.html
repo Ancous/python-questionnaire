@@ -1,13 +1,13 @@
 <!doctype html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
+    <meta
+        charset="UTF-8">
     <meta
         name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta
-        http-equiv="X-UA-Compatible"
-        content="ie=edge">
+        http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Ancous</title>
     <link
         rel="icon"
@@ -23,42 +23,46 @@
         <h1>
             Вопросики к собеседованию на Python
         </h1>
-
     </div>
-
 </header>
 <main>
     <div>
-        <form action="http://localhost:5000" method="get">
+        <button onclick="window.location.href='/'">
+            Вернуться на главную
+        </button>
+    </div>
+    <div>
+        Ответ
+    </div>
+    <div>
+        Оцените свой ответ
+    </div>
+    <div>
+        <form action="http://localhost:5000/question" method="get">
             <button type="submit">
-                Вернуться на главную
+                Ответил
+            </button>
+            <button type="submit">
+                Ответил не полностью, надо повторить
+            </button>
+            <button type="submit">
+                Не ответил
             </button>
         </form>
     </div>
+    {% if authorization %}
     <div>
-        <h2>
-            Вопрос № <124>
-        </h2>
+        <button onclick="window.location.href='/logout'">
+            Выйти
+        </button>
     </div>
-    <div>
-        <div>
-            Вопрос
-        </div>
-        <form action="http://localhost:5000/answer" method="get">
-            <button type="submit">
-                Ответ
-            </button>
-        </form>
-    </div>
-    <div>
-        Дополнение к вопросам
-    </div>
+    {% endif %}
 </main>
 <footer>
     <div>
-        <h3>
+        <h2>
             Здесь будет информация
-        </h3>
+        </h2>
     </div>
 </footer>
 </body>

@@ -43,11 +43,9 @@
         Отвечено на 100 из 200 вопросов
     </div>
     <div class="main">
-        <form action="/question_update" method="get">
-            <button type="submit">
-                Обновить мою историю вопросов
-            </button>
-        </form>
+        <button onclick="window.location.href='/question_update'">
+            Обновить мою историю вопросов
+        </button>
         {% with messages = get_flashed_messages(with_categories=true) %}
         {% for category, message in messages %}
         {% if category == 'register' %}
@@ -63,33 +61,33 @@
         {% endwith %}
     </div>
     <div>
-        <form action="http://localhost:5000/question" method="get">
-            <button type="submit">
-                Погнали к вопросам
-            </button>
-        </form>
+        <button onclick="window.location.href='/question'">
+            Погнали к вопросам
+        </button>
     </div>
     <div>
-        <form action="http://localhost:5000/statistic" method="get">
-            <button type="submit">
-                Статистика ответов
-            </button>
-        </form>
+        <button onclick="window.location.href='/statistic'">
+            Статистика ответов
+        </button>
+    </div>
+    {% if authorization %}
+    <div>
+        <button onclick="window.location.href='/logout'">
+            Выйти
+        </button>
+    </div>
+    {% else %}
+    <div>
+        <button onclick="window.location.href='/register'">
+            Регистрация
+        </button>
     </div>
     <div>
-        <form action="http://localhost:5000/register" method="get">
-            <button type="submit">
-                Регистрация
-            </button>
-        </form>
+        <button onclick="window.location.href='/login'">
+            Войти
+        </button>
     </div>
-    <div>
-        <form action="http://localhost:5000/login" method="get">
-            <button type="submit">
-                Вход
-            </button>
-        </form>
-    </div>
+    {% endif %}
 </main>
 <footer>
     <div>
