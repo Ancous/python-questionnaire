@@ -33,7 +33,6 @@ def question():
             .order_by(func.random())
             .first()
         )
-        question_obj = None
         if question_obj is None:
             message = "Вы знаете все ответы на вопросы. Вопросов для Вас больше нет."
             return render_template(
