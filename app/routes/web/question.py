@@ -38,12 +38,12 @@ def question():
             return render_template(
                 'question.html',
                 authorization=bool(session.get('logged_in')),
-                result=None,
-                text=None,
+                question=None,
+                sub_question=None,
                 message=message
             )
 
-        html = markdown.markdown(
+        sub_question_html = markdown.markdown(
             question_obj.sub_question,
             extensions=['fenced_code']
         ) if question_obj.sub_question else None
@@ -51,7 +51,7 @@ def question():
     return render_template(
         'question.html',
         authorization=bool(session.get('logged_in')),
-        result=question_obj,
-        text=html,
+        question=question_obj,
+        sub_question=sub_question_html,
         message=None
     )
