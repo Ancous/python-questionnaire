@@ -16,7 +16,7 @@ def statistic():
     """
     Документация функции
     """
-    authorization = False
-    if session.get('logged_in'):
-        authorization = True
-    return render_template(template_name_or_list='statistic.html', authorization=authorization)
+    return render_template(
+        template_name_or_list='statistic.html',
+        authorization=bool(session.get('logged_in'))
+    )

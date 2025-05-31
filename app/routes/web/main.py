@@ -16,7 +16,7 @@ def main():
     """
     Документация функции
     """
-    authorization = False
-    if session.get('logged_in'):
-        authorization = True
-    return render_template(template_name_or_list='index.html', authorization=authorization)
+    return render_template(
+        template_name_or_list='index.html',
+        authorization=bool(session.get('logged_in'))
+    )

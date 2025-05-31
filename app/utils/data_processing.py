@@ -65,9 +65,9 @@ def parse_question_file():
                     current_question[-1] = '\n'.join(current_code) + "\n```"
                     current_code = []
                 else:
-                    current_code.append(line.strip())
+                    current_code.append(line.rstrip("\n"))
             elif current_code:
-                current_code.append(line.strip())
+                current_code.append(line.rstrip("\n"))
 
         if current_question:
             if current_code:

@@ -16,6 +16,10 @@
     <link
         rel="stylesheet"
         href="../static/css/style.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
 </head>
 <body>
 <header>
@@ -23,9 +27,16 @@
         <h1>
             Вопросики к собеседованию на Python
         </h1>
-
     </div>
-
+    {% if authorization %}
+    <div>
+        Отвечено на n из 200 вопросов
+    </div>
+    {% else %}
+    <div>
+        Чтобы сохранялась история вопросов нужна авторизация
+    </div>
+    {% endif %}
 </header>
 <main>
     <div>
@@ -33,17 +44,28 @@
             Вернуться на главную
         </button>
     </div>
+    {% if result.id %}
     <div>
         <h2>
-            Вопрос № <124>
+            Вопрос №{{ result.id }}
         </h2>
     </div>
+    {% endif %}
+    {% if message %}
     <div>
-        Вопрос
+        <h2>
+            {{ message }}
+        </h2>
     </div>
+    {% endif %}
     <div>
-        Дополнение к вопросам
+        {{ result.question }}
     </div>
+    {% if text %}
+    <div>
+        {{ text|safe }}
+    </div>
+    {% endif %}
     <div>
         <button onclick="window.location.href='/answer'">
             Ответ

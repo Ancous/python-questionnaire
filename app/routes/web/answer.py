@@ -16,7 +16,7 @@ def answer():
     """
     Документация функции
     """
-    authorization = False
-    if session.get('logged_in'):
-        authorization = True
-    return render_template(template_name_or_list='answer.html', authorization=authorization)
+    return render_template(
+        template_name_or_list='answer.html',
+        authorization=bool(session.get('logged_in'))
+    )
