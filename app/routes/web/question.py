@@ -2,8 +2,6 @@
 Документация модуля
 """
 
-import markdown
-
 from flask import Blueprint, render_template, session
 from sqlalchemy import func
 
@@ -29,6 +27,7 @@ def question():
     with Session() as se:
         question_obj = (
             se.query(Questions)
+            # .filter(Questions.id == 200)
             .filter(~Questions.id.in_(answered_ids))
             .order_by(func.random())
             .first()
@@ -43,15 +42,12 @@ def question():
                 message=message
             )
 
-        sub_question_html = markdown.markdown(
-            question_obj.sub_question,
-            extensions=['fenced_code']
-        ) if question_obj.sub_question else None
+        session['question'] = question_obj.id
 
     return render_template(
         'question.html',
         authorization=bool(session.get('logged_in')),
         question=question_obj,
-        sub_question=sub_question_html,
+        sub_question=question_obj.sub_question,
         message=None
     )
