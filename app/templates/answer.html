@@ -45,6 +45,14 @@
         </button>
     </div>
     <div>
+        Вопрос № {{ question_id }}: {{ question }}.
+    </div>
+    {% if sub_question %}
+    <div>
+        {{ sub_question|safe }}
+    </div>
+    {% endif %}
+    <div>
         {{ sub_answer|safe }}
     </div>
     <div>

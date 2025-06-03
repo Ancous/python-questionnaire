@@ -22,12 +22,15 @@ def answer():
     with Session() as se:
         answer_obj = (
             se.query(Answers)
-            .filter(Answers.question_id == session["question"])
+            .filter(Answers.question_id == session["question_id"])
             .first()
         )
 
     return render_template(
         template_name_or_list='answer.html',
         authorization=bool(session.get('logged_in')),
+        question=session["question"],
+        sub_question=session["sub_question"],
+        question_id=session["question_id"],
         sub_answer=answer_obj.answer
     )
