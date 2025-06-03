@@ -32,7 +32,7 @@ class Questions(BaseModel):
         Документация метода
         """
         query = (
-            select(Questions)
+            select(cls)
         )
         result = sesh.execute(query)
         all_questions_objects = result.scalars().all()
@@ -44,7 +44,7 @@ class Questions(BaseModel):
         Документация метода
         """
         questions_objects = [
-            Questions(
+            cls(
                 question=item["question"],
                 sub_question=item["sub_question"]
             ) for item in questions_data
@@ -58,7 +58,7 @@ class Questions(BaseModel):
         Документация метода
         """
         for item in questions_data:
-            question = sesh.query(Questions).filter(Questions.id == item["id"]).first()
+            question = sesh.query(cls).filter(cls.id == item["id"]).first()
             if question:
                 question.question = item["question"]
                 question.sub_question = item["sub_question"]
@@ -72,7 +72,7 @@ class Questions(BaseModel):
         Документация метода
         """
         for item in questions_id:
-            question_to_delete = sesh.query(Questions).filter(Questions.id == item["id"]).one_or_none()
+            question_to_delete = sesh.query(cls).filter(cls.id == item["id"]).one_or_none()
             if question_to_delete is None:
                 raise ValueError(f"id {item["id"]} не найден для удаления.")
             sesh.delete(question_to_delete)
@@ -84,7 +84,7 @@ class Questions(BaseModel):
         """
         Документация метода
         """
-        question_object = sesh.get(Questions, question_id)
+        question_object = sesh.get(cls, question_id)
         if question_object is None:
             raise ValueError(f"id {question_id} не найден.")
 
@@ -102,7 +102,7 @@ class Questions(BaseModel):
         """
         Документация метода
         """
-        question = sesh.query(Questions).filter(Questions.id == question_id).first()
+        question = sesh.query(cls).filter(cls.id == question_id).first()
         if question:
             question.question = question_data["question"]
             question.sub_question = question_data["sub_question"]
@@ -115,7 +115,7 @@ class Questions(BaseModel):
         """
         Документация метода
         """
-        question_to_delete = sesh.query(Questions).filter(Questions.id == question_id).one_or_none()
+        question_to_delete = sesh.query(cls).filter(cls.id == question_id).one_or_none()
         if question_to_delete is None:
             raise ValueError(f"id {question_id} не найден для удаления.")
         sesh.delete(question_to_delete)

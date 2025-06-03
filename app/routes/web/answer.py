@@ -20,17 +20,13 @@ def answer():
     Документация функции
     """
     with Session() as se:
-        answer_obj = (
-            se.query(Answers)
-            .filter(Answers.question_id == session["question_id"])
-            .first()
-        )
+        answer_obj = Answers.answer_by_question_id(se, session["question_id"])
 
     return render_template(
         template_name_or_list='answer.html',
         authorization=bool(session.get('logged_in')),
-        question=session["question"],
-        sub_question=session["sub_question"],
-        question_id=session["question_id"],
+        question=session.get("question"),
+        sub_question=session.get("sub_question"),
+        question_id=session.get("question_id"),
         sub_answer=answer_obj.answer
     )

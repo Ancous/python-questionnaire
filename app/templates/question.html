@@ -44,10 +44,10 @@
             Вернуться на главную
         </button>
     </div>
-    {% if question %}
+    {% if question_id %}
     <div>
         <h2>
-            Вопрос №{{ question.id }}
+            Вопрос №{{ question_id }}
         </h2>
     </div>
     {% endif %}
@@ -60,7 +60,7 @@
     {% endif %}
     {% if question %}
     <div>
-        {{ question.question }}
+        {{ question }}
     </div>
     {% endif %}
     {% if sub_question %}

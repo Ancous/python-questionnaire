@@ -23,17 +23,17 @@ def question():
     Документация функции
     """
     answered_ids = [4, 6, 10]  # запрос на получение id отвеченных вопросов у пользователя
-    global ALL_ID_QUESTION
+    # global ALL_ID_QUESTION
     with Session() as se:
         question_obj = (
             se.query(Questions)
-            .filter(Questions.id == ALL_ID_QUESTION)
-            # .filter(~Questions.id.in_(answered_ids))
-            # .order_by(func.random())
+            # .filter(Questions.id == ALL_ID_QUESTION)
+            .filter(~Questions.id.in_(answered_ids))
+            .order_by(func.random())
             .first()
         )
 
-        ALL_ID_QUESTION += 1
+        # ALL_ID_QUESTION += 1
 
         if question_obj is None:
             message = "Вы знаете все ответы на вопросы. Вопросов для Вас больше нет."
@@ -52,7 +52,8 @@ def question():
     return render_template(
         'question.html',
         authorization=bool(session.get('logged_in')),
-        question=question_obj,
-        sub_question=question_obj.sub_question,
+        question_id=session.get("question_id"),
+        question=session.get("question"),
+        sub_question=session.get("sub_question"),
         message=None
     )
