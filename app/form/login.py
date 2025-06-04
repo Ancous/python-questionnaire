@@ -3,7 +3,6 @@
 """
 
 from flask_wtf import FlaskForm
-from wtforms.validators import DataRequired
 from wtforms import StringField, PasswordField, SubmitField
 
 from app.form.custom_validation import CheckRecord

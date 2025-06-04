@@ -15,10 +15,14 @@ class Answers(BaseModel):
     __tablename__ = 'answers'
     id = Column(Integer, primary_key=True, autoincrement=True)
 
-    answer = Column(String)
-    question_id = Column(Integer, ForeignKey('questions.id'))
+    answer = Column(String, nullable=False)
+    question_id = Column(Integer, ForeignKey('questions.id'), unique=True, nullable=False)
 
-    question = relationship("Questions", back_populates="answer")
+    question = relationship(
+        "Questions",
+        back_populates="answer",
+        uselist=False
+    )
 
     def __repr__(self):
         """
@@ -31,11 +35,8 @@ class Answers(BaseModel):
         """
         Документация метода
         """
-        query = (
-            select(cls)
-        )
-        result = sesh.execute(query)
-        all_answers_objects = result.scalars().all()
+        stmt = select(cls)
+        all_answers_objects = sesh.execute(stmt).scalars().all()
         return all_answers_objects
 
     @classmethod
@@ -44,9 +45,8 @@ class Answers(BaseModel):
         Документация метода
         """
         answers_objects = [
-            cls(
-                answer=item["answer"]
-            ) for item in answers_data
+            cls(answer=item["answer"])
+            for item in answers_data
         ]
         sesh.add_all(answers_objects)
         sesh.commit()
@@ -57,7 +57,8 @@ class Answers(BaseModel):
         Документация метода
         """
         for item in answers_data:
-            answer = sesh.query(cls).filter(cls.id == item["id"]).first()
+            stmt = select(cls).where(cls.id == item["id"])
+            answer = sesh.execute(stmt).scalars().first()
             if answer:
                 answer.answer = item["answer"]
                 answer.question_id = item["question_id"]
@@ -71,7 +72,8 @@ class Answers(BaseModel):
         Документация метода
         """
         for item in answers_id:
-            answer_to_delete = sesh.query(cls).filter(cls.id == item["id"]).one_or_none()
+            stmt = select(cls).where(cls.id == item["id"])
+            answer_to_delete = sesh.execute(stmt).scalars().first()
             if answer_to_delete is None:
                 raise ValueError(f"id {item["id"]} не найден для удаления.")
             sesh.delete(answer_to_delete)
@@ -101,7 +103,8 @@ class Answers(BaseModel):
         """
         Документация метода
         """
-        answer = sesh.query(cls).filter(cls.id == answer_id).first()
+        stmt = select(cls).where(cls.id == answer_id)
+        answer = sesh.execute(stmt).scalars().first()
         if answer:
             answer.answer = answer_data["answer"]
             sesh.commit()
@@ -113,7 +116,8 @@ class Answers(BaseModel):
         """
         Документация метода
         """
-        answer_to_delete = sesh.query(cls).filter(cls.id == answer_id).one_or_none()
+        stmt = select(cls).where(cls.id == answer_id)
+        answer_to_delete = sesh.execute(stmt).scalars().first()
         if answer_to_delete is None:
             raise ValueError(f"id {answer_id} не найден для удаления.")
         sesh.delete(answer_to_delete)
@@ -125,11 +129,8 @@ class Answers(BaseModel):
         """
         Документация метода
         """
-        answer_obj = (
-            sesh.query(cls)
-            .filter(cls.question_id == id_question)
-            .first()
-        )
+        stmt = select(cls).where(cls.question_id == id_question)
+        answer_obj = sesh.execute(stmt).scalars().first()
 
         return answer_obj
 

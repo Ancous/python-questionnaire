@@ -17,4 +17,4 @@ def logout():
     Документация функции
     """
     session.clear()
-    return redirect(url_for('login.login'))
+    return redirect(url_for('main.main'))

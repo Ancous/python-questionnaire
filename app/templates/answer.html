@@ -40,7 +40,7 @@
 </header>
 <main>
     <div>
-        <button onclick="window.location.href='/'">
+        <button onclick="window.location.href='{{ url_for('main.main') }}'">
             Вернуться на главную
         </button>
     </div>
@@ -58,23 +58,34 @@
     <div>
         Оцените свой ответ
     </div>
+    {% if authorization %}
     <div>
-        <form action="http://localhost:5000/question" method="get">
-            <button type="submit">
+        <form action="{{ url_for('question.question') }}" method="post">
+            <button type="submit" name="action" value="answered">
                 Ответил
             </button>
-            <button type="submit">
+            <button type="submit" name="action" value="partial">
                 Ответил не полностью, надо повторить
             </button>
-            <button type="submit">
+            <button type="submit" name="action" value="not_answered">
                 Не ответил
             </button>
         </form>
     </div>
-    {% if authorization %}
     <div>
-        <button onclick="window.location.href='/logout'">
+        <button onclick="window.location.href='{{ url_for('logout.logout') }}'">
             Выйти
+        </button>
+    </div>
+    {% else %}
+    <div>
+        <button onclick="window.location.href='{{ url_for('question.question') }}'">
+            Следующий вопрос
+        </button>
+    </div>
+    <div>
+        <button onclick="window.location.href='{{ url_for('login.login') }}'">
+            Войти
         </button>
     </div>
     {% endif %}

@@ -2,7 +2,10 @@
 Документация модуля
 """
 
-from flask import Blueprint, flash, redirect, url_for
+from flask import Blueprint, flash, redirect, url_for, session
+
+from app.models import Session
+from app.models.answered_questions import AnsweredQuestions
 
 question_update_bp = Blueprint(
     "question_update",
@@ -16,7 +19,8 @@ def question_update():
     """
     Документация функции
     """
-    # логика сброса истории вопросов пользователя !!!
-
-    flash("Вопросы обновлены", "update")
+    if bool(session.get('logged_in')):
+        with Session() as se:
+            AnsweredQuestions.clear_answered_questions(se, session.get("user_id"))
+        flash("Вопросы обновлены", "update")
     return redirect(url_for('main.main'))

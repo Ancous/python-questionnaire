@@ -40,7 +40,7 @@
 </header>
 <main>
     <div>
-        <button onclick="window.location.href='/'">
+        <button onclick="window.location.href='{{ url_for('main.main') }}'">
             Вернуться на главную
         </button>
     </div>
@@ -69,14 +69,20 @@
     </div>
     {% endif %}
     <div>
-        <button onclick="window.location.href='/answer'">
+        <button onclick="window.location.href='{{ url_for('answer.answer') }}'">
             Ответ
         </button>
     </div>
     {% if authorization %}
     <div>
-        <button onclick="window.location.href='/logout'">
+        <button onclick="window.location.href='{{ url_for('logout.logout') }}'">
             Выйти
+        </button>
+    </div>
+    {% else %}
+    <div>
+        <button onclick="window.location.href='{{ url_for('login.login') }}'">
+            Войти
         </button>
     </div>
     {% endif %}

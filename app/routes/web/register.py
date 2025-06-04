@@ -24,18 +24,16 @@ def register():
     form = RegistrationForm()
     if form.validate_on_submit():
         with Session() as se:
-            if se.query(Users).filter_by(username=form.username.data.strip()).first():
-                flash('Пользователь уже существует.')
-                form.password.data = form.password.data
-                return render_template(template_name_or_list='register.html', form=form)
+            if not Users.get_user(se, form.username.data.strip()):
+                hashed_pw = generate_password_hash(form.password.data)
+                user = Users.add_user(se, form.username.data.strip(), hashed_pw)
+                flash("Регистрация прошла успешно!", "register")
+                session['user_id'] = user.id
+                session['username'] = user.username
+                session['logged_in'] = True
+                return redirect(url_for('main.main'))
 
-            hashed_pw = generate_password_hash(form.password.data)
-            user = Users(username=form.username.data.strip(), password=hashed_pw)
-            se.add(user)
-            se.commit()
-            flash("Регистрация прошла успешно!", "register")
-            session['logged_in'] = True
-            session['username'] = user.username
-        return redirect(url_for('main.main'))
+            flash('Пользователь уже существует.')
+            return redirect(url_for('register.register', form=form))
 
     return render_template(template_name_or_list='register.html', form=form)

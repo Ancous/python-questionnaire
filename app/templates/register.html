@@ -36,14 +36,12 @@
     Регистрация
 </h2>
 <div>
-    <form action="http://localhost:5000" method="get">
-        <button type="submit">
-            Вернуться на главную
-        </button>
-    </form>
+    <button onclick="window.location.href='{{ url_for('main.main') }}'">
+        Вернуться на главную
+    </button>
 </div>
 <div>
-    <form method="POST">
+    <form method="post">
         {{ form.hidden_tag() }}
         <p>
             {{ form.username.label }}

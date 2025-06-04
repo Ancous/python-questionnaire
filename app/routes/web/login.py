@@ -2,7 +2,7 @@
 Документация модуля
 """
 
-from flask import render_template, Blueprint, redirect, session
+from flask import render_template, Blueprint, redirect, session, url_for
 from werkzeug.security import check_password_hash
 
 from app.form.login import LoginForm
@@ -28,8 +28,7 @@ def login():
             if user and check_password_hash(user.password, form.password.data):
                 session['logged_in'] = True
                 session['username'] = user.username
-                return redirect('/')
-            else:
-                return render_template(template_name_or_list='login.html', form=form)
+                session['user_id'] = user.id
+                return redirect(url_for('main.main'))
 
     return render_template(template_name_or_list='login.html', form=form)

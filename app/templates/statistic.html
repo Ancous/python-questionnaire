@@ -24,19 +24,13 @@
             Вопросики к собеседованию на Python
         </h1>
     </div>
-    {% if authorization %}
     <div>
         Отвечено на n из 200 вопросов
     </div>
-    {% else %}
-    <div>
-        Чтобы сохранялась история вопросов нужна авторизация
-    </div>
-    {% endif %}
 </header>
 <main>
     <div>
-        <button onclick="window.location.href='/'">
+        <button onclick="window.location.href='{{ url_for('main.main') }}'">
             Вернуться на главную
         </button>
     </div>
@@ -45,28 +39,25 @@
             Вопросы отвеченные
         </p>
         <div>
-            ...
+            {{ data }}
         </div>
         <p>
             Вопросы, которые следует повторить
         </p>
         <div>
-            ...
+            {{ data }}
         </div>
         <p>
             Вопросы, которые надо изучить
         </p>
         <div>
-            ...
         </div>
     </div>
-    {% if authorization %}
     <div>
-        <button onclick="window.location.href='/logout'">
+        <button onclick="window.location.href='{{ url_for('logout.logout') }}'">
             Выйти
         </button>
     </div>
-    {% endif %}
 </main>
 <footer>
     <div>

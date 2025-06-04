@@ -49,9 +49,11 @@
 </header>
 <main>
     <div class="main">
-        <button onclick="window.location.href='/question_update'">
+        {% if authorization %}
+        <button onclick="window.location.href='{{ url_for('question_update.question_update') }}'">
             Обновить мою историю вопросов
         </button>
+        {% endif %}
         {% with messages = get_flashed_messages(with_categories=true) %}
         {% for category, message in messages %}
         {% if category == 'register' %}
@@ -67,29 +69,29 @@
         {% endwith %}
     </div>
     <div>
-        <button onclick="window.location.href='/question'">
+        <button onclick="window.location.href='{{ url_for('question.question') }}'">
             Погнали к вопросам
-        </button>
-    </div>
-    <div>
-        <button onclick="window.location.href='/statistic'">
-            Статистика ответов
         </button>
     </div>
     {% if authorization %}
     <div>
-        <button onclick="window.location.href='/logout'">
+        <button onclick="window.location.href='{{ url_for('statistic.statistic') }}'">
+            Статистика ответов
+        </button>
+    </div>
+    <div>
+        <button onclick="window.location.href='{{ url_for('logout.logout') }}'">
             Выйти
         </button>
     </div>
     {% else %}
     <div>
-        <button onclick="window.location.href='/register'">
+        <button onclick="window.location.href='{{ url_for('register.register') }}'">
             Регистрация
         </button>
     </div>
     <div>
-        <button onclick="window.location.href='/login'">
+        <button onclick="window.location.href='{{ url_for('login.login') }}'">
             Войти
         </button>
     </div>

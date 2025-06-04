@@ -3,7 +3,7 @@
 """
 
 from sqlalchemy.orm import relationship
-from sqlalchemy import Column, Integer, String, select
+from sqlalchemy import Column, Integer, String, select, func
 
 from app.models import BaseModel
 
@@ -15,10 +15,20 @@ class Questions(BaseModel):
     __tablename__ = 'questions'
 
     id = Column(Integer, primary_key=True, autoincrement=True)
-    question = Column(String)
+    question = Column(String, nullable=False)
     sub_question = Column(String)
 
-    answer = relationship("Answers", back_populates="question", cascade="all, delete-orphan")
+    answer = relationship(
+        "Answers",
+        back_populates="question",
+        uselist=False,
+        cascade="all, delete-orphan"
+    )
+
+    user_stats = relationship(
+        "UserStatistic",
+        back_populates="question"
+    )
 
     def __repr__(self):
         """
@@ -31,11 +41,7 @@ class Questions(BaseModel):
         """
         Документация метода
         """
-        query = (
-            select(cls)
-        )
-        result = sesh.execute(query)
-        all_questions_objects = result.scalars().all()
+        all_questions_objects = sesh.execute(select(cls)).scalars().all()
         return all_questions_objects
 
     @classmethod
@@ -44,10 +50,8 @@ class Questions(BaseModel):
         Документация метода
         """
         questions_objects = [
-            cls(
-                question=item["question"],
-                sub_question=item["sub_question"]
-            ) for item in questions_data
+            cls(question=item["question"], sub_question=item["sub_question"])
+            for item in questions_data
         ]
         sesh.add_all(questions_objects)
         sesh.commit()
@@ -58,7 +62,8 @@ class Questions(BaseModel):
         Документация метода
         """
         for item in questions_data:
-            question = sesh.query(cls).filter(cls.id == item["id"]).first()
+            stmt = select(cls).where(cls.id == item["id"])
+            question = sesh.execute(stmt).scalars().first()
             if question:
                 question.question = item["question"]
                 question.sub_question = item["sub_question"]
@@ -72,7 +77,8 @@ class Questions(BaseModel):
         Документация метода
         """
         for item in questions_id:
-            question_to_delete = sesh.query(cls).filter(cls.id == item["id"]).one_or_none()
+            stmt = select(cls).where(cls.id == item["id"])
+            question_to_delete = sesh.execute(stmt).scalars().first()
             if question_to_delete is None:
                 raise ValueError(f"id {item["id"]} не найден для удаления.")
             sesh.delete(question_to_delete)
@@ -102,7 +108,8 @@ class Questions(BaseModel):
         """
         Документация метода
         """
-        question = sesh.query(cls).filter(cls.id == question_id).first()
+        stmt = select(cls).where(cls.id == question_id)
+        question = sesh.execute(stmt).scalars().first()
         if question:
             question.question = question_data["question"]
             question.sub_question = question_data["sub_question"]
@@ -115,9 +122,25 @@ class Questions(BaseModel):
         """
         Документация метода
         """
-        question_to_delete = sesh.query(cls).filter(cls.id == question_id).one_or_none()
+        stmt = select(cls).where(cls.id == question_id)
+        question_to_delete = sesh.execute(stmt).scalars().first()
         if question_to_delete is None:
             raise ValueError(f"id {question_id} не найден для удаления.")
         sesh.delete(question_to_delete)
 
         sesh.commit()
+
+    @classmethod
+    def get_random_unanswered_question(cls, sesh, answered_ids):
+        """
+        Документация метода
+        """
+        if answered_ids is None:
+            answered_ids = list()
+        stmt = (
+            select(cls)
+            .where(~cls.id.in_(answered_ids))
+            .order_by(func.random())
+        )
+        question_obj = sesh.execute(stmt).scalars().first()
+        return question_obj

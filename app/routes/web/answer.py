@@ -21,7 +21,6 @@ def answer():
     """
     with Session() as se:
         answer_obj = Answers.answer_by_question_id(se, session["question_id"])
-
     return render_template(
         template_name_or_list='answer.html',
         authorization=bool(session.get('logged_in')),
