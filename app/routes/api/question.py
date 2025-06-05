@@ -117,7 +117,7 @@ class QuestionApi(Resource):
             return {'errors': err.__str__()}, 400
 
     @staticmethod
-    def post(id):
+    def post(id):  # noqa
         """
         Документация метода
         """

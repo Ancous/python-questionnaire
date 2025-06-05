@@ -7,12 +7,13 @@
         name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta
-        http-equiv="X-UA-Compatible" content="ie=edge">
+        http-equiv="X-UA-Compatible"
+        content="ie=edge">
     <title>Ancous</title>
     <script>
         function hideMessage() {
             setTimeout(() => {
-                const message = document.querySelector('.flash-message-update');
+                const message = document.querySelector('.flash-message-update, .flash-message');
                 if (message) {
                     message.style.display = 'none';
                 }
@@ -24,11 +25,11 @@
     </script>
     <link
         rel="icon"
-        href="../static/images/favicon.jpg"
+        href="{{ url_for('static', filename='images/favicon.jpg') }}"
         type="image/svg+xml">
     <link
         rel="stylesheet"
-        href="../static/css/style.css">
+        href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
 <header>
@@ -56,8 +57,8 @@
         {% endif %}
         {% with messages = get_flashed_messages(with_categories=true) %}
         {% for category, message in messages %}
-        {% if category == 'register' %}
-        <div class="flash-message-register">
+        {% if category in ('register', 'login', 'logout') %}
+        <div class="flash-message">
             {{ message }}
         </div>
         {% elif category == 'update' %}
@@ -96,6 +97,11 @@
         </button>
     </div>
     {% endif %}
+    <div>
+        <button onclick="window.location.href='{{ url_for('question_all.question_all') }}'">
+            Список всех вопросов
+        </button>
+    </div>
 </main>
 <footer>
     <div>

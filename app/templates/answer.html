@@ -7,19 +7,22 @@
         name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta
-        http-equiv="X-UA-Compatible" content="ie=edge">
+        http-equiv="X-UA-Compatible"
+        content="ie=edge">
     <title>Ancous</title>
     <link
         rel="icon"
-        href="../static/images/favicon.jpg"
+        href="{{ url_for('static', filename='images/favicon.jpg') }}"
         type="image/svg+xml">
     <link
         rel="stylesheet"
-        href="../static/css/style.css">
+        href="{{ url_for('static', filename='css/style.css') }}">
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/github.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
-    <script>hljs.highlightAll();</script>
+    <script>
+        hljs.highlightAll();
+    </script>
 </head>
 <body>
 <header>
@@ -53,13 +56,32 @@
     </div>
     {% endif %}
     <div>
-        {{ sub_answer|safe }}
-    </div>
-    <div>
-        Оцените свой ответ
+        {{ answer|safe }}
     </div>
     {% if authorization %}
     <div>
+        Оцените свой ответ
+    </div>
+    <div>
+        {% if statistic %}
+        <form action="{{ url_for('statistic.statistic') }}" method="post">
+            <button type="submit" name="action" value="answered">
+                Ответил
+            </button>
+            <button type="submit" name="action" value="partial">
+                Ответил не полностью, надо повторить
+            </button>
+            <button type="submit" name="action" value="not_answered">
+                Не ответил
+            </button>
+        </form>
+        {% elif question_all %}
+        <div>
+            <button onclick="window.location.href='{{ url_for('question_all.question_all') }}'">
+                Назад
+            </button>
+        </div>
+        {% else %}
         <form action="{{ url_for('question.question') }}" method="post">
             <button type="submit" name="action" value="answered">
                 Ответил
@@ -71,6 +93,7 @@
                 Не ответил
             </button>
         </form>
+        {% endif %}
     </div>
     <div>
         <button onclick="window.location.href='{{ url_for('logout.logout') }}'">
@@ -79,9 +102,17 @@
     </div>
     {% else %}
     <div>
+        {% if question_all %}
+        <div>
+            <button onclick="window.location.href='{{ url_for('question_all.question_all') }}'">
+                Назад
+            </button>
+        </div>
+        {% else %}
         <button onclick="window.location.href='{{ url_for('question.question') }}'">
             Следующий вопрос
         </button>
+        {% endif %}
     </div>
     <div>
         <button onclick="window.location.href='{{ url_for('login.login') }}'">

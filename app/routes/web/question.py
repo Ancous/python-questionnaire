@@ -25,6 +25,8 @@ def question():
     """
     pass
     """
+    session['statistic'] = None
+    session['question_all'] = None
     with Session() as se:
         if request.method == 'POST' and bool(session.get('logged_in')):
             if request.form.get('action'):
@@ -39,23 +41,10 @@ def question():
         # ALL_ID_QUESTION += 1
 
         if question_obj is None:
-            message = "Вы знаете все ответы на вопросы. Вопросов для Вас больше нет."
-            return render_template(
-                'question.html',
-                authorization=bool(session.get('logged_in')),
-                question=None,
-                sub_question=None,
-                message=message
-            )
+            session['message'] = "Вы знаете все ответы на вопросы. Вопросов для Вас больше нет."
+            return render_template('question.html')
 
         session['question_id'] = question_obj.id
         session['question'] = question_obj.question
         session['sub_question'] = question_obj.sub_question
-        return render_template(
-            'question.html',
-            authorization=bool(session.get('logged_in')),
-            question_id=session.get("question_id"),
-            question=session.get("question"),
-            sub_question=session.get("sub_question"),
-            message=None
-        )
+        return render_template('question.html')

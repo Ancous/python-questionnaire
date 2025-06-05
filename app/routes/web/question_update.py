@@ -19,8 +19,8 @@ def question_update():
     """
     Документация функции
     """
-    if bool(session.get('logged_in')):
-        with Session() as se:
-            AnsweredQuestions.clear_answered_questions(se, session.get("user_id"))
-        flash("Вопросы обновлены", "update")
+    with Session() as se:
+        AnsweredQuestions.clear_answered_questions(se, session.get("user_id"))
+
+    flash("Вопросы обновлены", "update")
     return redirect(url_for('main.main'))

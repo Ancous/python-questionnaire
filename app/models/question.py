@@ -6,6 +6,7 @@ from sqlalchemy.orm import relationship
 from sqlalchemy import Column, Integer, String, select, func
 
 from app.models import BaseModel
+from app.models.user_statistic import UserStatistic
 
 
 class Questions(BaseModel):
@@ -141,6 +142,32 @@ class Questions(BaseModel):
             select(cls)
             .where(~cls.id.in_(answered_ids))
             .order_by(func.random())
+        )
+        question_obj = sesh.execute(stmt).scalars().first()
+        return question_obj
+
+    @classmethod
+    def get_questions_grouped_by_answer_option(cls, sesh, user_id):
+        """
+        Документация метода
+        """
+        stmt = (
+            select(UserStatistic.answer_option_id, Questions.question)
+            .join(Questions, UserStatistic.question)
+            .where(UserStatistic.user_id.__eq__(user_id))
+            .order_by(UserStatistic.answer_option_id)
+        )
+        result = sesh.execute(stmt).all()
+        return result
+
+    @classmethod
+    def get_by_name_question(cls, sesh, name_questions):
+        """
+        Документация метода
+        """
+        stmt = (
+            select(cls)
+            .where(cls.question == name_questions)
         )
         question_obj = sesh.execute(stmt).scalars().first()
         return question_obj

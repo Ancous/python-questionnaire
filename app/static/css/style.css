@@ -15,7 +15,7 @@
     display: none;
 }
 
-.flash-message-register {
+.flash-message {
     position: fixed;
     top: 10px;
     right: 10px;
@@ -27,12 +27,4 @@
     padding: 10px 20px;
     border-radius: 4px;
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-
-.flash-message-register div {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    color: #856404;
-    font-size: 1em;
 }

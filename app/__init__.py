@@ -3,9 +3,11 @@
 """
 
 from flask import Flask
+from flask_caching import Cache
 from flask_restful import Api
 
-from .config.config import FLASK_SECRET_KEY
+from .config.config import FLASK_SECRET_KEY, inject_authorization
+
 from .routes.api.answer import AnswersApi, AnswerApi
 from .routes.api.database import TablesApi, TableApi
 from .routes.api.question import QuestionsApi, QuestionApi
@@ -17,6 +19,7 @@ from .routes.web.logout import logout_bp
 from .routes.web.question import question_bp
 from .routes.web.register import register_bp
 from .routes.web.statistic import statistic_bp
+from .routes.web.question_all import create_question_all_bp
 from .routes.web.question_update import question_update_bp
 
 
@@ -26,7 +29,13 @@ def create_app():
     """
     app = Flask(__name__)
     app.secret_key = FLASK_SECRET_KEY
+    app.context_processor(inject_authorization)
     api = Api(app)
+
+    cache = Cache(app, config={
+        'CACHE_TYPE': 'redis',
+        'CACHE_REDIS_URL': 'redis://localhost:6379/0',
+    })
 
     api.add_resource(QuestionsApi, '/api/questions')
     api.add_resource(QuestionApi, '/api/questions/<int:id>')
@@ -43,5 +52,6 @@ def create_app():
     app.register_blueprint(question_bp)
     app.register_blueprint(statistic_bp)
     app.register_blueprint(question_update_bp)
+    app.register_blueprint(create_question_all_bp(cache))
 
     return app

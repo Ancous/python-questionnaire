@@ -7,15 +7,16 @@
         name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta
-        http-equiv="X-UA-Compatible" content="ie=edge">
+        http-equiv="X-UA-Compatible"
+        content="ie=edge">
     <title>Ancous</title>
     <link
         rel="icon"
-        href="../static/images/favicon.jpg"
+        href="{{ url_for('static', filename='images/favicon.jpg') }}"
         type="image/svg+xml">
     <link
         rel="stylesheet"
-        href="../static/css/style.css">
+        href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
 <header>
@@ -38,21 +39,45 @@
         <p>
             Вопросы отвеченные
         </p>
+        {% for res in data[1] %}
         <div>
-            {{ data }}
+            <a href="{{ url_for('answer.answer', name=res) }}">
+                {{ res }}
+            </a>
         </div>
+        {% else %}
+        <div>
+            --- Пока что вопросов в этой категории у вас нет ---
+        </div>
+        {% endfor %}
         <p>
             Вопросы, которые следует повторить
         </p>
+        {% for res in data[2] %}
         <div>
-            {{ data }}
+            <a href="{{ url_for('answer.answer', name=res) }}">
+                {{ res }}
+            </a>
         </div>
+        {% else %}
+        <div>
+            --- Пока что вопросов в этой категории у вас нет ---
+        </div>
+        {% endfor %}
         <p>
             Вопросы, которые надо изучить
         </p>
+        {% for res in data[3] %}
         <div>
-            {{ data }}
+            <a href="{{ url_for('answer.answer', name=res) }}">
+                {{ res }}
+            </a>
         </div>
+        {% else %}
+        <div>
+            --- Пока что вопросов в этой категории у вас нет ---
+        </div>
+        {% endfor %}
     </div>
     <div>
         <button onclick="window.location.href='{{ url_for('logout.logout') }}'">

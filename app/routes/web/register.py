@@ -27,13 +27,13 @@ def register():
             if not Users.get_user(se, form.username.data.strip()):
                 hashed_pw = generate_password_hash(form.password.data)
                 user = Users.add_user(se, form.username.data.strip(), hashed_pw)
-                flash("Регистрация прошла успешно!", "register")
+                session['logged_in'] = True
                 session['user_id'] = user.id
                 session['username'] = user.username
-                session['logged_in'] = True
+                flash("Регистрация прошла успешно!", "register")
                 return redirect(url_for('main.main'))
 
-            flash('Пользователь уже существует.')
+            flash('Пользователь уже существует.', "register")
             return redirect(url_for('register.register', form=form))
 
-    return render_template(template_name_or_list='register.html', form=form)
+    return render_template('register.html', form=form)

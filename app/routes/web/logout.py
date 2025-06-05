@@ -2,7 +2,7 @@
 Документация модуля
 """
 
-from flask import session, Blueprint, redirect, url_for
+from flask import session, Blueprint, redirect, url_for, flash
 
 logout_bp = Blueprint(
     "logout",
@@ -17,4 +17,5 @@ def logout():
     Документация функции
     """
     session.clear()
+    flash("Вы успешно вышли из системы.", "logout")
     return redirect(url_for('main.main'))

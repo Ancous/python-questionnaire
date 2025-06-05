@@ -2,11 +2,15 @@
 Документация модуля
 """
 
+from collections import defaultdict
 
-def statistic_data(data) -> dict:
+
+def statistic_data(results) -> dict:
     """
     Документация функции
     """
-    # логика обработки запроса
-
+    grouped = defaultdict(list)
+    for field1, field2 in results:
+        grouped[field1].append(field2)
+    data = dict(grouped)
     return data

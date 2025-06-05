@@ -54,7 +54,7 @@ class UserStatistic(BaseModel):
         Документация метода
         """
         stmt = select(cls).where(cls.user_id == user_id)
-        statistic_obj = sesh.execute(stmt).scalars().all()
+        statistic_obj = sesh.execute(stmt).all()
         return statistic_obj
 
     @classmethod

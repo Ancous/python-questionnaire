@@ -77,7 +77,7 @@ class TableApi(Resource):
         return {"table": result}, 200
 
     @staticmethod
-    def post(name):
+    def post(name):  # noqa
         """
         Документация функции
         """
@@ -86,7 +86,7 @@ class TableApi(Resource):
         return {"error": "endpoint в разработке"}, 501
 
     @staticmethod
-    def put(name):
+    def put(name):  # noqa
         """
         Документация функции
         """

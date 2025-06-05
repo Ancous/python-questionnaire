@@ -59,5 +59,6 @@ class AnsweredQuestions(BaseModel):
         """
         stmt = select(cls).where(cls.user_id == user_id)
         answered_questions_numbers = sesh.execute(stmt).scalars().first()
-        answered_questions_numbers.numbers.clear()
-        sesh.commit()
+        if answered_questions_numbers:
+            answered_questions_numbers.numbers.clear()
+            sesh.commit()

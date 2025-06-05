@@ -2,7 +2,7 @@
 Документация модуля
 """
 
-from flask import Blueprint, render_template, session
+from flask import Blueprint, render_template
 
 main_bp = Blueprint(
     "main",
@@ -16,7 +16,4 @@ def main():
     """
     Документация функции
     """
-    return render_template(
-        template_name_or_list='index.html',
-        authorization=bool(session.get('logged_in'))
-    )
+    return render_template('index.html')
