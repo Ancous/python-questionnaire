@@ -9,8 +9,18 @@ services:
       POSTGRES_PASSWORD: 1975
       POSTGRES_DB: python_interview
     volumes:
-      - db_data:/var/lib/postgresql/data
+      - db-data:/var/lib/postgresql/data
+    restart: unless-stopped
+
+  redis:
+    image: redis
+    container_name: my-redis-1
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
     restart: unless-stopped
 
 volumes:
-  db_data:
+  db-data:
+  redis-data:

@@ -6,7 +6,7 @@ from flask import Flask
 from flask_caching import Cache
 from flask_restful import Api
 
-from .config.config import FLASK_SECRET_KEY, inject_authorization
+from .config.config import FLASK_SECRET_KEY, inject_authorization, REDIS_URL
 
 from .routes.api.answer import AnswersApi, AnswerApi
 from .routes.api.database import TablesApi, TableApi
@@ -34,7 +34,7 @@ def create_app():
 
     cache = Cache(app, config={
         'CACHE_TYPE': 'redis',
-        'CACHE_REDIS_URL': 'redis://localhost:6379/0',
+        'CACHE_REDIS_URL': f'{REDIS_URL}',
     })
 
     api.add_resource(QuestionsApi, '/api/questions')

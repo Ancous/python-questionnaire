@@ -5,7 +5,7 @@
 from sqlalchemy import event, create_engine
 from sqlalchemy.orm import DeclarativeBase, sessionmaker
 
-from app.config.config import DATABASE_URL
+from app.config.config import POSTGRES_URL
 
 
 class Base(DeclarativeBase):
@@ -33,5 +33,5 @@ class BaseModel(Base):
                 raise ValueError("Запись id вручную запрещена.")
 
 
-engine = create_engine(DATABASE_URL)
+engine = create_engine(POSTGRES_URL)
 Session = sessionmaker(engine)
