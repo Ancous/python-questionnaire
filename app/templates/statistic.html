@@ -1,35 +1,15 @@
-<!doctype html>
-<html lang="ru">
-<head>
-    <meta
-        charset="UTF-8">
-    <meta
-        name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta
-        http-equiv="X-UA-Compatible"
-        content="ie=edge">
-    <title>Ancous</title>
-    <link
-        rel="icon"
-        href="{{ url_for('static', filename='images/favicon.jpg') }}"
-        type="image/svg+xml">
-    <link
-        rel="stylesheet"
-        href="{{ url_for('static', filename='css/style.css') }}">
-</head>
-<body>
-<header>
-    <div>
-        <h1>
-            Вопросики к собеседованию на Python
-        </h1>
-    </div>
-    <div>
-        Отвечено на n из 200 вопросов
-    </div>
-</header>
+{% extends "base.html" %}
+{% block content %}
 <main>
+    {% if authorization %}
+    <div>
+        Осталось {{ number_questions_answered }} из 200 случайных вопросов
+    </div>
+    {% else %}
+    <div>
+        Чтобы сохранялась история вопросов нужна авторизация
+    </div>
+    {% endif %}
     <div>
         <button onclick="window.location.href='{{ url_for('main.main') }}'">
             Вернуться на главную
@@ -85,12 +65,4 @@
         </button>
     </div>
 </main>
-<footer>
-    <div>
-        <h2>
-            Здесь будет информация
-        </h2>
-    </div>
-</footer>
-</body>
-</html>
+{% endblock %}

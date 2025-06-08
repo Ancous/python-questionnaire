@@ -2,7 +2,7 @@
 Документация модуля
 """
 
-from sqlalchemy import Column, Integer, JSON, ForeignKey, select
+from sqlalchemy import Column, Integer, JSON, ForeignKey, select, func
 from sqlalchemy.ext.mutable import MutableList
 from sqlalchemy.orm import relationship
 
@@ -36,6 +36,15 @@ class AnsweredQuestions(BaseModel):
         stmt = select(cls.numbers).where(cls.user_id == user_id)
         answered_questions_numbers = sesh.execute(stmt).scalars().first()
         return answered_questions_numbers
+
+    @classmethod
+    def get_numbers_count(cls, sesh, user_id) -> int:
+        """
+        Документация метода
+        """
+        stmt = select(func.json_array_length(cls.numbers)).where(cls.user_id == user_id)
+        count = sesh.execute(stmt).scalar()
+        return count or 0
 
     @classmethod
     def mark_question_as_answered(cls, sesh, user_id, number_question):

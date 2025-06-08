@@ -1,6 +1,7 @@
 """
 Документация модуля
 """
+from urllib.parse import urlparse
 
 from flask import Blueprint, render_template, session, request
 
@@ -27,10 +28,10 @@ def answer(name):
             session['answer'] = answer_obj.answer
             return render_template('answer.html')
         else:
-            if request.referrer == "http://localhost:5000/statistic/":
+            ref_path = urlparse(request.referrer).path
+            if ref_path == '/statistic/':
                 session['statistic'] = True
-
-            if request.referrer == "http://localhost:5000/question/all/":
+            elif ref_path == '/question/all/':
                 session['question_all'] = True
 
             question_obj = Questions.get_by_name_question(se, name)

@@ -1,6 +1,7 @@
 """
 Документация модуля
 """
+from flask import session
 
 from app.models.answer_options import AnswerOptions
 from app.models.answered_questions import AnsweredQuestions
@@ -21,5 +22,6 @@ def process_user_answer(se, user_id: int, question_id: int, action: str) -> None
 
     if action == 'answered':
         AnsweredQuestions.mark_question_as_answered(se, user_id, question_id)
+        session['number_questions_answered'] -= 1
 
     UserStatistic.set_answer_for_user_and_question(se, user_id, question_id, answer_option.id)

@@ -1,7 +1,6 @@
 """
 Документация модуля
 """
-import time
 
 from flask import Blueprint, render_template, session
 

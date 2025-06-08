@@ -41,5 +41,6 @@ def inject_authorization():
         question_id=session.get("question_id"),
         sub_question=session.get("sub_question"),
         question_all=session.get("question_all"),
-        authorization=bool(session.get('logged_in')),
+        authorization=bool(session.get('logged_in') is True),
+        number_questions_answered=session.get("number_questions_answered")
     )

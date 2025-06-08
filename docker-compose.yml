@@ -2,6 +2,8 @@ services:
   db:
     image: postgres
     container_name: my-postgres-1
+    ports:
+      - "5432:5432"
     environment:
       POSTGRES_USER: root
       POSTGRES_PASSWORD: 1975
@@ -15,6 +17,8 @@ services:
   redis:
     image: redis
     container_name: my-redis-1
+    ports:
+      - "6379:6379"
     volumes:
       - redis-data:/data
     networks:

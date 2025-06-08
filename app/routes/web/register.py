@@ -7,6 +7,7 @@ from flask import Blueprint, flash, redirect, url_for, render_template, session
 
 from app.form.register import RegistrationForm
 from app.models import Session
+from app.models.answered_questions import AnsweredQuestions
 from app.models.user import Users
 
 register_bp = Blueprint(
@@ -27,6 +28,8 @@ def register():
             if not Users.get_user(se, form.username.data.strip()):
                 hashed_pw = generate_password_hash(form.password.data)
                 user = Users.add_user(se, form.username.data.strip(), hashed_pw)
+                count = AnsweredQuestions.get_numbers_count(se, user_id=user.id)
+                session['number_questions_answered'] = 200 - count
                 session['logged_in'] = True
                 session['user_id'] = user.id
                 session['username'] = user.username

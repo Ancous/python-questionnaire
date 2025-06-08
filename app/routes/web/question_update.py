@@ -21,6 +21,7 @@ def question_update():
     """
     with Session() as se:
         AnsweredQuestions.clear_answered_questions(se, session.get("user_id"))
+        session['number_questions_answered'] = 200
 
     flash("Вопросы обновлены", "update")
     return redirect(url_for('main.main'))

@@ -1,116 +1,78 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta
-        charset="UTF-8">
-    <meta
-        name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta
-        http-equiv="X-UA-Compatible"
-        content="ie=edge">
-    <title>Регистрация</title>
-    <script>
-        function hideMessage() {
-            setTimeout(() => {
-                const message = document.querySelector('.flash-message');
-                if (message) {
-                    message.style.display = 'none';
-                }
-            }, 2000);
-        }
-        window.onload = function() {
-            hideMessage();
-        }
-    </script>
-    <link
-        rel="icon"
-        href="{{ url_for('static', filename='images/favicon.jpg') }}"
-        type="image/svg+xml">
-    <link
-        rel="stylesheet"
-        href="{{ url_for('static', filename='css/style.css') }}">
-</head>
-<header>
+{% extends "base.html" %}
+{% block content %}
+<main>
+    {% if authorization %}
     <div>
-        <h1>
-            Вопросики к собеседованию на Python
-        </h1>
+        Осталось {{ number_questions_answered }} из 200 случайных вопросов
     </div>
-</header>
-<body>
-<h2>
-    Регистрация
-</h2>
-<div>
-    <button onclick="window.location.href='{{ url_for('main.main') }}'">
-        Вернуться на главную
-    </button>
-</div>
-<div>
-    <form method="post">
-        {{ form.hidden_tag() }}
-        <p>
-            {{ form.username.label }}
-            <br>
-            {{ form.username(size=32, class="validate") }}
-            {% for error in form.username.errors %}
-            <span class="error-message" style="color: red;">{{ error }}</span>
-            {% endfor %}
-        </p>
-        <p>
-            {{ form.password.label }}
-            <br>
-            {{ form.password(size=32, class="validate") }}
-            {% for error in form.password.errors %}
-            <span class="error-message" style="color: red;">{{ error }}</span>
-            {% endfor %}
-        </p>
-        <p>
-            {{ form.confirm.label }}
-            <br>
-            {{ form.confirm(size=32, class="validate") }}
-            {% for error in form.confirm.errors %}
-            <span class="error-message" style="color: red;">{{ error }}</span>
-            {% endfor %}
-        </p>
-        <p>
-            {{ form.submit() }}
-        </p>
-    </form>
-</div>
-{% with messages = get_flashed_messages(with_categories=true) %}
-{% for category, message in messages %}
-{% if category == 'register' %}
-<div class="flash-message">
-    {{ message }}
-</div>
-{% endif %}
-{% endfor %}
-{% endwith %}
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        document.querySelectorAll('input.validate').forEach(function(input) {
-            input.addEventListener('input', function() {
-                // Получаем родительский <p> и все error-message внутри него
-                let p = input.closest('p');
-                if (!p) return;
-                let errors = p.querySelectorAll('.error-message');
-                if (input.value.trim() !== '') {
-                    errors.forEach(span => span.style.display = 'none');
-                } else {
-                    errors.forEach(span => span.style.display = 'inline');
-                }
+    {% else %}
+    <div>
+        Чтобы сохранялась история вопросов нужна авторизация
+    </div>
+    {% endif %}
+    {% with messages = get_flashed_messages(category_filter=["register"]) %}
+    {% for message in messages %}
+    <div class="flash-message">
+        {{ message }}
+    </div>
+    {% endfor %}
+    {% endwith %}
+    <h2>
+        Регистрация
+    </h2>
+    <div>
+        <button onclick="window.location.href='{{ url_for('main.main') }}'">
+            Вернуться на главную
+        </button>
+    </div>
+    <div>
+        <form method="post">
+            {{ form.hidden_tag() }}
+            <p>
+                {{ form.username.label }}
+                <br>
+                {{ form.username(size=32, class="validate") }}
+                {% for error in form.username.errors %}
+                <span class="error-message" style="color: red;">{{ error }}</span>
+                {% endfor %}
+            </p>
+            <p>
+                {{ form.password.label }}
+                <br>
+                {{ form.password(size=32, class="validate") }}
+                {% for error in form.password.errors %}
+                <span class="error-message" style="color: red;">{{ error }}</span>
+                {% endfor %}
+            </p>
+            <p>
+                {{ form.confirm.label }}
+                <br>
+                {{ form.confirm(size=32, class="validate") }}
+                {% for error in form.confirm.errors %}
+                <span class="error-message" style="color: red;">{{ error }}</span>
+                {% endfor %}
+            </p>
+            <p>
+                {{ form.submit() }}
+            </p>
+        </form>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('input.validate').forEach(function(input) {
+                input.addEventListener('input', function() {
+                    // Получаем родительский <p> и все error-message внутри него
+                    let p = input.closest('p');
+                    if (!p) return;
+                    let errors = p.querySelectorAll('.error-message');
+                    if (input.value.trim() !== '') {
+                        errors.forEach(span => span.style.display = 'none');
+                    } else {
+                        errors.forEach(span => span.style.display = 'inline');
+                    }
+                });
             });
         });
-    });
-</script>
-</body>
-<footer>
-    <div>
-        <h2>
-            Здесь будет информация
-        </h2>
-    </div>
-</footer>
-</html>
+    </script>
+</main>
+{% endblock %}
