@@ -26,7 +26,8 @@ class Users(BaseModel):
     )
     user_stats = relationship(
         "UserStatistic",
-        back_populates="user"
+        back_populates="user",
+        cascade="all, delete-orphan"
     )
 
     def __repr__(self):

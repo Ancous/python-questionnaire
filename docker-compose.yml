@@ -1,9 +1,27 @@
 services:
+  app:
+    image: ancous1/ancous-app
+    container_name: my-app-1
+    ports:
+      - "5000:5000"
+    environment:
+      DB_HOST: my-postgres-1
+      DB_PORT: 5432
+      DB_NAME: python_interview
+      DB_USER: root
+      DB_PASSWORD: 1975
+      REDIS_HOST: my-redis-1
+      REDIS_PORT: 6379
+    networks:
+      - app-network
+    depends_on:
+      - db
+      - redis
+    restart: unless-stopped
+
   db:
     image: postgres
     container_name: my-postgres-1
-    ports:
-      - "5432:5432"
     environment:
       POSTGRES_USER: root
       POSTGRES_PASSWORD: 1975
@@ -17,8 +35,6 @@ services:
   redis:
     image: redis
     container_name: my-redis-1
-    ports:
-      - "6379:6379"
     volumes:
       - redis-data:/data
     networks:

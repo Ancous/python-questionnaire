@@ -36,7 +36,7 @@ class Answers(BaseModel):
         Документация метода
         """
         stmt = select(cls)
-        all_answers_objects = sesh.execute(stmt).scalars().all()
+        all_answers_objects = sesh.scalars(stmt).all()
         return all_answers_objects
 
     @classmethod
@@ -58,7 +58,7 @@ class Answers(BaseModel):
         """
         for item in answers_data:
             stmt = select(cls).where(cls.id == item["id"])
-            answer = sesh.execute(stmt).scalars().first()
+            answer = sesh.scalars(stmt).one()
             if answer:
                 answer.answer = item["answer"]
                 answer.question_id = item["question_id"]
@@ -73,7 +73,7 @@ class Answers(BaseModel):
         """
         for item in answers_id:
             stmt = select(cls).where(cls.id == item["id"])
-            answer_to_delete = sesh.execute(stmt).scalars().first()
+            answer_to_delete = sesh.scalars(stmt).one()
             if answer_to_delete is None:
                 raise ValueError(f"id {item["id"]} не найден для удаления.")
             sesh.delete(answer_to_delete)
@@ -104,7 +104,7 @@ class Answers(BaseModel):
         Документация метода
         """
         stmt = select(cls).where(cls.id == answer_id)
-        answer = sesh.execute(stmt).scalars().first()
+        answer = sesh.scalars(stmt).one()
         if answer:
             answer.answer = answer_data["answer"]
             sesh.commit()
@@ -117,7 +117,7 @@ class Answers(BaseModel):
         Документация метода
         """
         stmt = select(cls).where(cls.id == answer_id)
-        answer_to_delete = sesh.execute(stmt).scalars().first()
+        answer_to_delete = sesh.scalars(stmt).one()
         if answer_to_delete is None:
             raise ValueError(f"id {answer_id} не найден для удаления.")
         sesh.delete(answer_to_delete)
@@ -130,7 +130,7 @@ class Answers(BaseModel):
         Документация метода
         """
         stmt = select(cls).where(cls.question_id == id_question)
-        answer_obj = sesh.execute(stmt).scalars().first()
+        answer_obj = sesh.scalars(stmt).one()
 
         return answer_obj
 

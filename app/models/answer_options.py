@@ -19,7 +19,8 @@ class AnswerOptions(BaseModel):
 
     user_stats = relationship(
         "UserStatistic",
-        back_populates="answer_option"
+        back_populates="answer_option",
+        cascade="all, delete-orphan"
     )
 
     @classmethod
@@ -28,5 +29,5 @@ class AnswerOptions(BaseModel):
         Документация метода
         """
         stmt = select(cls).where(cls.choice == choice)
-        result = sesh.execute(stmt).scalars().first()
+        result = sesh.scalars(stmt).one()
         return result

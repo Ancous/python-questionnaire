@@ -5,6 +5,7 @@
 from flask import Blueprint, render_template, session, request
 
 from app.models import Session
+from app.models.answered_questions import AnsweredQuestions
 from app.models.question import Questions
 from app.utils.processing_response_history import process_user_answer
 from app.utils.processing_statistic_data import statistic_data

@@ -34,7 +34,7 @@ class AnsweredQuestions(BaseModel):
         Документация метода
         """
         stmt = select(cls.numbers).where(cls.user_id == user_id)
-        answered_questions_numbers = sesh.execute(stmt).scalars().first()
+        answered_questions_numbers = sesh.scalars(stmt).one_or_none()
         return answered_questions_numbers
 
     @classmethod
@@ -43,7 +43,7 @@ class AnsweredQuestions(BaseModel):
         Документация метода
         """
         stmt = select(func.json_array_length(cls.numbers)).where(cls.user_id == user_id)
-        count = sesh.execute(stmt).scalar()
+        count = sesh.scalars(stmt).one_or_none()
         return count or 0
 
     @classmethod
@@ -52,7 +52,7 @@ class AnsweredQuestions(BaseModel):
         Документация метода
         """
         stmt = select(cls).where(cls.user_id == user_id)
-        answered_questions_numbers = sesh.execute(stmt).scalars().first()
+        answered_questions_numbers = sesh.scalars(stmt).one_or_none()
         if answered_questions_numbers is None:
             answered_question = cls(numbers=[number_question], user_id=user_id)
             sesh.add(answered_question)
@@ -67,7 +67,7 @@ class AnsweredQuestions(BaseModel):
         Документация метода
         """
         stmt = select(cls).where(cls.user_id == user_id)
-        answered_questions_numbers = sesh.execute(stmt).scalars().first()
+        answered_questions_numbers = sesh.scalars(stmt).one_or_none()
         if answered_questions_numbers:
             answered_questions_numbers.numbers.clear()
             sesh.commit()

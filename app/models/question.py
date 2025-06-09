@@ -28,7 +28,8 @@ class Questions(BaseModel):
 
     user_stats = relationship(
         "UserStatistic",
-        back_populates="question"
+        back_populates="question",
+        cascade="all, delete-orphan"
     )
 
     def __repr__(self):
@@ -42,7 +43,8 @@ class Questions(BaseModel):
         """
         Документация метода
         """
-        all_questions_objects = sesh.execute(select(cls)).scalars().all()
+        stmt = select(cls)
+        all_questions_objects = sesh.scalars(stmt).all()
         return all_questions_objects
 
     @classmethod
@@ -64,7 +66,7 @@ class Questions(BaseModel):
         """
         for item in questions_data:
             stmt = select(cls).where(cls.id == item["id"])
-            question = sesh.execute(stmt).scalars().first()
+            question = sesh.scalars(stmt).one()
             if question:
                 question.question = item["question"]
                 question.sub_question = item["sub_question"]
@@ -79,7 +81,7 @@ class Questions(BaseModel):
         """
         for item in questions_id:
             stmt = select(cls).where(cls.id == item["id"])
-            question_to_delete = sesh.execute(stmt).scalars().first()
+            question_to_delete = sesh.scalars(stmt).one()
             if question_to_delete is None:
                 raise ValueError(f"id {item["id"]} не найден для удаления.")
             sesh.delete(question_to_delete)
@@ -110,7 +112,7 @@ class Questions(BaseModel):
         Документация метода
         """
         stmt = select(cls).where(cls.id == question_id)
-        question = sesh.execute(stmt).scalars().first()
+        question = sesh.scalars(stmt).one()
         if question:
             question.question = question_data["question"]
             question.sub_question = question_data["sub_question"]
@@ -124,7 +126,7 @@ class Questions(BaseModel):
         Документация метода
         """
         stmt = select(cls).where(cls.id == question_id)
-        question_to_delete = sesh.execute(stmt).scalars().first()
+        question_to_delete = sesh.scalars(stmt).one()
         if question_to_delete is None:
             raise ValueError(f"id {question_id} не найден для удаления.")
         sesh.delete(question_to_delete)
@@ -143,7 +145,7 @@ class Questions(BaseModel):
             .where(~cls.id.in_(answered_ids))
             .order_by(func.random())
         )
-        question_obj = sesh.execute(stmt).scalars().first()
+        question_obj = sesh.scalars(stmt).first()
         return question_obj
 
     @classmethod
@@ -169,5 +171,5 @@ class Questions(BaseModel):
             select(cls)
             .where(cls.question == name_questions)
         )
-        question_obj = sesh.execute(stmt).scalars().first()
+        question_obj = sesh.scalars(stmt).one()
         return question_obj
