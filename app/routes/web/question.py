@@ -3,12 +3,10 @@
 """
 import random
 
-from flask import Blueprint, render_template, session, request, redirect, url_for
-# from sqlalchemy import select, and_
+from flask import Blueprint, session, request, redirect, url_for
 
 from app.models import Session
 from app.models.answered_questions import AnsweredQuestions
-from app.models.question import Questions
 from app.utils.processing_response_history import process_user_answer
 
 question_bp = Blueprint(
@@ -16,9 +14,6 @@ question_bp = Blueprint(
     __name__,
     url_prefix="/question"
 )
-
-
-# ALL_ID_QUESTION = 26
 
 
 @question_bp.route("/", methods=["GET", "POST"])
