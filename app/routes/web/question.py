@@ -1,8 +1,9 @@
 """
 Документация модуля
 """
+import random
 
-from flask import Blueprint, render_template, session, request
+from flask import Blueprint, render_template, session, request, redirect, url_for
 # from sqlalchemy import select, and_
 
 from app.models import Session
@@ -33,18 +34,13 @@ def question():
                 process_user_answer(se, session.get("user_id"), session.get("question_id"), request.form.get('action'))
 
         answered_ids = AnsweredQuestions.get_numbers(se, session.get("user_id"))
-        question_obj = Questions.get_random_unanswered_question(se, answered_ids)
+        random_question_id = 0
 
-        # global ALL_ID_QUESTION
-        # stmt = select(Questions).where(and_(Questions.id == ALL_ID_QUESTION))
-        # question_obj = se.execute(stmt).scalars().first()
-        # ALL_ID_QUESTION += 1
+        if answered_ids is None:
+            random_question_id = random.randint(1, 200)
+        else:
+            available_numbers = list(set(range(1, 200)) - set(answered_ids))
+            if available_numbers:
+                random_question_id = random.choice(available_numbers)
 
-        if question_obj is None:
-            session['message'] = "Вы знаете все ответы на вопросы. Вопросов для Вас больше нет."
-            return render_template('question.html')
-
-        session['question_id'] = question_obj.id
-        session['question'] = question_obj.question
-        session['sub_question'] = question_obj.sub_question
-        return render_template('question.html')
+        return redirect(url_for('question_question_id.question_question_id', question_id=random_question_id))

@@ -1,6 +1,6 @@
 services:
   app:
-    image: ancous1/ancous-app
+    image: ancous1/ancous-app:1
     container_name: my-app-1
     ports:
       - "5000:5000"
