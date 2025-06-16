@@ -11,93 +11,83 @@ Python — это язык с полной поддержкой объектно
 #### Основные ООП-концепции, поддерживаемые Python
 
 1. **Классы и объекты**
-    
     - Класс — шаблон (чертеж) для создания объектов. Объект — экземпляр класса, содержащий конкретные данные.
-      
-      ```python
-      class Dog:
-          def __init__(self, name):
-              self.name = name
+    ```python
+    class Dog:
+        def __init__(self, name):
+            self.name = name
 
-          def bark(self):
-              print(f"{self.name} says Woof!")
+        def bark(self):
+            print(f"{self.name} says Woof!")
 
-      my_dog = Dog("Rex")
-      my_dog.bark()  # Rex says Woof!
-      ```
+    my_dog = Dog("Rex")
+    my_dog.bark()  # Rex says Woof!
+    ```
 
 2. **Наследование**
-    
-    - Классы могут наследовать свойства и методы других классов, что позволяет реализовывать повторное использование кода
-      и создавать иерархии объектов.
-      
-      ```python
-      class Animal:
-          def speak(self):
-              print("Some sound")
+    - Классы могут наследовать свойства и методы других классов, что позволяет реализовывать повторное использование
+      кода и создавать иерархии объектов.
+    ```python
+    class Animal:
+        def speak(self):
+            print("Some sound")
 
-      class Cat(Animal):
-          pass
+    class Cat(Animal):
+        pass
 
-      c = Cat()
-      c.speak()  #  Some sound
-      ```
+    c = Cat()
+    c.speak()  #  Some sound
+    ```
 
 3. **Инкапсуляция**
-    
     - Механизм сокрытия внутреннего состояния объекта и предоставления доступа к нему только через методы класса.
-      
-      ```python
-      class Account:
-          def __init__(self, balance):
-              self.__balance = balance  # Приватный атрибут
+    ```python
+    class Account:
+        def __init__(self, balance):
+            self.__balance = balance  # Приватный атрибут
 
-          def get_balance(self):
-              return self.__balance
+        def get_balance(self):
+            return self.__balance
 
-      acc = Account(100)
-      print(acc.get_balance())  #  100
-      print(acc.__balance)  # AttributeError
-      ```
+    acc = Account(100)
+    print(acc.get_balance())  #  100
+    print(acc.__balance)  # AttributeError
+    ```
 
 4. **Полиморфизм**
-    
     - Способность использовать одинаковый интерфейс для разных реализаций.
-      
-      ```python
-      class Bird:
-          def sound(self):
-              print("Chirp")
+    ```python
+    class Bird:
+        def sound(self):
+            print("Chirp")
 
-      class Duck(Bird):
-          def sound(self):
-              print("Quack")
+    class Duck(Bird):
+        def sound(self):
+            print("Quack")
 
-      animals = [Bird(), Duck()]
-      for animal in animals:
-          animal.sound()
+    animals = [Bird(), Duck()]
+    for animal in animals:
+        animal.sound()
 
-      # Chirp
-      # Quack
-      ```
+    # Chirp
+    # Quack
+    ```
 
 5. **Абстракция**
-    
     - Сокрытие деталей реализации и предоставление только основной функциональности (в Python поддерживается через
       абстрактные базовые классы):
-      
-      ```python
-      from abc import ABC, abstractmethod
+    ```python
+    from abc import ABC, abstractmethod
 
-      class Vehicle(ABC):
-          @abstractmethod
-          def move(self):
-              pass
+    class Vehicle(ABC):
+        @abstractmethod
+        def move(self):
+            pass
 
-      class Car(Vehicle):
-          def move(self):
-              print("Moving by road")
-      ```
+    class Car(Vehicle):
+        def move(self):
+            print("Moving by road")
+    ```
 
 #### Особенности ООП в Python
 

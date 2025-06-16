@@ -28,7 +28,14 @@ def create_question_all_bp(cache):
         session['question_all'] = None
         with Session() as se:
             question_obj = Questions.all_questions(se)
-            result = [{"question": q.question, "sub_question": q.sub_question} for q in question_obj]
-        return render_template('question_all.html', question_all=result)
+            session['question_all'] = [
+                {
+                    "question_id": q.id,
+                    "question": q.question,
+                    "sub_question": q.sub_question
+                }
+                for q in question_obj
+            ]
+        return render_template('question_all.html')
 
     return question_all_bp
