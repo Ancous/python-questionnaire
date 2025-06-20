@@ -9,8 +9,8 @@
     <div>
         {% for res in question_all %}
         <div>
-            <a href="{{ url_for('answer.answer', question_id=res.question_id) }}">
-                {{ res.question_id }} - {{ res.question }}
+            <a href="{{ url_for('answer.answer', name=res.question) }}">
+                {{ res.question }}
             </a>
         </div>
         {% endfor %}

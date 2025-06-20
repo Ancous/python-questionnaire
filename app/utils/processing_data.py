@@ -15,7 +15,6 @@ QUESTION_PATTERN = re.compile(
     r'\s+(?P<trash>&nbsp;\s*)*<small>\[Ответ](?P<link>.*)</small>',
 )
 IGNORE_LINE_PREFIXES = ('<div', '[Вернуться к вопросам]', '</div', '\n')
-CODEBLOCK_PYTHON = "```python"
 CODEBLOCK = "```"
 
 

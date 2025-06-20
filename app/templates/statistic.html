@@ -21,8 +21,8 @@
         </p>
         {% for res in data[1] %}
         <div>
-            <a href="{{ url_for('answer.answer', question_id=res[0]) }}">
-                {{ res[1] }}
+            <a href="{{ url_for('answer.answer', name=res) }}">
+                {{ res }}
             </a>
         </div>
         {% else %}
@@ -35,8 +35,8 @@
         </p>
         {% for res in data[2] %}
         <div>
-            <a href="{{ url_for('answer.answer', question_id=res[0]) }}">
-                {{ res[1] }}
+            <a href="{{ url_for('answer.answer', name=res) }}">
+                {{ res }}
             </a>
         </div>
         {% else %}
@@ -49,8 +49,8 @@
         </p>
         {% for res in data[3] %}
         <div>
-            <a href="{{ url_for('answer.answer', question_id=res[0]) }}">
-                {{ res[1] }}
+            <a href="{{ url_for('answer.answer', name=res) }}">
+                {{ res }}
             </a>
         </div>
         {% else %}

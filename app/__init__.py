@@ -14,11 +14,11 @@ from .routes.api.question import QuestionsApi, QuestionApi
 
 from .routes.web.main import main_bp
 from .routes.web.login import login_bp
+from .routes.web.answer import answer_bp
 from .routes.web.logout import logout_bp
 from .routes.web.question import question_bp
 from .routes.web.register import register_bp
 from .routes.web.statistic import statistic_bp
-from .routes.web.answer import create_answer_bp
 from .routes.web.question_update import question_update_bp
 from .routes.web.question_all import create_question_all_bp
 from .routes.web.question_question_id import create_question_question_id_bp
@@ -47,12 +47,12 @@ def create_app():
 
     app.register_blueprint(main_bp)
     app.register_blueprint(login_bp)
+    app.register_blueprint(answer_bp)
     app.register_blueprint(logout_bp)
     app.register_blueprint(register_bp)
     app.register_blueprint(question_bp)
     app.register_blueprint(statistic_bp)
     app.register_blueprint(question_update_bp)
-    app.register_blueprint(create_answer_bp(cache))
     app.register_blueprint(create_question_all_bp(cache))
     app.register_blueprint(create_question_question_id_bp(cache))
 
