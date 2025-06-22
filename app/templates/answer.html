@@ -65,14 +65,12 @@
         </button>
     </div>
     {% else %}
-    {% if question_all %}
     <div class="button-container">
+        {% if question_all %}
         <button class="button" onclick="window.location.href='{{ url_for('question_all.question_all') }}'">
             Назад
         </button>
-    </div>
-    {% else %}
-    <div class="button-container">
+        {% else %}
         <button class="button" onclick="window.location.href='{{ url_for('question.question') }}'">
             Следующий вопрос
         </button>
