@@ -1,15 +1,15 @@
 {% extends "base.html" %}
 {% block content %}
 <main>
-    <div>
-        <button onclick="window.location.href='{{ url_for('main.main') }}'">
+    <div class="button-container">
+        <button class="button" onclick="window.location.href='{{ url_for('main.main') }}'">
             Вернуться на главную
         </button>
     </div>
-    <div>
+    <div class="question_all">
         {% for res in question_all %}
-        <div>
-            <a href="{{ url_for('answer.answer', name=res.question) }}">
+        <div class="question_one">
+            <a href="{{ url_for('answer_id.answer_id', id=res.id) }}">
                 {{ res.question }}
             </a>
         </div>

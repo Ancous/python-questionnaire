@@ -1,5 +1,210 @@
-.main {
+.body {
+    max-width: 1770px;
+    margin: 0 auto;
+    margin: 20px 20px 50px 20px;
+}
+
+.header-h1 {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+.header-h2 {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+.header-h3 {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+.info-main {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.button-container {
+    display: flex; /* Включаем Flexbox для контейнера */
+    justify-content: center; /* Центрирование кнопок по горизонтали */
+    flex-direction: column;
+    align-items: center;
+    gap: 5px; /* Отступ между кнопками */
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+.button {
+    width: 200px; /* Ширина кнопки */
+    height: 50px; /* Высота кнопки */
+    cursor: pointer; /* Указатель при наведении */
+    border: none; /* Убираем рамку */
+    border-radius: 5px; /* Закругленные углы */
+    transition: background-color 0.3s; /* Плавный переход при наведении */
+}
+.button-answer {
+    font-size: 17px;
+    width: 200px; /* Ширина кнопки */
+    height: 50px; /* Высота кнопки */
+    cursor: pointer; /* Указатель при наведении */
+    border: none; /* Убираем рамку */
+    border-radius: 5px; /* Закругленные углы */
+    margin-bottom: 20px;
+    transition: background-color 0.3s; /* Плавный переход при наведении */
+}
+
+.button:hover {
+    background-color: #A9A9A9; /* Цвет фона при наведении */
+}
+
+.button-update {
+    display: inline-block;
     position: relative;
+}
+
+.form-button {
+    display: flex; /* Включаем Flexbox для контейнера */
+    justify-content: center; /* Центрирование кнопок по горизонтали */
+    align-items: center;
+    gap: 5px; /* Отступ между кнопками */
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+.login-form {
+    display: flex;
+    border: 2px solid #A9A9A9;
+    border-radius: 15px;
+    max-width: 1000px; /* Задайте желаемую ширину */
+    justify-content: center;
+    text-align: center;
+    padding: 15px;
+    margin: 0 auto; /* Центрирование блока по горизонтали */
+    margin-bottom: 20px;
+}
+
+.register-form {
+    display: flex;
+    border: 2px solid #A9A9A9;
+    border-radius: 15px;
+    max-width: 1000px; /* Задайте желаемую ширину */
+    justify-content: center;
+    text-align: center;
+    padding: 15px;
+    margin: 0 auto; /* Центрирование блока по горизонтали */
+    margin-bottom: 20px;
+}
+
+.question {
+    display: flex;
+    justify-content: center;
+    border: 2px solid #A9A9A9;
+    border-radius: 15px;
+    flex-direction: column;
+    padding: 15px;
+    margin: 0 auto; /* Центрирование блока по горизонтали */
+    margin-bottom: 20px;
+    max-width: 1000px; /* Задайте желаемую ширину */
+}
+
+.question p {
+    text-align: center;
+}
+
+.question h3 {
+    text-align: center;
+}
+
+.question pre {
+    display: flex; /* Используем Flexbox */
+    justify-content: center; /* Центрируем элемент по горизонтали */
+    align-items: center; /* Центрируем элемент по вертикали */
+}
+
+.question pre code{
+    flex: 1; /* Элемент может расти и сжиматься */
+    min-width: 100px; /* Минимальная ширина элемента */
+    max-width: 400px; /* Максимальная ширина элемента */
+    padding: 20px; /* Внутренние отступы */
+    background-color: #A9A9A9; /* Цвет фона элемента */
+    margin: 0 auto;
+}
+
+.question_all {
+    display: flex;
+    justify-content: center;
+    border: 2px solid #A9A9A9;
+    border-radius: 15px;
+    text-align: center;
+    flex-direction: column;
+    padding: 15px;
+    margin: 0 auto; /* Центрирование блока по горизонтали */
+    margin-bottom: 20px;
+    max-width: 1000px; /* Задайте желаемую ширину */
+}
+
+.question_one {
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.sub_question {
+    display: flex;
+    justify-content: center;
+    border: 2px solid #A9A9A9;
+    border-radius: 15px;
+    flex-direction: column;
+    padding: 15px;
+    margin: 0 auto; /* Центрирование блока по горизонтали */
+    margin-bottom: 20px;
+    max-width: 1000px; /* Задайте желаемую ширину */
+}
+
+.statistic {
+    display: flex;
+    justify-content: center;
+    border: 2px solid #A9A9A9;
+    border-radius: 15px;
+    text-align: center;
+    flex-direction: column;
+    padding: 15px;
+    margin: 0 auto; /* Центрирование блока по горизонтали */
+    margin-bottom: 20px;
+    max-width: 1000px; /* Задайте желаемую ширину */
+}
+
+.statistic-block {
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.statistic-status {
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.statistic-not-status {
+    font-size: 15px;
+}
+
+
+
+.rate-your-answer {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 .flash-message-update {
@@ -27,4 +232,24 @@
     padding: 10px 20px;
     border-radius: 4px;
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+pre code.hljs {
+    margin: 0;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    display: inline-block;
+    background: #F0F0F0;
+}
+
+.error-message {
+    display: block; /* Отображение как блочный элемент */
+    margin-top: 5px; /* Отступ сверху для разделения с полем */
+    color: red; /* Цвет текста ошибки */
+    font-size: 14px; /* Размер шрифта */
+}
+
+ol {
+    list-style: none; /* Убираем стандартные маркеры */
+    padding: 0; /* Убираем отступы */
 }

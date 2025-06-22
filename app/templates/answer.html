@@ -2,86 +2,82 @@
 {% block content %}
 <main>
     {% if authorization %}
-    <div>
+    <div class="info-main">
         Осталось {{ number_questions_answered }} из 200 случайных вопросов
     </div>
     {% else %}
-    <div>
+    <div class="info-main">
         Чтобы сохранялась история вопросов нужна авторизация
     </div>
     {% endif %}
-    <div>
-        <button onclick="window.location.href='{{ url_for('main.main') }}'">
+    <div class="button-container">
+        <button class="button" onclick="window.location.href='{{ url_for('main.main') }}'">
             Вернуться на главную
         </button>
     </div>
-    <div>
+    <h2 class="header-h2">
         Вопрос № {{ question_id }}: {{ question }}
-    </div>
-    {% if sub_question %}
-    <div>
+    </h2>
+    <div class="question">
+        {% if sub_question %}
         {{ sub_question|safe }}
-    </div>
-    {% endif %}
-    <div>
+        {% endif %}
         {{ answer|safe }}
     </div>
     {% if authorization %}
-    <div>
+    <p class="rate-your-answer">
         Оцените свой ответ
+    </p>
+    {% if statistic %}
+    <form class="form-button" action="{{ url_for('statistic.statistic') }}" method="post">
+        <button class="button" type="submit" name="action" value="answered">
+            Ответил
+        </button>
+        <button class="button" type="submit" name="action" value="partial">
+            Ответил не полностью, надо повторить
+        </button>
+        <button class="button" type="submit" name="action" value="not_answered">
+            Не ответил
+        </button>
+    </form>
+    {% elif question_all %}
+    <div class="button-container">
+        <button class="button" onclick="window.location.href='{{ url_for('question_all.question_all') }}'">
+            Назад
+        </button>
     </div>
-    <div>
-        {% if statistic %}
-        <form action="{{ url_for('statistic.statistic') }}" method="post">
-            <button type="submit" name="action" value="answered">
-                Ответил
-            </button>
-            <button type="submit" name="action" value="partial">
-                Ответил не полностью, надо повторить
-            </button>
-            <button type="submit" name="action" value="not_answered">
-                Не ответил
-            </button>
-        </form>
-        {% elif question_all %}
-        <div>
-            <button onclick="window.location.href='{{ url_for('question_all.question_all') }}'">
-                Назад
-            </button>
-        </div>
-        {% else %}
-        <form action="{{ url_for('question.question') }}" method="post">
-            <button type="submit" name="action" value="answered">
-                Ответил
-            </button>
-            <button type="submit" name="action" value="partial">
-                Ответил не полностью, надо повторить
-            </button>
-            <button type="submit" name="action" value="not_answered">
-                Не ответил
-            </button>
-        </form>
-        {% endif %}
-    </div>
-    <div>
-        <button onclick="window.location.href='{{ url_for('logout.logout') }}'">
+    {% else %}
+    <form class="form-button" action="{{ url_for('question.question') }}" method="post">
+        <button class="button" type="submit" name="action" value="answered">
+            Ответил
+        </button>
+        <button class="button" type="submit" name="action" value="partial">
+            Ответил не полностью, надо повторить
+        </button>
+        <button class="button" type="submit" name="action" value="not_answered">
+            Не ответил
+        </button>
+    </form>
+    {% endif %}
+    <div class="button-container">
+        <button class="button" onclick="window.location.href='{{ url_for('logout.logout') }}'">
             Выйти
         </button>
     </div>
     {% else %}
-    <div>
-        {% if question_all %}
-        <button onclick="window.location.href='{{ url_for('question_all.question_all') }}'">
+    {% if question_all %}
+    <div class="button-container">
+        <button class="button" onclick="window.location.href='{{ url_for('question_all.question_all') }}'">
             Назад
         </button>
-        {% else %}
-        <button onclick="window.location.href='{{ url_for('question.question') }}'">
+    </div>
+    {% else %}
+    <div class="button-container">
+        <button class="button" onclick="window.location.href='{{ url_for('question.question') }}'">
             Следующий вопрос
         </button>
         {% endif %}
-    </div>
-    <div>
-        <button onclick="window.location.href='{{ url_for('login.login') }}'">
+        <button class="button" onclick="window.location.href='{{ url_for('login.login') }}'">
             Войти
         </button>
     </div>

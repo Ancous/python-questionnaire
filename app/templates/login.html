@@ -2,11 +2,11 @@
 {% block content %}
 <main>
     {% if authorization %}
-    <div>
+    <div class="info-main">
         Осталось {{ number_questions_answered }} из 200 случайных вопросов
     </div>
     {% else %}
-    <div>
+    <div class="info-main">
         Чтобы сохранялась история вопросов нужна авторизация
     </div>
     {% endif %}
@@ -17,15 +17,15 @@
     </div>
     {% endfor %}
     {% endwith %}
-    <h2>
+    <h2 class="header-h2">
         Войти
     </h2>
-    <div>
-        <button onclick="window.location.href='{{ url_for('main.main') }}'">
+    <div class="button-container">
+        <button class="button" onclick="window.location.href='{{ url_for('main.main') }}'">
             Вернуться на главную
         </button>
     </div>
-    <div>
+    <div class="login-form">
         <form method="post">
             {{ form.hidden_tag() }}
             <p>
@@ -33,7 +33,7 @@
                 <br>
                 {{ form.username(class="validate") }}
                 {% for error in form.username.errors %}
-                <span class="error-message" style="color: red;">{{ error }}</span>
+                <span class="error-message">{{ error }}</span>
                 {% endfor %}
             </p>
             <p>
@@ -41,11 +41,11 @@
                 <br>
                 {{ form.password(class="validate") }}
                 {% for error in form.username.errors %}
-                <span class="error-message" style="color: red;">{{ error }}</span>
+                <span class="error-message">{{ error }}</span>
                 {% endfor %}
             </p>
             <p>
-                {{ form.submit() }}
+                {{ form.submit(class="button") }}
             </p>
         </form>
     </div>

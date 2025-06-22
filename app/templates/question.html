@@ -2,57 +2,50 @@
 {% block content %}
 <main>
     {% if authorization %}
-    <div>
+    <div class="info-main">
         Осталось {{ number_questions_answered }} из 200 случайных вопросов
     </div>
     {% else %}
-    <div>
+    <div class="info-main">
         Чтобы сохранялась история вопросов нужна авторизация
     </div>
     {% endif %}
-    <div>
-        <button onclick="window.location.href='{{ url_for('main.main') }}'">
+    <div class="button-container">
+        <button class="button" onclick="window.location.href='{{ url_for('main.main') }}'">
             Вернуться на главную
         </button>
     </div>
     {% if question_id %}
-    <div>
-        <h2>
-            Вопрос №{{ question_id }}
-        </h2>
-    </div>
+    <h2 class="header-h2">
+        Вопрос №{{ question_id }}
+    </h2>
     {% endif %}
     {% if message %}
-    <div>
-        <h2>
-            {{ message }}
-        </h2>
-    </div>
+    <h2 class="header-h2">
+        {{ message }}
+    </h2>
     {% endif %}
-    {% if question %}
-    <div>
-        {{ question }}
-    </div>
-    {% endif %}
-    {% if sub_question %}
-    <div>
+    <div class="question">
+        {% if question %}
+        <p>
+            {{ question }}
+        </p>
+        {% endif %}
+        {% if sub_question %}
         {{ sub_question|safe }}
+        {% endif %}
     </div>
-    {% endif %}
-    <div>
-        <button onclick="window.location.href='{{ url_for('answer.answer') }}'">
+    <div class="button-container">
+        <button class="button button-answer"
+                onclick="window.location.href='{{ url_for('answer_id.answer_id', id=question_id) }}'">
             Ответ
         </button>
-    </div>
-    {% if authorization %}
-    <div>
-        <button onclick="window.location.href='{{ url_for('logout.logout') }}'">
+        {% if authorization %}
+        <button class="button" onclick="window.location.href='{{ url_for('logout.logout') }}'">
             Выйти
         </button>
-    </div>
-    {% else %}
-    <div>
-        <button onclick="window.location.href='{{ url_for('login.login') }}'">
+        {% else %}
+        <button class="button" onclick="window.location.href='{{ url_for('login.login') }}'">
             Войти
         </button>
     </div>

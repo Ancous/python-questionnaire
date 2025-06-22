@@ -2,64 +2,54 @@
 {% block content %}
 <main>
     {% if authorization %}
-    <div>
+    <div class="info-main">
         Осталось {{ number_questions_answered }} из 200 случайных вопросов
     </div>
     {% else %}
-    <div>
+    <div class="info-main">
         Чтобы сохранялась история вопросов нужна авторизация
     </div>
     {% endif %}
-    <div class="main">
-        {% if authorization %}
-        <button onclick="window.location.href='{{ url_for('question_update.question_update') }}'">
-            Обновить мою историю вопросов
-        </button>
-        {% endif %}
-        {% with messages = get_flashed_messages(with_categories=true) %}
-        {% for category, message in messages %}
-        {% if category in ('register', 'login', 'logout') %}
-        <div class="flash-message">
-            {{ message }}
+    <div class="button-container">
+        <div class="button-update">
+            {% if authorization %}
+            <button class="button" onclick="window.location.href='{{ url_for('question_update.question_update') }}'">
+                Обновить мою историю вопросов
+            </button>
+            {% endif %}
+            {% with messages = get_flashed_messages(with_categories=true) %}
+            {% for category, message in messages %}
+            {% if category in ('register', 'login', 'logout') %}
+            <div class="flash-message">
+                {{ message }}
+            </div>
+            {% elif category == 'update' %}
+            <div class="flash-message-update" style="display: block;">
+                {{ message }}
+            </div>
+            {% endif %}
+            {% endfor %}
+            {% endwith %}
         </div>
-        {% elif category == 'update' %}
-        <div class="flash-message-update" style="display: block;">
-            {{ message }}
-        </div>
-        {% endif %}
-        {% endfor %}
-        {% endwith %}
-    </div>
-    <div>
-        <button onclick="window.location.href='{{ url_for('question.question') }}'">
+        <button class="button" onclick="window.location.href='{{ url_for('question.question') }}'">
             Погнали к вопросам
         </button>
-    </div>
-    {% if authorization %}
-    <div>
-        <button onclick="window.location.href='{{ url_for('statistic.statistic') }}'">
+        {% if authorization %}
+        <button class="button" onclick="window.location.href='{{ url_for('statistic.statistic') }}'">
             Статистика ответов
         </button>
-    </div>
-    <div>
-        <button onclick="window.location.href='{{ url_for('logout.logout') }}'">
+        <button class="button" onclick="window.location.href='{{ url_for('logout.logout') }}'">
             Выйти
         </button>
-    </div>
-    {% else %}
-    <div>
-        <button onclick="window.location.href='{{ url_for('register.register') }}'">
+        {% else %}
+        <button class="button" onclick="window.location.href='{{ url_for('register.register') }}'">
             Регистрация
         </button>
-    </div>
-    <div>
-        <button onclick="window.location.href='{{ url_for('login.login') }}'">
+        <button class="button" onclick="window.location.href='{{ url_for('login.login') }}'">
             Войти
         </button>
-    </div>
-    {% endif %}
-    <div>
-        <button onclick="window.location.href='{{ url_for('question_all.question_all') }}'">
+        {% endif %}
+        <button class="button" onclick="window.location.href='{{ url_for('question_all.question_all') }}'">
             Список всех вопросов
         </button>
     </div>

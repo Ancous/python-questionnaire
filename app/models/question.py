@@ -154,7 +154,7 @@ class Questions(BaseModel):
         Документация метода
         """
         stmt = (
-            select(UserStatistic.answer_option_id, Questions.question)
+            select(UserStatistic.answer_option_id, Questions.id, Questions.question)
             .join(Questions, UserStatistic.question)
             .where(UserStatistic.user_id.__eq__(user_id))
             .order_by(UserStatistic.answer_option_id)

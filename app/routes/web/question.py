@@ -26,7 +26,13 @@ def question():
     with Session() as se:
         if request.method == 'POST' and bool(session.get('logged_in')):
             if request.form.get('action'):
-                process_user_answer(se, session.get("user_id"), session.get("question_id"), request.form.get('action'))
+                process_user_answer(
+                    se,
+                    user_id=session.get("user_id"),
+                    question_id=session.get("question_id"),
+                    action=request.form.get('action'),
+                    statistic_questionall=False
+                )
 
         answered_ids = AnsweredQuestions.get_numbers(se, session.get("user_id"))
         random_question_id = 0
@@ -38,4 +44,4 @@ def question():
             if available_numbers:
                 random_question_id = random.choice(available_numbers)
 
-        return redirect(url_for('question_question_id.question_question_id', question_id=random_question_id))
+        return redirect(url_for('question_id.question_id', id=random_question_id))

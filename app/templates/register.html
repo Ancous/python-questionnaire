@@ -2,11 +2,11 @@
 {% block content %}
 <main>
     {% if authorization %}
-    <div>
+    <div class="info-main">
         Осталось {{ number_questions_answered }} из 200 случайных вопросов
     </div>
     {% else %}
-    <div>
+    <div class="info-main">
         Чтобы сохранялась история вопросов нужна авторизация
     </div>
     {% endif %}
@@ -17,43 +17,43 @@
     </div>
     {% endfor %}
     {% endwith %}
-    <h2>
+    <h2 class="header-h2">
         Регистрация
     </h2>
-    <div>
-        <button onclick="window.location.href='{{ url_for('main.main') }}'">
+    <div class="button-container">
+        <button class="button" onclick="window.location.href='{{ url_for('main.main') }}'">
             Вернуться на главную
         </button>
     </div>
-    <div>
+    <div class="register-form">
         <form method="post">
             {{ form.hidden_tag() }}
             <p>
                 {{ form.username.label }}
                 <br>
-                {{ form.username(size=32, class="validate") }}
+                {{ form.username(size=28, class="validate") }}
                 {% for error in form.username.errors %}
-                <span class="error-message" style="color: red;">{{ error }}</span>
+                <span class="error-message">{{ error }}</span>
                 {% endfor %}
             </p>
             <p>
                 {{ form.password.label }}
                 <br>
-                {{ form.password(size=32, class="validate") }}
+                {{ form.password(size=28, class="validate") }}
                 {% for error in form.password.errors %}
-                <span class="error-message" style="color: red;">{{ error }}</span>
+                <span class="error-message">{{ error }}</span>
                 {% endfor %}
             </p>
             <p>
                 {{ form.confirm.label }}
                 <br>
-                {{ form.confirm(size=32, class="validate") }}
+                {{ form.confirm(size=28, class="validate") }}
                 {% for error in form.confirm.errors %}
-                <span class="error-message" style="color: red;">{{ error }}</span>
+                <span class="error-message">{{ error }}</span>
                 {% endfor %}
             </p>
             <p>
-                {{ form.submit() }}
+                {{ form.submit(class="button") }}
             </p>
         </form>
     </div>

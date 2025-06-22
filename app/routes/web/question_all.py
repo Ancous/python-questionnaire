@@ -1,6 +1,7 @@
 """
 Документация модуля
 """
+import time
 
 from flask import Blueprint, render_template, session
 
@@ -19,7 +20,7 @@ def create_question_all_bp(cache):
     )
 
     @question_all_bp.route('/', methods=["GET"])
-    @cache.cached(timeout=3600)
+    @cache.cached(timeout=5)
     def question_all():
         """
         Документация функции
@@ -28,7 +29,7 @@ def create_question_all_bp(cache):
         session['question_all'] = None
         with Session() as se:
             question_obj = Questions.all_questions(se)
-            result = [{"question": q.question, "sub_question": q.sub_question} for q in question_obj]
+            result = [{"id": q.id, "question": q.question, "sub_question": q.sub_question} for q in question_obj]
         return render_template('question_all.html', question_all=result)
 
     return question_all_bp

@@ -2,65 +2,69 @@
 {% block content %}
 <main>
     {% if authorization %}
-    <div>
+    <div class="info-main">
         Осталось {{ number_questions_answered }} из 200 случайных вопросов
     </div>
     {% else %}
-    <div>
+    <div class="info-main">
         Чтобы сохранялась история вопросов нужна авторизация
     </div>
     {% endif %}
-    <div>
-        <button onclick="window.location.href='{{ url_for('main.main') }}'">
+    <div class="button-container">
+        <button class="button" onclick="window.location.href='{{ url_for('main.main') }}'">
             Вернуться на главную
         </button>
     </div>
-    <div>
-        <p>
-            Вопросы отвеченные
-        </p>
-        {% for res in data[1] %}
-        <div>
-            <a href="{{ url_for('answer.answer', name=res) }}">
-                {{ res }}
+    <div class="statistic">
+        <div class="statistic-block">
+            <p class="statistic-status">
+                Вопросы отвеченные
+            </p>
+            {% for res in data[1] %}
+            <a href="{{ url_for('answer_id.answer_id', id=res[0]) }}">
+                {{ res[1] }}
             </a>
+            {% else %}
+            <p class="statistic-not-status">
+                --- <br> Пока что вопросов в этой категории у вас нет <br> ---
+            </p>
+            {% endfor %}
         </div>
-        {% else %}
-        <div>
-            --- Пока что вопросов в этой категории у вас нет ---
+        <div class="statistic-block">
+            <p class="statistic-status">
+                Вопросы, которые следует повторить
+            </p>
+            {% for res in data[2] %}
+            <div>
+                <a href="{{ url_for('answer_id.answer_id', id=res[0]) }}">
+                    {{ res[1] }}
+                </a>
+            </div>
+            {% else %}
+            <p class="statistic-not-status">
+                --- <br> Пока что вопросов в этой категории у вас нет <br> ---
+            </p>
+            {% endfor %}
         </div>
-        {% endfor %}
-        <p>
-            Вопросы, которые следует повторить
-        </p>
-        {% for res in data[2] %}
-        <div>
-            <a href="{{ url_for('answer.answer', name=res) }}">
-                {{ res }}
-            </a>
+        <p class="statistic-block">
+            <p class="statistic-status">
+                Вопросы, которые надо изучить
+            </p>
+            {% for res in data[3] %}
+            <div>
+                <a href="{{ url_for('answer_id.answer_id', id=res[0]) }}">
+                    {{ res[1] }}
+                </a>
+            </div>
+            {% else %}
+            <p class="statistic-not-status">
+                --- <br> Пока что вопросов в этой категории у вас нет <br> ---
+            </p>
+            {% endfor %}
         </div>
-        {% else %}
-        <div>
-            --- Пока что вопросов в этой категории у вас нет ---
-        </div>
-        {% endfor %}
-        <p>
-            Вопросы, которые надо изучить
-        </p>
-        {% for res in data[3] %}
-        <div>
-            <a href="{{ url_for('answer.answer', name=res) }}">
-                {{ res }}
-            </a>
-        </div>
-        {% else %}
-        <div>
-            --- Пока что вопросов в этой категории у вас нет ---
-        </div>
-        {% endfor %}
     </div>
-    <div>
-        <button onclick="window.location.href='{{ url_for('logout.logout') }}'">
+    <div class="button-container">
+        <button class="button" onclick="window.location.href='{{ url_for('logout.logout') }}'">
             Выйти
         </button>
     </div>

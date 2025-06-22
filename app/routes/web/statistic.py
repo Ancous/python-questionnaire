@@ -5,7 +5,6 @@
 from flask import Blueprint, render_template, session, request
 
 from app.models import Session
-from app.models.answered_questions import AnsweredQuestions
 from app.models.question import Questions
 from app.utils.processing_response_history import process_user_answer
 from app.utils.processing_statistic_data import statistic_data
@@ -26,7 +25,13 @@ def statistic():
     session['question_all'] = None
     with Session() as se:
         if request.method == 'POST' and request.form.get('action'):
-            process_user_answer(se, session.get("user_id"), session.get("question_id"), request.form.get('action'))
+            process_user_answer(
+                se,
+                user_id=session.get("user_id"),
+                question_id=session.get("question_id"),
+                action=request.form.get('action'),
+                statistic_questionall=True
+            )
 
         user_statistic_obj = Questions.get_questions_grouped_by_answer_option(se, session.get('user_id'))
         session['data'] = statistic_data(user_statistic_obj)

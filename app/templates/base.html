@@ -29,31 +29,28 @@
         type="image/svg+xml">
     <link
         rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/github.min.css">
+    <link
+        rel="stylesheet"
         href="{{ url_for('static', filename='css/style.css') }}">
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/github.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
     <script>
         hljs.highlightAll();
     </script>
 </head>
-<body>
+<body class="body">
 <header>
-    <div>
-        <h1>
-            Вопросики к собеседованию на Python
-        </h1>
-    </div>
+    <h1 class="header-h1">
+        Вопросики к собеседованию на Python
+    </h1>
 </header>
 
 {% block content %}{% endblock %}
 
 <footer>
-    <div>
-        <h2>
-            Здесь будет информация
-        </h2>
-    </div>
+    <h2 class="header-h2">
+        Здесь будет информация
+    </h2>
 </footer>
 </body>
 </html>

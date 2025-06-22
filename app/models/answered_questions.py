@@ -56,10 +56,23 @@ class AnsweredQuestions(BaseModel):
         if answered_questions_numbers is None:
             answered_question = cls(numbers=[number_question], user_id=user_id)
             sesh.add(answered_question)
-            sesh.commit()
         else:
-            answered_questions_numbers.numbers.append(number_question)
-            sesh.commit()
+            if number_question not in answered_questions_numbers.numbers:
+                answered_questions_numbers.numbers.append(number_question)
+
+        sesh.commit()
+
+    @classmethod
+    def remove_question_from_marked(cls, sesh, user_id, number_question):
+        """
+        Документация метода
+        """
+        stmt = select(cls).where(cls.user_id == user_id)
+        answered_questions_numbers = sesh.scalars(stmt).one_or_none()
+        if number_question in answered_questions_numbers.numbers:
+            answered_questions_numbers.numbers.remove(number_question)
+
+        sesh.commit()
 
     @classmethod
     def clear_answered_questions(cls, sesh, user_id):
