@@ -21,9 +21,11 @@
                 Вопросы отвеченные
             </p>
             {% for res in data[1] %}
-            <a href="{{ url_for('answer_id.answer_id', id=res[0]) }}">
-                {{ res[1] }}
-            </a>
+            <div class="question_one">
+                <a href="{{ url_for('answer_id.answer_id', id=res[0]) }}">
+                    {{ res[1] }}
+                </a>
+            </div>
             {% else %}
             <p class="statistic-not-status">
                 --- <br> Пока что вопросов в этой категории у вас нет <br> ---
@@ -35,7 +37,7 @@
                 Вопросы, которые следует повторить
             </p>
             {% for res in data[2] %}
-            <div>
+            <div class="question_one">
                 <a href="{{ url_for('answer_id.answer_id', id=res[0]) }}">
                     {{ res[1] }}
                 </a>
@@ -46,12 +48,12 @@
             </p>
             {% endfor %}
         </div>
-        <p class="statistic-block">
+        <div class="statistic-block">
             <p class="statistic-status">
                 Вопросы, которые надо изучить
             </p>
             {% for res in data[3] %}
-            <div>
+            <div class="question_one">
                 <a href="{{ url_for('answer_id.answer_id', id=res[0]) }}">
                     {{ res[1] }}
                 </a>

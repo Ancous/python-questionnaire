@@ -1,6 +1,7 @@
 """
 Документация модуля
 """
+
 import random
 
 from flask import Blueprint, session, request, redirect, url_for

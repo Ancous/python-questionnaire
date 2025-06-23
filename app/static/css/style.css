@@ -47,11 +47,13 @@
 
 .button {
     width: 200px; /* Ширина кнопки */
-    height: 50px; /* Высота кнопки */
+    min-height: 50px; /* Высота кнопки */
     cursor: pointer; /* Указатель при наведении */
     border: none; /* Убираем рамку */
     border-radius: 5px; /* Закругленные углы */
     transition: background-color 0.3s; /* Плавный переход при наведении */
+    padding: 15px;
+    flex: 1;
 }
 .button-answer {
     font-size: 17px;
@@ -76,7 +78,6 @@
 .form-button {
     display: flex; /* Включаем Flexbox для контейнера */
     justify-content: center; /* Центрирование кнопок по горизонтали */
-    align-items: center;
     gap: 5px; /* Отступ между кнопками */
     margin: 0;
     margin-bottom: 20px;
