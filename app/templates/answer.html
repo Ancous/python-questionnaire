@@ -18,17 +18,19 @@
     <h2 class="header-h2">
         Вопрос № {{ question_id }}: {{ question }}
     </h2>
-    <div class="question">
-        {% if sub_question %}
+    {% if sub_question %}
+    <div class="sub_question">
         {{ sub_question|safe }}
-        {% endif %}
+    </div>
+    {% endif %}
+    <div class="question">
         {{ answer|safe }}
     </div>
     {% if authorization %}
+    {% if statistic %}
     <p class="rate-your-answer">
         Оцените свой ответ
     </p>
-    {% if statistic %}
     <form class="form-button" action="{{ url_for('statistic.statistic') }}" method="post">
         <button class="button" type="submit" name="action" value="answered">
             Ответил
@@ -47,6 +49,9 @@
         </button>
     </div>
     {% else %}
+    <p class="rate-your-answer">
+        Оцените свой ответ
+    </p>
     <form class="form-button" action="{{ url_for('question.question') }}" method="post">
         <button class="button" type="submit" name="action" value="answered">
             Ответил

@@ -79,7 +79,8 @@
     display: flex; /* Включаем Flexbox для контейнера */
     justify-content: center; /* Центрирование кнопок по горизонтали */
     gap: 5px; /* Отступ между кнопками */
-    margin: 0;
+    max-width: 1040px;
+    margin: 0 auto;
     margin-bottom: 20px;
 }
 
@@ -123,7 +124,7 @@
     text-align: center;
 }
 
-.question h3 {
+.question h2 {
     text-align: center;
 }
 
@@ -163,9 +164,6 @@
 .sub_question {
     display: flex;
     justify-content: center;
-    border: 2px solid #A9A9A9;
-    border-radius: 15px;
-    flex-direction: column;
     padding: 15px;
     margin: 0 auto; /* Центрирование блока по горизонтали */
     margin-bottom: 20px;
@@ -253,4 +251,8 @@ pre code.hljs {
 ol {
     list-style: none; /* Убираем стандартные маркеры */
     padding: 0; /* Убираем отступы */
+}
+
+.question ol li ul li pre{
+    margin: 0 0 0 -40px;
 }
