@@ -4,6 +4,7 @@
 
 from sqlalchemy.orm import relationship
 from sqlalchemy import Column, Integer, String, select, func
+from sqlalchemy.orm.attributes import InstrumentedAttribute
 
 from app.models import BaseModel
 from app.models.user_statistic import UserStatistic
@@ -153,10 +154,11 @@ class Questions(BaseModel):
         """
         Документация метода
         """
+        userstatistic_userid: InstrumentedAttribute = UserStatistic.user_id
         stmt = (
             select(UserStatistic.answer_option_id, Questions.id, Questions.question)
             .join(Questions, UserStatistic.question)
-            .where(UserStatistic.user_id.__eq__(user_id))
+            .where(userstatistic_userid == user_id)
             .order_by(UserStatistic.answer_option_id)
         )
         result = sesh.execute(stmt).all()

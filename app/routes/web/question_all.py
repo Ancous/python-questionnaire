@@ -20,7 +20,7 @@ def create_question_all_bp(cache):
     )
 
     @question_all_bp.route('/', methods=["GET"])
-    @cache.cached(timeout=3600)
+    @cache.cached(timeout=5)
     def question_all():
         """
         Документация функции

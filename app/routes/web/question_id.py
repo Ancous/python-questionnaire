@@ -18,7 +18,7 @@ def create_question_id_bp(cache):
         url_prefix="/question/<int:id>"
     )
 
-    @cache.memoize(timeout=3600)
+    @cache.memoize(timeout=5)
     def get_question_by_id(id):
         """
         Документация функции
