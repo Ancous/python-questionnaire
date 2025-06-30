@@ -33,7 +33,6 @@ def inject_authorization():
     Документация функции
     """
     return dict(
-        data=session.get("data"),
         answer=session.get("answer"),
         message=session.get("message"),
         user_id=session.get("user_id"),
