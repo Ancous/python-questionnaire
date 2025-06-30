@@ -44,11 +44,17 @@ def create_answer_id_bp(cache):
             session['question_all'] = True
 
         answer_obj, question_obj = get_question_answer_by_id(id)
-        session['answer_id'] = answer_obj.id
-        session['answer'] = answer_obj.answer
-        session['question_id'] = question_obj.id
-        session['question'] = question_obj.question
-        session['sub_question'] = question_obj.sub_question
-        return render_template('answer.html')
+        session["question_id"] = question_obj.id
+        session_answer_id = answer_obj.id
+        session_answer = answer_obj.answer
+        session_question = question_obj.question
+        session_sub_question = question_obj.sub_question
+        return render_template(
+            'answer.html',
+            answer_id=session_answer_id,
+            answer=session_answer,
+            question=session_question,
+            sub_question=session_sub_question
+        )
 
     return answer_id_bp

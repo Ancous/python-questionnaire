@@ -34,5 +34,5 @@ def statistic():
             )
 
         user_statistic_obj = Questions.get_questions_grouped_by_answer_option(se, session.get('user_id'))
-        dict_data = statistic_data(user_statistic_obj)
-        return render_template('statistic.html', data=dict_data)
+        session_data = statistic_data(user_statistic_obj)
+        return render_template('statistic.html', data=session_data)

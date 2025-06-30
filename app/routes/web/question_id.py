@@ -39,9 +39,13 @@ def create_question_id_bp(cache):
 
         question_obj = get_question_by_id(id)
 
-        session['question_id'] = question_obj.id
-        session['question'] = question_obj.question
-        session['sub_question'] = question_obj.sub_question
-        return render_template('question.html')
+        session["question_id"] = question_obj.id
+        session_question = question_obj.question
+        session_sub_question = question_obj.sub_question
+        return render_template(
+            'question.html',
+            question=session_question,
+            sub_question=session_sub_question
+        )
 
     return question_id_bp

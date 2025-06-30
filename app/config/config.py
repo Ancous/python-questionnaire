@@ -33,15 +33,11 @@ def inject_authorization():
     Документация функции
     """
     return dict(
-        answer=session.get("answer"),
         message=session.get("message"),
         user_id=session.get("user_id"),
         username=session.get("username"),
-        question=session.get("question"),
         statistic=session.get("statistic"),
-        answer_id=session.get('answer_id'),
         question_id=session.get("question_id"),
-        sub_question=session.get("sub_question"),
         question_all=session.get("question_all"),
         authorization=bool(session.get('logged_in') is True),
         number_questions_answered=session.get("number_questions_answered")

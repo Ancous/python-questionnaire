@@ -6,6 +6,7 @@ from flask import Blueprint, flash, redirect, url_for, session
 
 from app.models import Session
 from app.models.answered_questions import AnsweredQuestions
+from app.models.user_statistic import UserStatistic
 
 question_update_bp = Blueprint(
     "question_update",
@@ -21,6 +22,7 @@ def question_update():
     """
     with Session() as se:
         AnsweredQuestions.clear_answered_questions(se, session.get("user_id"))
+        UserStatistic.delete_answer_for_user_id(se, session.get("user_id"))
         session['number_questions_answered'] = 200
 
     flash("Вопросы обновлены", "update")

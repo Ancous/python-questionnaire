@@ -2,7 +2,7 @@
 Документация модуля
 """
 
-from sqlalchemy import Column, Integer, ForeignKey, select, UniqueConstraint
+from sqlalchemy import Column, Integer, ForeignKey, select, UniqueConstraint, delete
 from sqlalchemy.orm import relationship
 
 from app.models import BaseModel
@@ -84,3 +84,11 @@ class UserStatistic(BaseModel):
             sesh.add(instance)
         sesh.commit()
         return instance
+
+    @classmethod
+    def delete_answer_for_user_id(cls, sesh, user_id):
+        """
+        Документация метода
+        """
+        sesh.execute(delete(cls).where(cls.user_id == user_id))
+        sesh.commit()
