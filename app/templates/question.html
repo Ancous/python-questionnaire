@@ -25,21 +25,23 @@
         {{ message }}
     </h2>
     {% endif %}
+    {% if question %}
     <div class="question">
-        {% if question %}
         <p>
             {{ question }}
         </p>
-        {% endif %}
         {% if sub_question %}
         {{ sub_question|safe }}
         {% endif %}
     </div>
+    {% endif %}
     <div class="button-container">
+        {% if not message %}
         <button class="button button-answer"
                 onclick="window.location.href='{{ url_for('answer_id.answer_id', id=question_id) }}'">
             Ответ
         </button>
+        {% endif %}
         {% if authorization %}
         <button class="button" onclick="window.location.href='{{ url_for('logout.logout') }}'">
             Выйти

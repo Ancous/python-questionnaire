@@ -128,6 +128,10 @@
     text-align: center;
 }
 
+.question h3 {
+    text-align: center;
+}
+
 .question pre {
     display: flex; /* Используем Flexbox */
     justify-content: center; /* Центрируем элемент по горизонтали */
