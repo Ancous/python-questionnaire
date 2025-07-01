@@ -2,7 +2,7 @@
 Документация модуля
 """
 
-from flask import Blueprint, render_template, session
+from flask import Blueprint, render_template, session, flash
 
 from app.models import Session
 from app.models.question import Questions
@@ -34,7 +34,7 @@ def create_question_id_bp(cache):
         Документация функции
         """
         if not id:
-            session['message'] = "Вы знаете все ответы на вопросы. Вопросов для Вас больше нет."
+            flash("Вы знаете все ответы на вопросы. Вопросов для Вас больше нет.")
             return render_template('question.html')
 
         question_obj = get_question_by_id(id)

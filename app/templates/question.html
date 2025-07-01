@@ -15,14 +15,16 @@
             Вернуться на главную
         </button>
     </div>
-    {% if question_id %}
+    {% set flashed_messages = get_flashed_messages() %}
+    {% if flashed_messages %}
+    {% for messages in flashed_messages %}
+    <h2 class="header-h2">
+        {{ messages }}
+    </h2>
+    {% endfor %}
+    {% elif question_id %}
     <h2 class="header-h2">
         Вопрос №{{ question_id }}
-    </h2>
-    {% endif %}
-    {% if message %}
-    <h2 class="header-h2">
-        {{ message }}
     </h2>
     {% endif %}
     {% if question %}
@@ -36,7 +38,8 @@
     </div>
     {% endif %}
     <div class="button-container">
-        {% if not message %}
+        {% set flashed_messages = get_flashed_messages() %}
+        {% if not flashed_messages %}
         <button class="button button-answer"
                 onclick="window.location.href='{{ url_for('answer_id.answer_id', id=question_id) }}'">
             Ответ
