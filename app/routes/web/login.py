@@ -28,7 +28,7 @@ def login():
             user = se.query(Users).filter_by(username=form.username.data).first()
             if user and check_password_hash(user.password, form.password.data):
                 count = AnsweredQuestions.get_numbers_count(se, user_id=user.id)
-                session['number_questions_answered'] = 200 - count
+                session['number_questions_answered'] = 402 - count
                 session['logged_in'] = True
                 session['user_id'] = user.id
                 session['username'] = user.username

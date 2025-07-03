@@ -29,7 +29,7 @@ def register():
                 hashed_pw = generate_password_hash(form.password.data)
                 user = Users.add_user(se, form.username.data.strip(), hashed_pw)
                 count = AnsweredQuestions.get_numbers_count(se, user_id=user.id)
-                session['number_questions_answered'] = 200 - count
+                session['number_questions_answered'] = 402 - count
                 session['logged_in'] = True
                 session['user_id'] = user.id
                 session['username'] = user.username

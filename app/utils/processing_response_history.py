@@ -26,5 +26,5 @@ def process_user_answer(se, user_id: int, question_id: int, action: str, statist
         if action in ('partial', 'not_answered'):
             AnsweredQuestions.remove_question_from_marked(se, user_id, question_id)
 
-    session['number_questions_answered'] = 200 - AnsweredQuestions.get_numbers_count(se, user_id=session["user_id"])
+    session['number_questions_answered'] = 402 - AnsweredQuestions.get_numbers_count(se, user_id=session["user_id"])
     UserStatistic.set_answer_for_user_and_question(se, user_id, question_id, answer_option.id)
