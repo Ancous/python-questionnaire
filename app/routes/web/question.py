@@ -6,6 +6,7 @@ import random
 
 from flask import Blueprint, session, request, redirect, url_for
 
+from app.config.config import NUMBER_OF_QUESTIONS
 from app.models import Session
 from app.models.answered_questions import AnsweredQuestions
 from app.utils.processing_response_history import process_user_answer
@@ -39,9 +40,9 @@ def question():
         random_question_id = 0
 
         if answered_ids is None:
-            random_question_id = random.randint(1, 403)
+            random_question_id = random.randint(1, NUMBER_OF_QUESTIONS + 1)
         else:
-            available_numbers = list(set(range(1, 403)) - set(answered_ids))
+            available_numbers = list(set(range(1, NUMBER_OF_QUESTIONS + 1)) - set(answered_ids))
             if available_numbers:
                 random_question_id = random.choice(available_numbers)
 

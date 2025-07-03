@@ -1,15 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
 <main>
-    {% if authorization %}
-    <div class="info-main">
-        Осталось {{ number_questions_answered }} из 402 случайных вопросов
-    </div>
-    {% else %}
-    <div class="info-main">
-        Чтобы сохранялась история вопросов нужна авторизация
-    </div>
-    {% endif %}
     {% with messages = get_flashed_messages(category_filter=["register"]) %}
     {% for message in messages %}
     <div class="flash-message">
