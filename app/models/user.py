@@ -2,8 +2,8 @@
 Документация модуля
 """
 
-from sqlalchemy import Column, String, Integer, select
-from sqlalchemy.orm import relationship
+from sqlalchemy import String, Integer, select
+from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app.models import BaseModel
 
@@ -14,9 +14,9 @@ class Users(BaseModel):
     """
     __tablename__ = 'users'
 
-    id = Column(Integer, primary_key=True, autoincrement=True)
-    username = Column(String, unique=True, nullable=False)
-    password = Column(String, nullable=False)
+    id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
+    username: Mapped[str] = mapped_column(String, unique=True, nullable=False)
+    password: Mapped[str] = mapped_column(String, nullable=False)
 
     answered_questions = relationship(
         "AnsweredQuestions",

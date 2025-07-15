@@ -2,6 +2,7 @@
 Документация модуля
 """
 
+from typing import cast
 from flask import Blueprint, render_template, session, request
 
 from app.models import Session
@@ -27,9 +28,9 @@ def statistic():
         if request.method == 'POST' and request.form.get('action'):
             process_user_answer(
                 se,
-                user_id=session.get("user_id"),
-                question_id=session.get("question_id"),
-                action=request.form.get('action'),
+                user_id=cast(int, session.get("user_id")),
+                question_id=cast(int, session.get("question_id")),
+                action=cast(str, request.form.get('action')),
                 statistic_questionall=True
             )
 

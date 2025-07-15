@@ -2,9 +2,9 @@
 Документация модуля
 """
 
-from sqlalchemy import Column, Integer, JSON, ForeignKey, select, func
+from sqlalchemy import Integer, JSON, ForeignKey, select, func
 from sqlalchemy.ext.mutable import MutableList
-from sqlalchemy.orm import relationship
+from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app.models import BaseModel
 
@@ -15,9 +15,9 @@ class AnsweredQuestions(BaseModel):
     """
     __tablename__ = 'answered_questions'
 
-    id = Column(Integer, primary_key=True, autoincrement=True)
-    numbers = Column(MutableList.as_mutable(JSON), nullable=True)
-    user_id = Column(Integer, ForeignKey('users.id'), unique=True, nullable=False)
+    id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
+    numbers: Mapped[list] = mapped_column(MutableList.as_mutable(JSON), nullable=True)
+    user_id: Mapped[int] = mapped_column(Integer, ForeignKey('users.id'), unique=True, nullable=False)
 
     user = relationship(
         "Users",

@@ -2,6 +2,7 @@
 Документация модуля
 """
 
+from typing import cast
 from werkzeug.security import generate_password_hash
 from flask import Blueprint, flash, redirect, url_for, render_template, session
 
@@ -26,9 +27,11 @@ def register():
     form = RegistrationForm()
     if form.validate_on_submit():
         with Session() as se:
-            if not Users.get_user(se, form.username.data.strip()):
-                hashed_pw = generate_password_hash(form.password.data)
-                user = Users.add_user(se, form.username.data.strip(), hashed_pw)
+            username = cast(str, form.username.data)
+            password = cast(str, form.password.data)
+            if not Users.get_user(se, username.strip()):
+                hashed_pw = generate_password_hash(password)
+                user = Users.add_user(se, username.strip(), hashed_pw)
                 count = AnsweredQuestions.get_numbers_count(se, user_id=user.id)
                 session['number_questions_answered'] = NUMBER_OF_QUESTIONS - count
                 session['logged_in'] = True

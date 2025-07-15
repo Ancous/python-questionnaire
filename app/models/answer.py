@@ -2,8 +2,8 @@
 Документация модуля
 """
 
-from sqlalchemy.orm import relationship
-from sqlalchemy import Column, Integer, String, ForeignKey, select
+from sqlalchemy.orm import Mapped, mapped_column, relationship
+from sqlalchemy import Integer, String, ForeignKey, select
 
 from app.models import BaseModel
 
@@ -13,10 +13,10 @@ class Answers(BaseModel):
     Документация класса
     """
     __tablename__ = 'answers'
-    id = Column(Integer, primary_key=True, autoincrement=True)
+    id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
 
-    answer = Column(String, nullable=False)
-    question_id = Column(Integer, ForeignKey('questions.id'), unique=True, nullable=False)
+    answer: Mapped[str] = mapped_column(String, nullable=False)
+    question_id: Mapped[int] = mapped_column(Integer, ForeignKey('questions.id'), unique=True, nullable=False)
 
     question = relationship(
         "Questions",

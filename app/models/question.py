@@ -2,8 +2,8 @@
 Документация модуля
 """
 
-from sqlalchemy.orm import relationship
-from sqlalchemy import Column, Integer, String, select, func
+from sqlalchemy.orm import Mapped, mapped_column, relationship
+from sqlalchemy import Integer, String, select, func
 from sqlalchemy.orm.attributes import InstrumentedAttribute
 
 from app.models import BaseModel
@@ -16,9 +16,9 @@ class Questions(BaseModel):
     """
     __tablename__ = 'questions'
 
-    id = Column(Integer, primary_key=True, autoincrement=True)
-    question = Column(String, nullable=False)
-    sub_question = Column(String)
+    id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
+    question: Mapped[str] = mapped_column(String, nullable=False)
+    sub_question: Mapped[str] = mapped_column(String)
 
     answer = relationship(
         "Answers",

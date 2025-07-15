@@ -2,8 +2,8 @@
 Документация модуля
 """
 
-from sqlalchemy import Column, Integer, ForeignKey, select, UniqueConstraint, delete
-from sqlalchemy.orm import relationship
+from sqlalchemy import Integer, ForeignKey, select, UniqueConstraint, delete
+from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app.models import BaseModel
 
@@ -14,10 +14,10 @@ class UserStatistic(BaseModel):
     """
     __tablename__ = 'user_statistic'
 
-    id = Column(Integer, primary_key=True, autoincrement=True)
-    user_id = Column(Integer, ForeignKey('users.id'), nullable=False)
-    question_id = Column(Integer, ForeignKey('questions.id'), nullable=False)
-    answer_option_id = Column(Integer, ForeignKey('answer_options.id'), nullable=False)
+    id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
+    user_id: Mapped[int] = mapped_column(Integer, ForeignKey('users.id'), nullable=False)
+    question_id: Mapped[int] = mapped_column(Integer, ForeignKey('questions.id'), nullable=False)
+    answer_option_id: Mapped[int] = mapped_column(Integer, ForeignKey('answer_options.id'), nullable=False)
 
     question = relationship(
         "Questions",
@@ -58,7 +58,7 @@ class UserStatistic(BaseModel):
         return statistic_obj
 
     @classmethod
-    def get_statistic_for_user_and_question(cls, sesh, user_id, question_id) -> list:
+    def get_statistic_for_user_and_question(cls, sesh, user_id, question_id):
         """
         Документация метода
         """
