@@ -1,10 +1,11 @@
 """
-Документация модуля
+Модуль реализует обработку маршрута для регистрации пользователя.
 """
 
 from typing import cast
 from werkzeug.security import generate_password_hash
 from flask import Blueprint, flash, redirect, url_for, render_template, session
+from flask.typing import ResponseReturnValue
 
 from app.config.config import NUMBER_OF_QUESTIONS
 from app.form.register import RegistrationForm
@@ -20,9 +21,12 @@ register_bp = Blueprint(
 
 
 @register_bp.route('/', methods=['GET', 'POST'])
-def register():
+def register() -> ResponseReturnValue:
     """
-    Документация функции
+    Обрабатывает GET и POST запросы для регистрации пользователя.
+
+    Return:
+    html (ResponseReturnValue): HTML-страница с формой регистрации или перенаправление после успешной регистрации
     """
     form = RegistrationForm()
     if form.validate_on_submit():

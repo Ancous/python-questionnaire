@@ -1,5 +1,6 @@
 """
-Документация модуля
+Модуль реализует API для работы с базой данных через Flask-RESTful.
+Содержит классы ресурсов для получения информации о таблицах и управления ими.
 """
 
 from flask_restful import Resource
@@ -12,13 +13,15 @@ from app.utils.tables_info import inspector_tables
 
 class TablesApi(Resource):
     """
-    Документация класса
+    Класс-ресурс для работы со всеми таблицами базы данных.
     """
-
     @staticmethod
-    def get():
+    def get() -> tuple[dict, int]:
         """
-        Документация функции
+        Получить список всех таблиц и их структуру.
+
+        Return:
+        database (dict): информация о таблицах базы данных
         """
         inspector = inspect(engine)
         table_names = inspector.get_table_names()
@@ -27,27 +30,36 @@ class TablesApi(Resource):
         return {"database": result}, 200
 
     @staticmethod
-    def post():
+    def post() -> tuple[dict, int]:
         """
-        Документация функции
+        Заглушка для POST (не реализовано).
+
+        Return:
+        error (dict): словарь с сообщением об ошибке
         """
         pass
 
         return {"error": "endpoint в разработке"}, 501
 
     @staticmethod
-    def put():
+    def put() -> tuple[dict, int]:
         """
-        Документация функции
+        Заглушка для PUT (не реализовано).
+
+        Return:
+        error (dict): словарь с сообщением об ошибке
         """
         pass
 
         return {"error": "endpoint в разработке"}, 501
 
     @staticmethod
-    def delete():
+    def delete() -> tuple[dict, int]:
         """
-        Документация функции
+        Удалить все таблицы из базы данных.
+
+        Return:
+        message (dict): сообщение об успешном удалении
         """
         metadata = MetaData()
         metadata.reflect(engine)
@@ -58,13 +70,18 @@ class TablesApi(Resource):
 
 class TableApi(Resource):
     """
-    Документация класса
+    Класс-ресурс для работы с отдельной таблицей базы данных.
     """
-
     @staticmethod
-    def get(name):
+    def get(name: str) -> tuple[dict, int]:
         """
-        Документация функции
+        Получить структуру и данные конкретной таблицы.
+
+        Parameters:
+        name (str): имя таблицы
+
+        Return:
+        table (dict): информация о таблице или сообщение об ошибке
         """
         inspector = inspect(engine)
         if name not in inspector.get_table_names():
@@ -77,27 +94,45 @@ class TableApi(Resource):
         return {"table": result}, 200
 
     @staticmethod
-    def post(name):  # noqa
+    def post(name: str) -> tuple[dict, int]:
         """
-        Документация функции
+        Заглушка для POST по имени таблицы (не реализовано).
+
+        Parameters:
+        name (str): имя таблицы
+
+        Return:
+        error (dict): словарь с сообщением об ошибке
         """
         pass
 
         return {"error": "endpoint в разработке"}, 501
 
     @staticmethod
-    def put(name):  # noqa
+    def put(name: str) -> tuple[dict, int]:
         """
-        Документация функции
+        Заглушка для PUT по имени таблицы (не реализовано).
+
+        Parameters:
+        name (str): имя таблицы
+
+        Return:
+        error (dict): словарь с сообщением об ошибке
         """
         pass
 
         return {"error": "endpoint в разработке"}, 501
 
     @staticmethod
-    def delete(name):
+    def delete(name: str) -> tuple[dict, int]:
         """
-        Документация функции
+        Удалить таблицу по имени из базы данных.
+
+        Parameters:
+        name (str): имя таблицы
+
+        Return:
+        message (dict): сообщение об успешном удалении или ошибке
         """
         inspector = inspect(engine)
         if name not in inspector.get_table_names():

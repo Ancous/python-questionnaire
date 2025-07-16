@@ -1,10 +1,12 @@
 """
-Документация модуля
+Модуль содержит модель Questions для хранения вопросов викторины.
 """
 
-from sqlalchemy.orm import Mapped, mapped_column, relationship
+from sqlalchemy.orm import Mapped, mapped_column, relationship, Session
 from sqlalchemy import Integer, String, select, func
 from sqlalchemy.orm.attributes import InstrumentedAttribute
+from typing import Sequence, Union
+from sqlalchemy.engine import Row
 
 from app.models import BaseModel
 from app.models.user_statistic import UserStatistic
@@ -12,7 +14,14 @@ from app.models.user_statistic import UserStatistic
 
 class Questions(BaseModel):
     """
-    Документация класса
+    Класс вопроса викторины.
+
+    Arguments:
+    id (int): уникальный идентификатор вопроса
+    question (str): текст вопроса
+    sub_question (str): дополнительный под-вопрос или пояснение
+    answer (relationship): связь с правильным ответом (Answers)
+    user_stats (relationship): связь со статистикой ответов пользователей (UserStatistic)
     """
     __tablename__ = 'questions'
 
@@ -33,25 +42,38 @@ class Questions(BaseModel):
         cascade="all, delete-orphan"
     )
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         """
-        Документация метода
+        Представление объекта вопроса в виде строки.
+
+        Return:
+        str: строковое представление вопроса
         """
         return f"<Questions(id={self.id}, questions={self.question}, sub_question={self.sub_question})>"
 
     @classmethod
-    def all_questions(cls, sesh) -> list:
+    def all_questions(cls, sesh: Session) -> Sequence["Questions"]:
         """
-        Документация метода
+        Получить все объекты вопросов.
+
+        Parameters:
+        sesh (Session): сессия SQLAlchemy
+
+        Return:
+        all_questions_objects (Sequence[Questions]): список всех вопросов
         """
         stmt = select(cls)
         all_questions_objects = sesh.scalars(stmt).all()
         return all_questions_objects
 
     @classmethod
-    def add_questions(cls, sesh, questions_data):
+    def add_questions(cls, sesh: Session, questions_data: list[dict]) -> None:
         """
-        Документация метода
+        Добавить несколько вопросов в базу данных.
+
+        Parameters:
+        sesh (Session): сессия SQLAlchemy
+        questions_data (list[dict]): данные для добавления
         """
         questions_objects = [
             cls(question=item["question"], sub_question=item["sub_question"])
@@ -61,9 +83,13 @@ class Questions(BaseModel):
         sesh.commit()
 
     @classmethod
-    def update_questions(cls, sesh, questions_data):
+    def update_questions(cls, sesh: Session, questions_data: list[dict]) -> None:
         """
-        Документация метода
+        Обновить несколько вопросов в базе данных.
+
+        Parameters:
+        sesh (Session): сессия SQLAlchemy
+        questions_data (list[dict]): данные для обновления
         """
         for item in questions_data:
             stmt = select(cls).where(cls.id == item["id"])
@@ -76,9 +102,13 @@ class Questions(BaseModel):
                 raise ValueError(f"id {item["id"]} не найден для изменения.")
 
     @classmethod
-    def delete_questions(cls, sesh, questions_id):
+    def delete_questions(cls, sesh: Session, questions_id: list[dict]) -> None:
         """
-        Документация метода
+        Удалить несколько вопросов по id.
+
+        Parameters:
+        sesh (Session): сессия SQLAlchemy
+        questions_id (list[dict]): список id для удаления
         """
         for item in questions_id:
             stmt = select(cls).where(cls.id == item["id"])
@@ -86,31 +116,45 @@ class Questions(BaseModel):
             if question_to_delete is None:
                 raise ValueError(f"id {item["id"]} не найден для удаления.")
             sesh.delete(question_to_delete)
-
         sesh.commit()
 
     @classmethod
-    def get_question(cls, sesh, question_id):
+    def get_question(cls, sesh: Session, question_id: int) -> "Questions":
         """
-        Документация метода
+        Получить объект вопроса по id.
+
+        Parameters:
+        sesh (Session): сессия SQLAlchemy
+        question_id (int): id вопроса
+
+        Return:
+        question_object (Questions): найденный объект вопроса
         """
         question_object = sesh.get(cls, question_id)
         if question_object is None:
             raise ValueError(f"id {question_id} не найден.")
-
         return question_object
 
     @classmethod
-    def create_question(cls, sesh, question_data):
+    def create_question(cls, sesh: Session, question_data: dict) -> None:
         """
-        Документация метода
+        Создать новый вопрос (реализация не указана).
+
+        Parameters:
+        sesh (Session): сессия SQLAlchemy
+        question_data (dict): данные для создания
         """
         pass
 
     @classmethod
-    def update_question(cls, sesh, question_id, question_data):
+    def update_question(cls, sesh: Session, question_id: int, question_data: dict) -> None:
         """
-        Документация метода
+        Обновить вопрос по id.
+
+        Parameters:
+        sesh (Session): сессия SQLAlchemy
+        question_id (int): id вопроса
+        question_data (dict): новые данные
         """
         stmt = select(cls).where(cls.id == question_id)
         question = sesh.scalars(stmt).one()
@@ -122,22 +166,32 @@ class Questions(BaseModel):
             raise ValueError(f"id {question_id} не найден для изменения.")
 
     @classmethod
-    def delete_question(cls, sesh, question_id):
+    def delete_question(cls, sesh: Session, question_id: int) -> None:
         """
-        Документация метода
+        Удалить вопрос по id.
+
+        Parameters:
+        sesh (Session): сессия SQLAlchemy
+        question_id (int): id вопроса
         """
         stmt = select(cls).where(cls.id == question_id)
         question_to_delete = sesh.scalars(stmt).one()
         if question_to_delete is None:
             raise ValueError(f"id {question_id} не найден для удаления.")
         sesh.delete(question_to_delete)
-
         sesh.commit()
 
     @classmethod
-    def get_random_unanswered_question(cls, sesh, answered_ids):
+    def get_random_unanswered_question(cls, sesh: Session, answered_ids: list[int] | None) -> Union["Questions", None]:
         """
-        Документация метода
+        Получить случайный неотвеченный вопрос для пользователя.
+
+        Parameters:
+        sesh (Session): сессия SQLAlchemy
+        answered_ids (list[int] | None): список id уже отвеченных вопросов
+
+        Return:
+        question_obj (Questions | None): случайный неотвеченный вопрос или None
         """
         if answered_ids is None:
             answered_ids = list()
@@ -150,9 +204,16 @@ class Questions(BaseModel):
         return question_obj
 
     @classmethod
-    def get_questions_grouped_by_answer_option(cls, sesh, user_id):
+    def get_questions_grouped_by_answer_option(cls, sesh: Session, user_id: int) -> Sequence[Row]:
         """
-        Документация метода
+        Получить вопросы, сгруппированные по выбранному варианту ответа пользователя.
+
+        Parameters:
+        sesh (Session): сессия SQLAlchemy
+        user_id (int): id пользователя
+
+        Return:
+        result (Sequence[Row]): список строк с answer_option_id, id вопроса, текст вопроса
         """
         userstatistic_userid: InstrumentedAttribute = UserStatistic.user_id
         stmt = (
@@ -165,9 +226,16 @@ class Questions(BaseModel):
         return result
 
     @classmethod
-    def get_by_name_question(cls, sesh, name_questions):
+    def get_by_name_question(cls, sesh: Session, name_questions: str) -> "Questions":
         """
-        Документация метода
+        Получить вопрос по его тексту.
+
+        Parameters:
+        sesh (Session): сессия SQLAlchemy
+        name_questions (str): текст вопроса
+
+        Return:
+        question_obj (Questions): найденный объект вопроса
         """
         stmt = (
             select(cls)

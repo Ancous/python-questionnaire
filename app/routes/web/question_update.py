@@ -1,8 +1,9 @@
 """
-Документация модуля
+Модуль реализует обработку маршрута для сброса прогресса пользователя по вопросам.
 """
 
 from flask import Blueprint, flash, redirect, url_for, session
+from flask.typing import ResponseReturnValue
 
 from app.models import Session
 from app.models.answered_questions import AnsweredQuestions
@@ -16,9 +17,12 @@ question_update_bp = Blueprint(
 
 
 @question_update_bp.route("/", methods=["GET"])
-def question_update():
+def question_update() -> ResponseReturnValue:
     """
-    Документация функции
+    Обрабатывает GET-запрос для сброса прогресса пользователя по вопросам.
+
+    Return:
+    redirect (ResponseReturnValue): перенаправление на главную страницу после сброса
     """
     with Session() as se:
         AnsweredQuestions.clear_answered_questions(se, session.get("user_id"))

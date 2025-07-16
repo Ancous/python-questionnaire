@@ -1,5 +1,5 @@
 """
-pass
+Модуль для обновления ответов в базе данных на основе файлов с ответами.
 """
 
 import re
@@ -9,26 +9,26 @@ from sqlalchemy.orm import sessionmaker, DeclarativeBase
 
 from app.utils.processing_data import extract_decode_answer_link, parse_answer_file
 
-POSTGRES_URL = "postgresql://root:1975@31.129.100.106:5432/python_interview"
-QUESTION_PATTERN = re.compile(
+POSTGRES_URL: str = "postgresql://root:1975@31.129.100.106:5432/python_interview"
+QUESTION_PATTERN: re.Pattern = re.compile(
     r'### (?P<number_question>\d+).\s+(?P<question>.*?)'
     r'\s+(?P<trash>&nbsp;\s*)*<small>\[Ответ](?P<link>.*)</small>',
 )
-ANSWER_LINK_PREFIX = "[Ответ]("
-ANSWER_LINK_SUFFIX = ")"
-IGNORE_LINE_PREFIXES = ('<div', '[Вернуться к вопросам]', '</div', '\n')
+ANSWER_LINK_PREFIX: str = "[Ответ]("
+ANSWER_LINK_SUFFIX: str = ")"
+IGNORE_LINE_PREFIXES: tuple[str, ...] = ('<div', '[Вернуться к вопросам]', '</div', '\n')
 
 
 class Base(DeclarativeBase):
     """
-    Документация класса
+    Базовый класс для моделей SQLAlchemy.
     """
     pass
 
 
 class Answers(Base):
     """
-    Документация класса
+    Модель таблицы ответов.
     """
     __tablename__ = 'answers'
     id = Column(Integer, primary_key=True, autoincrement=True)
@@ -36,9 +36,12 @@ class Answers(Base):
     question_id = Column(Integer)
 
 
-def main(se):
+def main(se: sessionmaker) -> None:
     """
-    Документация функции
+    Обновляет ответы в базе данных на основе файлов с ответами.
+
+    Parameters:
+    se (sessionmaker): Фабрика сессий SQLAlchemy для работы с базой данных
     """
     question_path: Path = Path('app/doc/Список вопросов.txt')
     answer_dir: Path = Path('app/doc/')
@@ -47,9 +50,9 @@ def main(se):
             for line in file:
                 match = QUESTION_PATTERN.match(line)
                 if match:
-                    number = int(match.group("number_question"))
-                    answer_file = answer_dir / extract_decode_answer_link(line.strip())
-                    text_answer = parse_answer_file(answer_file)
+                    number: int = int(match.group("number_question"))
+                    answer_file: Path = answer_dir / extract_decode_answer_link(line.strip())
+                    text_answer: str = parse_answer_file(answer_file)
                     stmt = select(Answers).where(Answers.id == number)
                     result = session.execute(stmt)
                     record = result.scalars().first()

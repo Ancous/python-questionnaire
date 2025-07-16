@@ -1,11 +1,12 @@
 """
-Документация модуля
+Модуль реализует обработку маршрута для вывода случайного вопроса пользователю.
 """
 
 import random
 from typing import cast
 
 from flask import Blueprint, session, request, redirect, url_for
+from flask.typing import ResponseReturnValue
 
 from app.config.config import NUMBER_OF_QUESTIONS
 from app.models import Session
@@ -20,9 +21,12 @@ question_bp = Blueprint(
 
 
 @question_bp.route("/", methods=["GET", "POST"])
-def question():
+def question() -> ResponseReturnValue:
     """
-    pass
+    Обрабатывает GET и POST запросы для вывода случайного вопроса пользователю и обработки ответа.
+
+    Return:
+    redirect (ResponseReturnValue): перенаправление на страницу с вопросом
     """
     session['statistic'] = None
     session['question_all'] = None

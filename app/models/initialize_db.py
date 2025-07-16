@@ -1,5 +1,5 @@
 """
-Документация модуля
+Модуль отвечает за инициализацию и первичное заполнение базы данных.
 """
 
 from sqlalchemy import inspect, exists, select
@@ -14,9 +14,10 @@ from app.models.answered_questions import AnsweredQuestions  # noqa
 from app.utils.processing_data import parse_question_file
 
 
-def insert_initial_records():
+def insert_initial_records() -> None:
     """
-    Документация функции
+    Создаёт таблицы в базе данных и добавляет начальные записи, если они отсутствуют.
+
     """
     Base.metadata.create_all(engine)
     inspector = inspect(engine)

@@ -1,0 +1,56 @@
+---
+description: документация и аннотации модуля
+globs: *.py
+alwaysApply: false
+---
+
+- Docstring нужен:
+  - начало модуля (описание модуля)
+  - функция (описание функции)
+  - класс (описание класса)
+  - метод (описание метода)
+  - т.д.
+
+- Docstring в блоке if __name__ == '__main__' не нужны
+
+- если parametrs или return нет или None, то писать нечего не надо
+
+- так же надо добавить аннотации аргументов и возвращаемого значения
+
+- при аннотациях используй максимально точный вариант
+
+- структура документации для класса:
+
+  class Answers():
+      """
+      Класс такой-то
+
+      Arguments:
+      min_text (int): минимальная длина текста
+      max_text (int): максимальная длина текста
+      message (str | None): сообщение об ошибке
+      """
+      
+      min_text = min_text
+      
+      def __init__(self, max_text: int = -1, message: str | None = None) -> None:
+          self.max_text = max_text
+          self.message = message
+
+- структура документации для функции и методов:
+
+  def all_words_fanc(data_logs: list) -> str:
+      """
+      Функция обрабатывает логи и возвращает все слова в сообщениях
+
+      Parameters:
+      data_logs (list): логи
+
+      Return:
+      all_words (str): все слова встречающиеся в сообщениях логов
+      """
+      all_words = ""
+      for log in data_logs:
+          all_words += log["message"] + " "
+
+      return all_words

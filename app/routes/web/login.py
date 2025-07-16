@@ -1,9 +1,9 @@
 """
-Документация модуля
+Модуль реализует обработку маршрута для входа пользователя в систему.
 """
 
-from typing import cast
 from flask import render_template, Blueprint, redirect, session, url_for, flash
+from flask.typing import ResponseReturnValue
 from werkzeug.security import check_password_hash
 
 from app.config.config import NUMBER_OF_QUESTIONS
@@ -20,9 +20,12 @@ login_bp = Blueprint(
 
 
 @login_bp.route('/', methods=['GET', "POST"])
-def login():
+def login() -> ResponseReturnValue:
     """
-    Документация функции
+    Обрабатывает GET и POST запросы для входа пользователя.
+
+    Return:
+    html (ResponseReturnValue): HTML-страница с формой входа или перенаправление после успешного входа
     """
     form = LoginForm()
     if form.validate_on_submit():

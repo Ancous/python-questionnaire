@@ -1,9 +1,10 @@
 """
-Документация модуля
+Модуль реализует обработку маршрута для отображения статистики пользователя.
 """
 
 from typing import cast
 from flask import Blueprint, render_template, session, request
+from flask.typing import ResponseReturnValue
 
 from app.models import Session
 from app.models.question import Questions
@@ -18,9 +19,12 @@ statistic_bp = Blueprint(
 
 
 @statistic_bp.route("/", methods=["GET", "POST"])
-def statistic():
+def statistic() -> ResponseReturnValue:
     """
-    Документация функции
+    Обрабатывает GET и POST запросы для отображения статистики пользователя и обработки ответов.
+
+    Return:
+    html (ResponseReturnValue): HTML-страница со статистикой пользователя
     """
     session['statistic'] = None
     session['question_all'] = None
