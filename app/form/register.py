@@ -1,5 +1,5 @@
 """
-Документация модуля
+Модуль содержит форму регистрации пользователя для веб-приложения на Flask.
 """
 
 from flask_wtf import FlaskForm
@@ -10,7 +10,16 @@ from app.form.custom_validation import CustomLength, CheckRecord
 
 
 class RegistrationForm(FlaskForm):
-    username = StringField(
+    """
+    Форма для регистрации нового пользователя.
+
+    Arguments:
+    username (StringField): Поле для ввода имени пользователя с валидацией.
+    password (PasswordField): Поле для ввода пароля с валидацией.
+    confirm (PasswordField): Поле для подтверждения пароля с валидацией.
+    submit (SubmitField): Кнопка отправки формы.
+    """
+    username: StringField = StringField(
         label='Имя пользователя',
         validators=[
             CheckRecord(
@@ -23,7 +32,7 @@ class RegistrationForm(FlaskForm):
             )
         ]
     )
-    password = PasswordField(
+    password: PasswordField = PasswordField(
         label='Пароль',
         validators=[
             CheckRecord(
@@ -35,7 +44,7 @@ class RegistrationForm(FlaskForm):
             )
         ]
     )
-    confirm = PasswordField(
+    confirm: PasswordField = PasswordField(
         label='Подтвердите пароль',
         validators=[
             CheckRecord(
@@ -47,4 +56,4 @@ class RegistrationForm(FlaskForm):
             )
         ]
     )
-    submit = SubmitField('Зарегистрироваться')
+    submit: SubmitField = SubmitField('Зарегистрироваться')

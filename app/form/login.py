@@ -1,5 +1,5 @@
 """
-Документация модуля
+Модуль с формой входа пользователя.
 """
 
 from flask_wtf import FlaskForm
@@ -9,7 +9,15 @@ from app.form.custom_validation import CheckRecord
 
 
 class LoginForm(FlaskForm):
-    username = StringField(
+    """
+    Форма для входа пользователя.
+
+    Аргументы:
+    username (StringField): поле для ввода имени пользователя
+    password (PasswordField): поле для ввода пароля
+    submit (SubmitField): кнопка отправки формы
+    """
+    username: StringField = StringField(
         label='Username',
         validators=[
             CheckRecord(
@@ -17,7 +25,7 @@ class LoginForm(FlaskForm):
             ),
         ]
     )
-    password = PasswordField(
+    password: PasswordField = PasswordField(
         label='Password',
         validators=[
             CheckRecord(
@@ -25,4 +33,4 @@ class LoginForm(FlaskForm):
             ),
         ]
     )
-    submit = SubmitField('Вход')
+    submit: SubmitField = SubmitField('Вход')

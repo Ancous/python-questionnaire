@@ -1,19 +1,26 @@
 """
-Документация модуля
+Модуль реализует обработку маршрута для отображения ответа и вопроса по идентификатору.
 """
 
 from urllib.parse import urlparse
 
 from flask import Blueprint, render_template, session, request
+from flask_caching import Cache
 
 from app.models import Session
 from app.models.answer import Answers
 from app.models.question import Questions
 
 
-def create_answer_id_bp(cache):
+def create_answer_id_bp(cache: Cache) -> Blueprint:
     """
-    Документация функции
+    Создаёт Blueprint для обработки маршрута отображения ответа и вопроса по идентификатору.
+
+    Parameters:
+    cache (Cache): объект кеширования, поддерживающий метод memoize
+
+    Return:
+    answer_id_bp (Blueprint): Blueprint для маршрута ответа по id
     """
     answer_id_bp = Blueprint(
         "answer_id",
@@ -22,9 +29,15 @@ def create_answer_id_bp(cache):
     )
 
     @cache.memoize(timeout=5)
-    def get_question_answer_by_id(id):
+    def get_question_answer_by_id(id: int) -> tuple[Answers, Questions]:
         """
-        Документация функции
+        Получает объекты ответа и вопроса по идентификатору вопроса с кешированием.
+
+        Parameters:
+        id (int): идентификатор вопроса
+
+        Return:
+        result (tuple[Answers, Questions]): кортеж с объектом ответа и вопроса
         """
         with Session() as se:
             result_1 = Answers.answer_by_question_id(se, id)
@@ -33,9 +46,15 @@ def create_answer_id_bp(cache):
         return result_1, result_2
 
     @answer_id_bp.route("/", methods=["GET"])
-    def answer_id(id):
+    def answer_id(id: int) -> str:
         """
-        Документация функции
+        Обрабатывает GET-запрос для отображения ответа и вопроса по id.
+
+        Parameters:
+        id (int): идентификатор вопроса
+
+        Return:
+        html (str): HTML-страница с ответом и вопросом
         """
         ref_path = urlparse(request.referrer).path
         if ref_path == '/statistic/':

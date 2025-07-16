@@ -1,13 +1,22 @@
 """
-Документация модуля
+Модуль для работы с информацией о таблицах базы данных.
+
+Содержит функции для форматирования столбцов таблицы и получения информации о таблицах через инспектор SQLAlchemy.
 """
+from typing import Any, List, Dict, Optional, Sequence
 
 
-def format_columns(columns):
+def format_columns(columns: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
     """
-    Документация функции
+    Форматирует столбцы таблицы, удаляя лишние поля и приводя тип к строке.
+
+    Parameters:
+    columns (List[Dict[str, Any]]): список столбцов таблицы
+
+    Return:
+    result (List[Dict[str, Any]]): отформатированный список столбцов
     """
-    result = []
+    result: List[Dict[str, Any]] = []
     for column in columns:
         column.pop("default", None)
         column.pop("comment", None)
@@ -16,9 +25,21 @@ def format_columns(columns):
     return result
 
 
-def inspector_tables(inspector, tables_names, title=None):
+def inspector_tables(
+    inspector: Any,
+    tables_names: Sequence[str],
+    title: Optional[str] = None
+) -> Optional[Any]:
     """
-    Документация функции
+    Получает информацию о таблицах через инспектор SQLAlchemy.
+
+    Parameters:
+    inspector (Any): объект-инспектор SQLAlchemy
+    tables_names (Sequence[str]): имена таблиц
+    title (Optional[str]): имя конкретной таблицы (если нужно получить только одну)
+
+    Return:
+    tables_info (Optional[Any]): информация о таблицах или None, если таблица не найдена
     """
     if title is None:
         return [

@@ -1,10 +1,12 @@
 """
-Документация модуля
+Модуль реализует API для работы с ответами (Answers) через Flask-RESTful.
+Содержит классы ресурсов для получения, добавления, обновления и удаления ответов.
 """
 
 from flask import request
 from flask_restful import Resource
 from marshmallow import ValidationError
+from collections.abc import Mapping, Sequence
 
 from app.models.answer import Answers
 from app.models.initialize_db import Session
@@ -14,13 +16,16 @@ from app.schemas.answer import AnswerSchema, AnswerDeleteSchema
 
 class AnswersApi(Resource):
     """
-    Документация класса
+    Ресурс для работы с коллекцией ответов.
     """
 
     @staticmethod
-    def get():
+    def get() -> tuple[dict, int]:
         """
-        Документация метода
+        Получить все ответы.
+
+        Return:
+        message (dict): словарь с ключом 'message' и списком ответов
         """
         with Session() as se:
             questions = Answers.all_answers(se)
@@ -29,9 +34,12 @@ class AnswersApi(Resource):
             return {"message": result}, 200
 
     @staticmethod
-    def post():
+    def post() -> tuple[dict, int]:
         """
-        Документация метода
+        Добавить список ответов.
+
+        Return:
+        message (dict): словарь с сообщением об успехе или ошибке
         """
         data = request.get_json()
 
@@ -42,6 +50,8 @@ class AnswersApi(Resource):
 
         try:
             answer_data = schema.load(data)
+            if not isinstance(answer_data, list):
+                return {"error": "Ошибка валидации: ожидается список словарей"}, 400
             with Session() as se:
                 Answers.add_answers(se, answer_data)
         except ValidationError as err:
@@ -52,9 +62,12 @@ class AnswersApi(Resource):
         return {"message": "Данные добавлены"}, 200
 
     @staticmethod
-    def put():
+    def put() -> tuple[dict, int]:
         """
-        Документация метода
+        Обновить список ответов.
+
+        Return:
+        message (dict): словарь с сообщением об успехе или ошибке
         """
         data = request.get_json()
 
@@ -65,6 +78,8 @@ class AnswersApi(Resource):
 
         try:
             answer_data = schema.load(data)
+            if not isinstance(answer_data, list):
+                return {"error": "Ошибка валидации: ожидается список словарей"}, 400
             with Session() as se:
                 Answers.update_answers(se, answer_data)
         except ValidationError as err:
@@ -75,9 +90,12 @@ class AnswersApi(Resource):
         return {"message": "Данные обновлены"}, 200
 
     @staticmethod
-    def delete():
+    def delete() -> tuple[dict, int]:
         """
-        Документация метода
+        Удалить список ответов.
+
+        Return:
+        message (dict): словарь с сообщением об успехе или ошибке
         """
         data = request.get_json()
 
@@ -88,6 +106,8 @@ class AnswersApi(Resource):
 
         try:
             answer_data = schema.load(data)
+            if not isinstance(answer_data, list):
+                return {"error": "Ошибка валидации: ожидается список словарей"}, 400
             with Session() as se:
                 Answers.delete_answers(se, answer_data)
         except ValidationError as err:
@@ -100,13 +120,19 @@ class AnswersApi(Resource):
 
 class AnswerApi(Resource):
     """
-    Документация класса
+    Ресурс для работы с отдельным ответом.
     """
 
     @staticmethod
-    def get(id):
+    def get(id: int) -> tuple[dict, int]:
         """
-        Документация метода
+        Получить ответ по id.
+
+        Parameters:
+        id (int): идентификатор ответа
+
+        Return:
+        message (dict): словарь с ответом или ошибкой
         """
         try:
             with Session() as se:
@@ -118,18 +144,30 @@ class AnswerApi(Resource):
             return {'errors': err.__str__()}, 400
 
     @staticmethod
-    def post(id):  # noqa
+    def post(id: int) -> tuple[dict, int]:  # noqa
         """
-        Документация метода
+        Заглушка для POST по id (не реализовано).
+
+        Parameters:
+        id (int): идентификатор ответа
+
+        Return:
+        error (dict): словарь с сообщением об ошибке
         """
         pass
 
         return {"error": "endpoint в разработке"}, 501
 
     @staticmethod
-    def put(id):
+    def put(id: int) -> tuple[dict, int]:
         """
-        Документация метода
+        Обновить ответ по id.
+
+        Parameters:
+        id (int): идентификатор ответа
+
+        Return:
+        message (dict): словарь с сообщением об успехе или ошибке
         """
         data = request.get_json()
 
@@ -140,6 +178,8 @@ class AnswerApi(Resource):
 
         try:
             answer_data = schema.load(data)
+            if not isinstance(answer_data, dict):
+                return {"error": "Ошибка валидации: ожидается словарь"}, 400
             with Session() as se:
                 Answers.update_answer(se, id, answer_data)
         except ValidationError as err:
@@ -150,9 +190,15 @@ class AnswerApi(Resource):
         return {"message": "Данные обновлены"}, 200
 
     @staticmethod
-    def delete(id):
+    def delete(id: int) -> tuple[dict, int]:
         """
-        Документация метода
+        Удалить ответ по id.
+
+        Parameters:
+        id (int): идентификатор ответа
+
+        Return:
+        message (dict): словарь с сообщением об успехе или ошибке
         """
         try:
             with Session() as se:

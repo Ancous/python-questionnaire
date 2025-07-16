@@ -1,5 +1,6 @@
 """
-Документация модуля
+Модуль для добавления вопросов и ответов в базу данных PostgreSQL.
+Содержит классы моделей SQLAlchemy для вопросов и ответов, а также функции для парсинга и добавления данных в базу.
 """
 
 import re
@@ -9,27 +10,33 @@ from sqlalchemy.orm import sessionmaker, DeclarativeBase, relationship
 
 from app.utils.processing_data import parse_question_file
 
-POSTGRES_URL = "postgresql://root:1975@31.129.100.106:5432/python_interview"
-ANSWER_LINK_PREFIX = "[Ответ]("
-ANSWER_LINK_SUFFIX = ")"
-QUESTION_PATTERN = re.compile(
+POSTGRES_URL: str = "postgresql://root:1975@31.129.100.106:5432/python_interview"
+QUESTION_PATTERN: re.Pattern = re.compile(
     r'### (?P<number_question>\d+).\s+(?P<question>.*?)'
     r'\s+(?P<trash>&nbsp;\s*)*<small>\[Ответ](?P<link>.*)</small>',
 )
-IGNORE_LINE_PREFIXES = ('<div', '[Вернуться к вопросам]', '</div', '\n')
-CODEBLOCK = "```"
+ANSWER_LINK_PREFIX: str = "[Ответ]("
+ANSWER_LINK_SUFFIX: str = ")"
+IGNORE_LINE_PREFIXES: tuple[str, ...] = ('<div', '[Вернуться к вопросам]', '</div', '\n')
+CODEBLOCK: str = "```"
 
 
 class Base(DeclarativeBase):
     """
-    Документация класса
+    Базовый класс для моделей SQLAlchemy.
     """
     pass
 
 
 class Answers(Base):
     """
-    Документация класса
+    Класс модели ответа для таблицы 'answers'.
+
+    Arguments:
+    id (int): идентификатор ответа
+    answer (str): текст ответа
+    question_id (int): внешний ключ на вопрос
+    question (Questions): связь с вопросом
     """
     __tablename__ = 'answers'
     id = Column(Integer, primary_key=True, autoincrement=True)
@@ -45,7 +52,13 @@ class Answers(Base):
 
 class Questions(Base):
     """
-    Документация класса
+    Класс модели вопроса для таблицы 'questions'.
+
+    Arguments:
+    id (int): идентификатор вопроса
+    question (str): текст вопроса
+    sub_question (str): дополнительный вопрос
+    answer (Answers): связь с ответом
     """
     __tablename__ = 'questions'
 
@@ -60,9 +73,15 @@ class Questions(Base):
     )
 
 
-def parse_answer_db(se):
+def parse_answer_db(se: sessionmaker) -> list[str]:
     """
-    Документация функции
+    Функция для получения всех ответов из базы данных.
+
+    Parameters:
+    se (sessionmaker): фабрика сессий SQLAlchemy
+
+    Return:
+    list[str]: список всех ответов из базы
     """
     finish_result = list()
 
@@ -76,9 +95,14 @@ def parse_answer_db(se):
     return finish_result
 
 
-def func_add_question_answer(se, all_que, all_ans_db):
+def func_add_question_answer(se: sessionmaker, all_que: list[list], all_ans_db: list[str]) -> None:
     """
-    Документация функции
+    Функция для добавления новых вопросов и ответов в базу данных.
+
+    Parameters:
+    se (sessionmaker): фабрика сессий SQLAlchemy
+    all_que (list[list]): список вопросов и связанных данных
+    all_ans_db (list[str]): список уже существующих ответов в базе
     """
     add_questions = list()
     add_answer = list()
