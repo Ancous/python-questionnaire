@@ -38,6 +38,7 @@ def statistic() -> ResponseReturnValue:
                 statistic_questionall=True
             )
 
-        user_statistic_obj = Questions.get_questions_grouped_by_answer_option(se, session.get('user_id'))
-        session_data = statistic_data(user_statistic_obj)
+        user_statistic_obj = Questions.get_questions_grouped_by_answer_option(se, cast(int, session.get("user_id")))
+        user_statistic_tuples = [tuple(row) for row in user_statistic_obj]
+        session_data = statistic_data(user_statistic_tuples)
         return render_template('statistic.html', data=session_data)

@@ -27,7 +27,7 @@ class Questions(BaseModel):
 
     id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
     question: Mapped[str] = mapped_column(String, nullable=False)
-    sub_question: Mapped[str] = mapped_column(String)
+    sub_question: Mapped[str | None] = mapped_column(String, nullable=True)
 
     answer = relationship(
         "Answers",

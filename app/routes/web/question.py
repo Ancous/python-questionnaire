@@ -41,7 +41,7 @@ def question() -> ResponseReturnValue:
                     statistic_questionall=False
                 )
 
-        answered_ids = AnsweredQuestions.get_numbers(se, session.get("user_id"))
+        answered_ids = AnsweredQuestions.get_numbers(se, cast(int, session.get("user_id")))
         random_question_id = 0
 
         if answered_ids is None:

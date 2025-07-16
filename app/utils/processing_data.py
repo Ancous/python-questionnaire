@@ -1,6 +1,5 @@
 """
 Модуль для обработки и парсинга файлов с вопросами и ответами.
-
 Содержит функции для извлечения ссылок, фильтрации строк, парсинга файлов ответов и вопросов.
 """
 
@@ -8,13 +7,13 @@ import re
 import urllib.parse
 import markdown2
 from pathlib import Path
-from typing import List, Optional, Any
+from typing import List, Optional
 
 ANSWER_LINK_PREFIX = "[Ответ]("
 ANSWER_LINK_SUFFIX = ")"
 QUESTION_PATTERN = re.compile(
     r'### (?P<number_question>\d+).\s+(?P<question>.*?)'
-    r'\s+(?P<trash>&nbsp;\s*)*<small>[Ответ](?P<link>.*)</small>',
+    r'\s+(?P<trash>&nbsp;\s*)*<small>\[Ответ](?P<link>.*)</small>',
 )
 IGNORE_LINE_PREFIXES = ('<div', '[Вернуться к вопросам]', '</div', '\n')
 CODEBLOCK = "```"
@@ -114,7 +113,6 @@ def parse_question_file(
                         current_code: str = '\n'.join(code_lines)
                         current[3] = markdown2.markdown(current_code, extras=["fenced-code-blocks"]).strip()
                         code_lines = None
-
     if current:
         if code_lines:
             current[3] = "\n".join(code_lines)

@@ -1,6 +1,5 @@
 """
 Модуль для обработки истории ответов пользователя.
-
 Содержит функцию для обновления статистики ответов пользователя и взаимодействия с моделями AnswerOptions, AnsweredQuestions и UserStatistic.
 """
 from flask import session

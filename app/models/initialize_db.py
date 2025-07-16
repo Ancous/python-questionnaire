@@ -17,12 +17,10 @@ from app.utils.processing_data import parse_question_file
 def insert_initial_records() -> None:
     """
     Создаёт таблицы в базе данных и добавляет начальные записи, если они отсутствуют.
-
     """
     Base.metadata.create_all(engine)
     inspector = inspect(engine)
     table_exists = inspector.has_table('questions')
-
     with Session() as se:
         data_exists = se.execute(select(exists().where(Questions.id > 0))).scalar()
         if not table_exists or not data_exists:
