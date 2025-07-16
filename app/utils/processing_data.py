@@ -7,13 +7,13 @@ import re
 import urllib.parse
 import markdown2
 from pathlib import Path
-from typing import List, Optional
+from typing import List, Optional, Any
 
 ANSWER_LINK_PREFIX = "[Ответ]("
 ANSWER_LINK_SUFFIX = ")"
 QUESTION_PATTERN = re.compile(
     r'### (?P<number_question>\d+).\s+(?P<question>.*?)'
-    r'\s+(?P<trash>&nbsp;\s*)*<small>\[Ответ](?P<link>.*)</small>',
+    r'\s+(?P<trash>&nbsp;\s*)*<small>[Ответ](?P<link>.*)</small>',
 )
 IGNORE_LINE_PREFIXES = ('<div', '[Вернуться к вопросам]', '</div', '\n')
 CODEBLOCK = "```"
