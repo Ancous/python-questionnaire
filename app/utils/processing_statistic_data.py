@@ -7,7 +7,9 @@ from collections import defaultdict
 from typing import Any, Dict, List, Tuple, Iterable
 
 
-def statistic_data(results: Iterable[Tuple[Any, Any, Any]]) -> dict[Any, List[Tuple[Any, Any]]]:
+def statistic_data(
+    results: Iterable[Tuple[Any, Any, Any]]
+) -> dict[Any, List[Tuple[Any, Any]]]:
     """
     Группирует и преобразует результаты статистики в удобный для анализа вид.
 

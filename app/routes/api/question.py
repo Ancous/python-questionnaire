@@ -16,6 +16,7 @@ class QuestionsApi(Resource):
     """
     Класс-ресурс для работы с коллекцией вопросов.
     """
+
     @staticmethod
     def get() -> tuple[dict, int]:
         """
@@ -52,9 +53,9 @@ class QuestionsApi(Resource):
             with Session() as se:
                 Questions.add_questions(se, questions_data)
         except ValidationError as err:
-            return {'errors': err.messages}, 422
+            return {"errors": err.messages}, 422
         except ValueError as err:
-            return {'errors': err.__str__()}, 400
+            return {"errors": err.__str__()}, 400
 
         return {"message": "Данные добавлены"}, 200
 
@@ -80,9 +81,9 @@ class QuestionsApi(Resource):
             with Session() as se:
                 Questions.update_questions(se, questions_data)
         except ValidationError as err:
-            return {'errors': err.messages}, 422
+            return {"errors": err.messages}, 422
         except ValueError as err:
-            return {'errors': err.__str__()}, 400
+            return {"errors": err.__str__()}, 400
 
         return {"message": "Данные обновлены"}, 200
 
@@ -108,9 +109,9 @@ class QuestionsApi(Resource):
             with Session() as se:
                 Questions.delete_questions(se, questions_data)
         except ValidationError as err:
-            return {'errors': err.messages}, 422
+            return {"errors": err.messages}, 422
         except ValueError as err:
-            return {'errors': err.__str__()}, 400
+            return {"errors": err.__str__()}, 400
 
         return {"message": "Данные удалены"}, 200
 
@@ -119,6 +120,7 @@ class QuestionApi(Resource):
     """
     Класс-ресурс для работы с отдельным вопросом.
     """
+
     @staticmethod
     def get(id: int) -> tuple[dict, int]:
         """
@@ -137,7 +139,7 @@ class QuestionApi(Resource):
                 result = schema.dump(questions)
                 return {"message": result}, 200
         except ValueError as err:
-            return {'errors': err.__str__()}, 400
+            return {"errors": err.__str__()}, 400
 
     @staticmethod
     def post(id: int) -> tuple[dict, int]:
@@ -179,9 +181,9 @@ class QuestionApi(Resource):
             with Session() as se:
                 Questions.update_question(se, id, questions_data)
         except ValidationError as err:
-            return {'errors': err.messages}, 422
+            return {"errors": err.messages}, 422
         except ValueError as err:
-            return {'errors': err.__str__()}, 400
+            return {"errors": err.__str__()}, 400
 
         return {"message": "Данные обновлены"}, 200
 
@@ -200,6 +202,6 @@ class QuestionApi(Resource):
             with Session() as se:
                 Questions.delete_question(se, id)
         except ValueError as err:
-            return {'errors': err.__str__()}, 400
+            return {"errors": err.__str__()}, 400
 
         return {"message": "Данные удалены"}, 200

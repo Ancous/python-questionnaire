@@ -15,6 +15,7 @@ class QuestionSchema(Schema):
     question (fields.String): текст вопроса (обязателен)
     sub_question (fields.String): под-вопрос (обязателен, может быть None)
     """
+
     id = fields.Integer()
     question = fields.String(required=True)
     sub_question = fields.String(required=True, allow_none=True)
@@ -27,4 +28,5 @@ class QuestionDeleteSchema(Schema):
     Arguments:
     id (fields.Integer): идентификатор вопроса (обязателен)
     """
+
     id = fields.Integer(required=True)

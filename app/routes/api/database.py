@@ -15,6 +15,7 @@ class TablesApi(Resource):
     """
     Класс-ресурс для работы со всеми таблицами базы данных.
     """
+
     @staticmethod
     def get() -> tuple[dict, int]:
         """
@@ -72,6 +73,7 @@ class TableApi(Resource):
     """
     Класс-ресурс для работы с отдельной таблицей базы данных.
     """
+
     @staticmethod
     def get(name: str) -> tuple[dict, int]:
         """
@@ -144,6 +146,8 @@ class TableApi(Resource):
             table.drop(engine)
         except InternalError as exe:
             if "CASCADE" in exe.__str__():
-                return {"error": f"Таблица {name} не может быть удалена из за связей в таблицах."}, 409
+                return {
+                    "error": f"Таблица {name} не может быть удалена из за связей в таблицах."
+                }, 409
 
         return {"message": f"Таблица {name} удалена."}, 200

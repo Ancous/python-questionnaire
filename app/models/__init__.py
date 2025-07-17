@@ -13,6 +13,7 @@ class Base(DeclarativeBase):
     Базовый класс для всех моделей SQLAlchemy.
     Используется для декларативного описания моделей.
     """
+
     pass
 
 
@@ -20,6 +21,7 @@ class BaseModel(Base):
     """
     Абстрактный базовый класс для всех моделей.
     """
+
     __abstract__ = True
 
     @classmethod
@@ -27,7 +29,8 @@ class BaseModel(Base):
         """
         Добавляет валидацию id перед вставкой записи.
         """
-        @event.listens_for(cls, 'before_insert')
+
+        @event.listens_for(cls, "before_insert")
         def validate_id(mapper, connection, target) -> None:  # noqa
             """
             Запрещает ручную вставку id.

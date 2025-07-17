@@ -19,17 +19,15 @@ class Answers(BaseModel):
     question_id (int): внешний ключ на вопрос (Questions)
     question (relationship): связь с вопросом, к которому относится ответ
     """
-    __tablename__ = 'answers'
+
+    __tablename__ = "answers"
     id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
-
     answer: Mapped[str] = mapped_column(String, nullable=False)
-    question_id: Mapped[int] = mapped_column(Integer, ForeignKey('questions.id'), unique=True, nullable=False)
-
-    question = relationship(
-        "Questions",
-        back_populates="answer",
-        uselist=False
+    question_id: Mapped[int] = mapped_column(
+        Integer, ForeignKey("questions.id"), unique=True, nullable=False
     )
+
+    question = relationship("Questions", back_populates="answer", uselist=False)
 
     def __repr__(self) -> str:
         """
@@ -64,10 +62,7 @@ class Answers(BaseModel):
         sesh (Session): сессия SQLAlchemy
         answers_data (list[dict]): данные для добавления
         """
-        answers_objects = [
-            cls(answer=item["answer"])
-            for item in answers_data
-        ]
+        answers_objects = [cls(answer=item["answer"]) for item in answers_data]
         sesh.add_all(answers_objects)
         sesh.commit()
 
@@ -88,7 +83,7 @@ class Answers(BaseModel):
                 answer.question_id = item["question_id"]
                 sesh.commit()
             else:
-                raise ValueError(f"id {item["id"]} не найден для изменения.")
+                raise ValueError(f"id {item['id']} не найден для изменения.")
 
     @classmethod
     def delete_answers(cls, sesh: Session, answers_id: list[dict]) -> None:
@@ -99,13 +94,14 @@ class Answers(BaseModel):
         sesh (Session): сессия SQLAlchemy
         answers_id (list[dict]): список id для удаления
         """
+
         for item in answers_id:
             stmt = select(cls).where(cls.id == item["id"])
-            answer_to_delete = sesh.scalars(stmt).one()
+            answer_to_delete = sesh.scalars(stmt).first()
             if answer_to_delete is None:
-                raise ValueError(f"id {item["id"]} не найден для удаления.")
-            sesh.delete(answer_to_delete)
+                raise ValueError(f"id {item['id']} не найден для удаления.")
             answer_to_delete.delete_with_question(sesh)
+            sesh.delete(answer_to_delete)
         sesh.commit()
 
     @classmethod

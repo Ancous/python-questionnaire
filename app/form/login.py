@@ -17,20 +17,17 @@ class LoginForm(FlaskForm):
     password (PasswordField): поле для ввода пароля
     submit (SubmitField): кнопка отправки формы
     """
+
     username: StringField = StringField(
-        label='Username',
+        label="Username",
         validators=[
-            CheckRecord(
-                message="Поле не должно быть пустым"
-            ),
-        ]
+            CheckRecord(message="Поле не должно быть пустым"),
+        ],
     )
     password: PasswordField = PasswordField(
-        label='Password',
+        label="Password",
         validators=[
-            CheckRecord(
-                message="Поле не должно быть пустым"
-            ),
-        ]
+            CheckRecord(message="Поле не должно быть пустым"),
+        ],
     )
-    submit: SubmitField = SubmitField('Вход')
+    submit: SubmitField = SubmitField("Вход")

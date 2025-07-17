@@ -23,7 +23,8 @@ class Questions(BaseModel):
     answer (relationship): связь с правильным ответом (Answers)
     user_stats (relationship): связь со статистикой ответов пользователей (UserStatistic)
     """
-    __tablename__ = 'questions'
+
+    __tablename__ = "questions"
 
     id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
     question: Mapped[str] = mapped_column(String, nullable=False)
@@ -33,13 +34,11 @@ class Questions(BaseModel):
         "Answers",
         back_populates="question",
         uselist=False,
-        cascade="all, delete-orphan"
+        cascade="all, delete-orphan",
     )
 
     user_stats = relationship(
-        "UserStatistic",
-        back_populates="question",
-        cascade="all, delete-orphan"
+        "UserStatistic", back_populates="question", cascade="all, delete-orphan"
     )
 
     def __repr__(self) -> str:
@@ -99,7 +98,7 @@ class Questions(BaseModel):
                 question.sub_question = item["sub_question"]
                 sesh.commit()
             else:
-                raise ValueError(f"id {item["id"]} не найден для изменения.")
+                raise ValueError(f"id {item['id']} не найден для изменения.")
 
     @classmethod
     def delete_questions(cls, sesh: Session, questions_id: list[dict]) -> None:
@@ -114,7 +113,7 @@ class Questions(BaseModel):
             stmt = select(cls).where(cls.id == item["id"])
             question_to_delete = sesh.scalars(stmt).one()
             if question_to_delete is None:
-                raise ValueError(f"id {item["id"]} не найден для удаления.")
+                raise ValueError(f"id {item['id']} не найден для удаления.")
             sesh.delete(question_to_delete)
         sesh.commit()
 
@@ -147,7 +146,9 @@ class Questions(BaseModel):
         pass
 
     @classmethod
-    def update_question(cls, sesh: Session, question_id: int, question_data: dict) -> None:
+    def update_question(
+        cls, sesh: Session, question_id: int, question_data: dict
+    ) -> None:
         """
         Обновить вопрос по id.
 
@@ -182,7 +183,9 @@ class Questions(BaseModel):
         sesh.commit()
 
     @classmethod
-    def get_random_unanswered_question(cls, sesh: Session, answered_ids: list[int] | None) -> Union["Questions", None]:
+    def get_random_unanswered_question(
+        cls, sesh: Session, answered_ids: list[int] | None
+    ) -> Union["Questions", None]:
         """
         Получить случайный неотвеченный вопрос для пользователя.
 
@@ -195,16 +198,14 @@ class Questions(BaseModel):
         """
         if answered_ids is None:
             answered_ids = list()
-        stmt = (
-            select(cls)
-            .where(~cls.id.in_(answered_ids))
-            .order_by(func.random())
-        )
+        stmt = select(cls).where(~cls.id.in_(answered_ids)).order_by(func.random())
         question_obj = sesh.scalars(stmt).first()
         return question_obj
 
     @classmethod
-    def get_questions_grouped_by_answer_option(cls, sesh: Session, user_id: int) -> Sequence[Row]:
+    def get_questions_grouped_by_answer_option(
+        cls, sesh: Session, user_id: int
+    ) -> Sequence[Row]:
         """
         Получить вопросы, сгруппированные по выбранному варианту ответа пользователя.
 
@@ -237,9 +238,6 @@ class Questions(BaseModel):
         Return:
         question_obj (Questions): найденный объект вопроса
         """
-        stmt = (
-            select(cls)
-            .where(cls.question == name_questions)
-        )
+        stmt = select(cls).where(cls.question == name_questions)
         question_obj = sesh.scalars(stmt).one()
         return question_obj

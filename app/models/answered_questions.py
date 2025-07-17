@@ -19,17 +19,16 @@ class AnsweredQuestions(BaseModel):
     user_id (int): внешний ключ на пользователя (Users)
     user (relationship): связь с пользователем
     """
-    __tablename__ = 'answered_questions'
+
+    __tablename__ = "answered_questions"
 
     id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
     numbers: Mapped[list] = mapped_column(MutableList.as_mutable(JSON), nullable=True)
-    user_id: Mapped[int] = mapped_column(Integer, ForeignKey('users.id'), unique=True, nullable=False)
-
-    user = relationship(
-        "Users",
-        back_populates="answered_questions",
-        uselist=False
+    user_id: Mapped[int] = mapped_column(
+        Integer, ForeignKey("users.id"), unique=True, nullable=False
     )
+
+    user = relationship("Users", back_populates="answered_questions", uselist=False)
 
     def __repr__(self) -> str:
         """
@@ -73,7 +72,9 @@ class AnsweredQuestions(BaseModel):
         return count or 0
 
     @classmethod
-    def mark_question_as_answered(cls, sesh: Session, user_id: int, number_question: int) -> None:
+    def mark_question_as_answered(
+        cls, sesh: Session, user_id: int, number_question: int
+    ) -> None:
         """
         Отметить вопрос как отвеченный для пользователя.
 
@@ -93,7 +94,9 @@ class AnsweredQuestions(BaseModel):
         sesh.commit()
 
     @classmethod
-    def remove_question_from_marked(cls, sesh: Session, user_id: int, number_question: int) -> None:
+    def remove_question_from_marked(
+        cls, sesh: Session, user_id: int, number_question: int
+    ) -> None:
         """
         Удалить вопрос из списка отвеченных для пользователя.
 
@@ -104,7 +107,10 @@ class AnsweredQuestions(BaseModel):
         """
         stmt = select(cls).where(cls.user_id == user_id)
         answered_questions_numbers = sesh.scalars(stmt).one_or_none()
-        if answered_questions_numbers and number_question in answered_questions_numbers.numbers:
+        if (
+            answered_questions_numbers
+            and number_question in answered_questions_numbers.numbers
+        ):
             answered_questions_numbers.numbers.remove(number_question)
         sesh.commit()
 

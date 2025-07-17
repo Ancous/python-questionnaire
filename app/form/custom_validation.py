@@ -14,11 +14,14 @@ class CustomLength:
     max_text (int): максимальная длина текста
     message (str | None): сообщение об ошибке
     """
+
     min_text: int
     max_text: int
     message: str | None
 
-    def __init__(self, min_text: int = -1, max_text: int = -1, message: str | None = None) -> None:
+    def __init__(
+        self, min_text: int = -1, max_text: int = -1, message: str | None = None
+    ) -> None:
         """
         Инициализация валидатора длины.
 
@@ -41,9 +44,13 @@ class CustomLength:
         """
         data: str = field.data or ""
         if self.min_text != -1 and len(data) < self.min_text:
-            raise ValidationError(self.message or f"Слишком коротко, минимум {self.min_text} символов")
+            raise ValidationError(
+                self.message or f"Слишком коротко, минимум {self.min_text} символов"
+            )
         if self.max_text != -1 and len(data) > self.max_text:
-            raise ValidationError(self.message or f"Слишком длинно, максимум {self.max_text} символов")
+            raise ValidationError(
+                self.message or f"Слишком длинно, максимум {self.max_text} символов"
+            )
 
 
 class CheckRecord:
@@ -53,6 +60,7 @@ class CheckRecord:
     Arguments:
     message (str | None): сообщение об ошибке
     """
+
     message: str | None
 
     def __init__(self, message: str | None = None) -> None:
@@ -72,5 +80,8 @@ class CheckRecord:
         form: форма, к которой относится поле
         field: поле формы
         """
-        if field.data is None or str(field.data).strip() == '':
-            raise ValidationError(self.message or 'Поле не должно быть пустым или состоять только из пробелов.')
+        if field.data is None or str(field.data).strip() == "":
+            raise ValidationError(
+                self.message
+                or "Поле не должно быть пустым или состоять только из пробелов."
+            )

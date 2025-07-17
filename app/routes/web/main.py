@@ -5,11 +5,7 @@
 from flask import Blueprint, render_template
 from flask.typing import ResponseReturnValue
 
-main_bp = Blueprint(
-    "main",
-    __name__,
-    url_prefix="/"
-)
+main_bp = Blueprint("main", __name__, url_prefix="/")
 
 
 @main_bp.route("/", methods=["GET"])
@@ -20,4 +16,4 @@ def main() -> ResponseReturnValue:
     Return:
     html (ResponseReturnValue): HTML-страница с главной страницей
     """
-    return render_template('index.html')
+    return render_template("index.html")

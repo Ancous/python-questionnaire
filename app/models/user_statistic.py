@@ -22,28 +22,26 @@ class UserStatistic(BaseModel):
     user (relationship): связь с пользователем
     answer_option (relationship): связь с вариантом ответа
     """
-    __tablename__ = 'user_statistic'
+
+    __tablename__ = "user_statistic"
 
     id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
-    user_id: Mapped[int] = mapped_column(Integer, ForeignKey('users.id'), nullable=False)
-    question_id: Mapped[int] = mapped_column(Integer, ForeignKey('questions.id'), nullable=False)
-    answer_option_id: Mapped[int] = mapped_column(Integer, ForeignKey('answer_options.id'), nullable=False)
+    user_id: Mapped[int] = mapped_column(
+        Integer, ForeignKey("users.id"), nullable=False
+    )
+    question_id: Mapped[int] = mapped_column(
+        Integer, ForeignKey("questions.id"), nullable=False
+    )
+    answer_option_id: Mapped[int] = mapped_column(
+        Integer, ForeignKey("answer_options.id"), nullable=False
+    )
 
-    question = relationship(
-        "Questions",
-        back_populates="user_stats"
-    )
-    user = relationship(
-        "Users",
-        back_populates="user_stats"
-    )
-    answer_option = relationship(
-        "AnswerOptions",
-        back_populates="user_stats"
-    )
+    question = relationship("Questions", back_populates="user_stats")
+    user = relationship("Users", back_populates="user_stats")
+    answer_option = relationship("AnswerOptions", back_populates="user_stats")
 
     __table_args__ = (
-        UniqueConstraint('user_id', 'question_id', name='uq_user_question'),
+        UniqueConstraint("user_id", "question_id", name="uq_user_question"),
     )
 
     def __repr__(self) -> str:
@@ -62,7 +60,9 @@ class UserStatistic(BaseModel):
         )
 
     @classmethod
-    def all_statistic_for_user(cls, sesh: Session, user_id: int) -> Sequence["UserStatistic"]:
+    def all_statistic_for_user(
+        cls, sesh: Session, user_id: int
+    ) -> Sequence["UserStatistic"]:
         """
         Получить всю статистику для пользователя.
 
@@ -78,7 +78,9 @@ class UserStatistic(BaseModel):
         return statistic_obj
 
     @classmethod
-    def get_statistic_for_user_and_question(cls, sesh: Session, user_id: int, question_id: int) -> Union["UserStatistic", None]:
+    def get_statistic_for_user_and_question(
+        cls, sesh: Session, user_id: int, question_id: int
+    ) -> Union["UserStatistic", None]:
         """
         Получить статистику для пользователя по конкретному вопросу.
 
@@ -95,7 +97,9 @@ class UserStatistic(BaseModel):
         return statistic_obj
 
     @classmethod
-    def set_answer_for_user_and_question(cls, sesh: Session, user_id: int, question_id: int, answer_option_id: int) -> "UserStatistic":
+    def set_answer_for_user_and_question(
+        cls, sesh: Session, user_id: int, question_id: int, answer_option_id: int
+    ) -> "UserStatistic":
         """
         Установить вариант ответа для пользователя по вопросу.
 
@@ -115,7 +119,7 @@ class UserStatistic(BaseModel):
             instance = UserStatistic(
                 user_id=user_id,
                 question_id=question_id,
-                answer_option_id=answer_option_id
+                answer_option_id=answer_option_id,
             )
             sesh.add(instance)
         sesh.commit()

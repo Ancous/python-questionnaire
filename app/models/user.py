@@ -20,7 +20,8 @@ class Users(BaseModel):
     answered_questions (relationship): связь с отвеченными вопросами (AnsweredQuestions)
     user_stats (relationship): связь со статистикой ответов (UserStatistic)
     """
-    __tablename__ = 'users'
+
+    __tablename__ = "users"
 
     id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
     username: Mapped[str] = mapped_column(String, unique=True, nullable=False)
@@ -30,12 +31,10 @@ class Users(BaseModel):
         "AnsweredQuestions",
         back_populates="user",
         uselist=False,
-        cascade="all, delete-orphan"
+        cascade="all, delete-orphan",
     )
     user_stats = relationship(
-        "UserStatistic",
-        back_populates="user",
-        cascade="all, delete-orphan"
+        "UserStatistic", back_populates="user", cascade="all, delete-orphan"
     )
 
     def __repr__(self) -> str:

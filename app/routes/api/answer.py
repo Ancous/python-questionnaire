@@ -55,9 +55,9 @@ class AnswersApi(Resource):
             with Session() as se:
                 Answers.add_answers(se, answer_data)
         except ValidationError as err:
-            return {'errors': err.messages}, 422
+            return {"errors": err.messages}, 422
         except ValueError as err:
-            return {'errors': err.__str__()}, 400
+            return {"errors": err.__str__()}, 400
 
         return {"message": "Данные добавлены"}, 200
 
@@ -83,9 +83,9 @@ class AnswersApi(Resource):
             with Session() as se:
                 Answers.update_answers(se, answer_data)
         except ValidationError as err:
-            return {'errors': err.messages}, 422
+            return {"errors": err.messages}, 422
         except ValueError as err:
-            return {'errors': err.__str__()}, 400
+            return {"errors": err.__str__()}, 400
 
         return {"message": "Данные обновлены"}, 200
 
@@ -111,9 +111,9 @@ class AnswersApi(Resource):
             with Session() as se:
                 Answers.delete_answers(se, answer_data)
         except ValidationError as err:
-            return {'errors': err.messages}, 422
+            return {"errors": err.messages}, 422
         except ValueError as err:
-            return {'errors': err.__str__()}, 400
+            return {"errors": err.__str__()}, 400
 
         return {"message": "Данные удалены"}, 200
 
@@ -141,7 +141,7 @@ class AnswerApi(Resource):
                 result = schema.dump(answer)
                 return {"message": result}, 200
         except ValueError as err:
-            return {'errors': err.__str__()}, 400
+            return {"errors": err.__str__()}, 400
 
     @staticmethod
     def post(id: int) -> tuple[dict, int]:  # noqa
@@ -183,9 +183,9 @@ class AnswerApi(Resource):
             with Session() as se:
                 Answers.update_answer(se, id, answer_data)
         except ValidationError as err:
-            return {'errors': err.messages}, 422
+            return {"errors": err.messages}, 422
         except ValueError as err:
-            return {'errors': err.__str__()}, 400
+            return {"errors": err.__str__()}, 400
 
         return {"message": "Данные обновлены"}, 200
 
@@ -204,6 +204,6 @@ class AnswerApi(Resource):
             with Session() as se:
                 Answers.delete_answer(se, id)
         except ValueError as err:
-            return {'errors': err.__str__()}, 400
+            return {"errors": err.__str__()}, 400
 
         return {"message": "Данные удалены"}, 200

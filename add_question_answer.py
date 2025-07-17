@@ -12,12 +12,17 @@ from app.utils.processing_data import parse_question_file
 
 POSTGRES_URL: str = "postgresql://root:1975@31.129.100.106:5432/python_interview"
 QUESTION_PATTERN: re.Pattern = re.compile(
-    r'### (?P<number_question>\d+).\s+(?P<question>.*?)'
-    r'\s+(?P<trash>&nbsp;\s*)*<small>\[Ответ](?P<link>.*)</small>',
+    r"### (?P<number_question>\d+).\s+(?P<question>.*?)"
+    r"\s+(?P<trash>&nbsp;\s*)*<small>\[Ответ](?P<link>.*)</small>",
 )
 ANSWER_LINK_PREFIX: str = "[Ответ]("
 ANSWER_LINK_SUFFIX: str = ")"
-IGNORE_LINE_PREFIXES: tuple[str, ...] = ('<div', '[Вернуться к вопросам]', '</div', '\n')
+IGNORE_LINE_PREFIXES: tuple[str, ...] = (
+    "<div",
+    "[Вернуться к вопросам]",
+    "</div",
+    "\n",
+)
 CODEBLOCK: str = "```"
 
 
@@ -25,6 +30,7 @@ class Base(DeclarativeBase):
     """
     Базовый класс для моделей SQLAlchemy.
     """
+
     pass
 
 
@@ -38,16 +44,15 @@ class Answers(Base):
     question_id (int): внешний ключ на вопрос
     question (Questions): связь с вопросом
     """
-    __tablename__ = 'answers'
+
+    __tablename__ = "answers"
     id = Column(Integer, primary_key=True, autoincrement=True)
 
     answer = Column(String, nullable=False)
-    question_id = Column(Integer, ForeignKey('questions.id'), unique=True, nullable=False)
-    question = relationship(
-        "Questions",
-        back_populates="answer",
-        uselist=False
+    question_id = Column(
+        Integer, ForeignKey("questions.id"), unique=True, nullable=False
     )
+    question = relationship("Questions", back_populates="answer", uselist=False)
 
 
 class Questions(Base):
@@ -60,7 +65,8 @@ class Questions(Base):
     sub_question (str): дополнительный вопрос
     answer (Answers): связь с ответом
     """
-    __tablename__ = 'questions'
+
+    __tablename__ = "questions"
 
     id = Column(Integer, primary_key=True, autoincrement=True)
     question = Column(String, nullable=False)
@@ -69,7 +75,7 @@ class Questions(Base):
         "Answers",
         back_populates="question",
         uselist=False,
-        cascade="all, delete-orphan"
+        cascade="all, delete-orphan",
     )
 
 
@@ -95,7 +101,9 @@ def parse_answer_db(se: sessionmaker) -> list[str]:
     return finish_result
 
 
-def func_add_question_answer(se: sessionmaker, all_que: list[list], all_ans_db: list[str]) -> None:
+def func_add_question_answer(
+    se: sessionmaker, all_que: list[list], all_ans_db: list[str]
+) -> None:
     """
     Функция для добавления новых вопросов и ответов в базу данных.
 
@@ -110,7 +118,9 @@ def func_add_question_answer(se: sessionmaker, all_que: list[list], all_ans_db: 
     with se() as session:
         for question_data in all_que:
             if question_data[2] not in all_ans_db:
-                new_questions = Questions(question=question_data[1], sub_question=question_data[3])
+                new_questions = Questions(
+                    question=question_data[1], sub_question=question_data[3]
+                )
                 new_answer = Answers(answer=question_data[2], question=new_questions)
                 add_questions.append(new_questions)
                 add_answer.append(new_answer)
@@ -119,7 +129,7 @@ def func_add_question_answer(se: sessionmaker, all_que: list[list], all_ans_db: 
         session.commit()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     engine = create_engine(POSTGRES_URL)
     Session = sessionmaker(engine)
 

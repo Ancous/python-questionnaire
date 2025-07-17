@@ -17,15 +17,14 @@ class AnswerOptions(BaseModel):
     choice (str): текстовое значение варианта (например, 'answered')
     user_stats (relationship): связь с UserStatistic, отражающая пользователей, выбравших этот вариант
     """
-    __tablename__ = 'answer_options'
+
+    __tablename__ = "answer_options"
 
     id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
     choice: Mapped[str] = mapped_column(String, nullable=False)
 
     user_stats = relationship(
-        "UserStatistic",
-        back_populates="answer_option",
-        cascade="all, delete-orphan"
+        "UserStatistic", back_populates="answer_option", cascade="all, delete-orphan"
     )
 
     @classmethod

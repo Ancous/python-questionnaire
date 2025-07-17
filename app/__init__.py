@@ -33,17 +33,20 @@ def create_app():
     app.context_processor(inject_authorization)
     api = Api(app)
 
-    cache = Cache(app, config={
-        'CACHE_TYPE': 'redis',
-        'CACHE_REDIS_URL': f'{REDIS_URL}',
-    })
+    cache = Cache(
+        app,
+        config={
+            "CACHE_TYPE": "redis",
+            "CACHE_REDIS_URL": f"{REDIS_URL}",
+        },
+    )
 
-    api.add_resource(QuestionsApi, '/api/questions')
-    api.add_resource(QuestionApi, '/api/questions/<int:id>')
-    api.add_resource(AnswersApi, '/api/answers')
-    api.add_resource(AnswerApi, '/api/answers/<int:id>')
-    api.add_resource(TablesApi, '/api/tables')
-    api.add_resource(TableApi, '/api/tables/<string:name>')
+    api.add_resource(QuestionsApi, "/api/questions")
+    api.add_resource(QuestionApi, "/api/questions/<int:id>")
+    api.add_resource(AnswersApi, "/api/answers")
+    api.add_resource(AnswerApi, "/api/answers/<int:id>")
+    api.add_resource(TablesApi, "/api/tables")
+    api.add_resource(TableApi, "/api/tables/<string:name>")
 
     app.register_blueprint(main_bp)
     app.register_blueprint(login_bp)

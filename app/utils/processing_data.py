@@ -12,10 +12,10 @@ from typing import List, Optional, Any
 ANSWER_LINK_PREFIX = "[Ответ]("
 ANSWER_LINK_SUFFIX = ")"
 QUESTION_PATTERN = re.compile(
-    r'### (?P<number_question>\d+).\s+(?P<question>.*?)'
-    r'\s+(?P<trash>&nbsp;\s*)*<small>\[Ответ](?P<link>.*)</small>',
+    r"### (?P<number_question>\d+).\s+(?P<question>.*?)"
+    r"\s+(?P<trash>&nbsp;\s*)*<small>\[Ответ](?P<link>.*)</small>",
 )
-IGNORE_LINE_PREFIXES = ('<div', '[Вернуться к вопросам]', '</div', '\n')
+IGNORE_LINE_PREFIXES = ("<div", "[Вернуться к вопросам]", "</div", "\n")
 CODEBLOCK = "```"
 
 
@@ -64,7 +64,7 @@ def parse_answer_file(filepath: Path) -> str:
     Return:
     html (str): html-ответ
     """
-    with filepath.open(encoding='utf-8') as file:
+    with filepath.open(encoding="utf-8") as file:
         lines: List[str] = file.readlines()
 
     filtered: str = filter_irrelevant_lines(lines)
@@ -72,8 +72,8 @@ def parse_answer_file(filepath: Path) -> str:
 
 
 def parse_question_file(
-    question_path: Path = Path('app/doc/Список вопросов.txt'),
-    answer_dir: Path = Path('app/doc/')
+    question_path: Path = Path("app/doc/Список вопросов.txt"),
+    answer_dir: Path = Path("app/doc/"),
 ) -> List[List[Optional[str]]]:
     """
     Парсит файл вопросов, собирает вопросы, их тексты, html-ответы, и связанный блок кода (если есть).
@@ -89,7 +89,7 @@ def parse_question_file(
     current: Optional[list] = None
     code_lines: Optional[List[str]] = None
 
-    with question_path.open(encoding='utf-8') as file:
+    with question_path.open(encoding="utf-8") as file:
         for line in file:
             match = QUESTION_PATTERN.match(line)
             if match:
@@ -101,7 +101,9 @@ def parse_question_file(
 
                 number: int = int(match.group("number_question"))
                 text: str = match.group("question").strip()
-                answer_file: Path = answer_dir / extract_decode_answer_link(line.strip())
+                answer_file: Path = answer_dir / extract_decode_answer_link(
+                    line.strip()
+                )
                 html_answer: str = parse_answer_file(answer_file)
                 current = [number, text, html_answer, None]
             elif current is not None:
@@ -110,8 +112,10 @@ def parse_question_file(
                 elif code_lines is not None:
                     code_lines.append(line.rstrip("\n"))
                     if line.strip() == CODEBLOCK:
-                        current_code: str = '\n'.join(code_lines)
-                        current[3] = markdown2.markdown(current_code, extras=["fenced-code-blocks"]).strip()
+                        current_code: str = "\n".join(code_lines)
+                        current[3] = markdown2.markdown(
+                            current_code, extras=["fenced-code-blocks"]
+                        ).strip()
                         code_lines = None
     if current:
         if code_lines:

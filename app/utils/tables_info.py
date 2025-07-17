@@ -2,6 +2,7 @@
 Модуль для работы с информацией о таблицах базы данных.
 Содержит функции для форматирования столбцов таблицы и получения информации о таблицах через инспектор SQLAlchemy.
 """
+
 from typing import Any, List, Dict, Optional, Sequence
 
 
@@ -25,9 +26,7 @@ def format_columns(columns: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
 
 
 def inspector_tables(
-    inspector: Any,
-    tables_names: Sequence[str],
-    title: Optional[str] = None
+    inspector: Any, tables_names: Sequence[str], title: Optional[str] = None
 ) -> Optional[Any]:
     """
     Получает информацию о таблицах через инспектор SQLAlchemy.
@@ -42,17 +41,14 @@ def inspector_tables(
     """
     if title is None:
         return [
-            {
-                "_table_name": name,
-                "column": format_columns(inspector.get_columns(name))
-            }
+            {"_table_name": name, "column": format_columns(inspector.get_columns(name))}
             for name in tables_names
         ]
     else:
         if title in tables_names:
             return {
                 "_table_name": title,
-                "column": format_columns(inspector.get_columns(title))
+                "column": format_columns(inspector.get_columns(title)),
             }
         else:
             return None

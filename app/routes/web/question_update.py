@@ -12,9 +12,7 @@ from app.models.user_statistic import UserStatistic
 from app.config.config import NUMBER_OF_QUESTIONS
 
 question_update_bp = Blueprint(
-    "question_update",
-    __name__,
-    url_prefix="/question_update"
+    "question_update", __name__, url_prefix="/question_update"
 )
 
 
@@ -27,9 +25,11 @@ def question_update() -> ResponseReturnValue:
     redirect (ResponseReturnValue): перенаправление на главную страницу после сброса
     """
     with Session() as se:
-        AnsweredQuestions.clear_answered_questions(se, cast(int, session.get("user_id")))
+        AnsweredQuestions.clear_answered_questions(
+            se, cast(int, session.get("user_id"))
+        )
         UserStatistic.delete_answer_for_user_id(se, cast(int, session.get("user_id")))
-        session['number_questions_answered'] = NUMBER_OF_QUESTIONS
+        session["number_questions_answered"] = NUMBER_OF_QUESTIONS
 
     flash("Вопросы обновлены", "update")
-    return redirect(url_for('main.main'))
+    return redirect(url_for("main.main"))

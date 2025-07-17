@@ -19,8 +19,9 @@ class RegistrationForm(FlaskForm):
     confirm (PasswordField): Поле для подтверждения пароля с валидацией.
     submit (SubmitField): Кнопка отправки формы.
     """
+
     username: StringField = StringField(
-        label='Имя пользователя',
+        label="Имя пользователя",
         validators=[
             CheckRecord(
                 message="Поле не должно быть пустым или состоять только из пробелов"
@@ -28,32 +29,26 @@ class RegistrationForm(FlaskForm):
             CustomLength(
                 min_text=3,
                 max_text=25,
-                message="Имя пользователя должен быть от 3 до 25 символов"
-            )
-        ]
+                message="Имя пользователя должен быть от 3 до 25 символов",
+            ),
+        ],
     )
     password: PasswordField = PasswordField(
-        label='Пароль',
+        label="Пароль",
         validators=[
             CheckRecord(
                 message="Поле не должно быть пустым или состоять только из пробелов"
             ),
-            CustomLength(
-                min_text=3,
-                message="Пароль должен быть от 3 символов"
-            )
-        ]
+            CustomLength(min_text=3, message="Пароль должен быть от 3 символов"),
+        ],
     )
     confirm: PasswordField = PasswordField(
-        label='Подтвердите пароль',
+        label="Подтвердите пароль",
         validators=[
             CheckRecord(
                 message="Поле не должно быть пустым или состоять только из пробелов"
             ),
-            EqualTo(
-                fieldname='password',
-                message='Пароли должны совпадать.'
-            )
-        ]
+            EqualTo(fieldname="password", message="Пароли должны совпадать."),
+        ],
     )
-    submit: SubmitField = SubmitField('Зарегистрироваться')
+    submit: SubmitField = SubmitField("Зарегистрироваться")
