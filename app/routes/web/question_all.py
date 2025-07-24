@@ -2,8 +2,6 @@
 Модуль реализует обработку маршрута для отображения всех вопросов.
 """
 
-import time
-
 from flask import Blueprint, render_template, session
 from flask.typing import ResponseReturnValue
 from flask_caching import Cache
