@@ -1,4 +1,5 @@
 __pycache__/
-venv
 .env
 .idea
+.venv_python_questionnaire/
+.cursor/
