@@ -31,8 +31,6 @@ class Base(DeclarativeBase):
     Базовый класс для моделей SQLAlchemy.
     """
 
-    pass
-
 
 class Answers(Base):
     """

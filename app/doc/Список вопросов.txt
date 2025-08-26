@@ -948,3 +948,5 @@ for i in range(3):
 ### 401. Что происходит, когда функция не имеет оператора возврата (return)? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%A7%D1%82%D0%BE%20%D0%BF%D1%80%D0%BE%D0%B8%D1%81%D1%85%D0%BE%D0%B4%D0%B8%D1%82%2C%20%D0%BA%D0%BE%D0%B3%D0%B4%D0%B0%20%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F%20%D0%BD%D0%B5%20%D0%B8%D0%BC%D0%B5%D0%B5%D1%82%20%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80%D0%B0%20%D0%B2%D0%BE%D0%B7%D0%B2%D1%80%D0%B0%D1%82%D0%B0%20%28return%29.md)</small>
 
 ### 402. Почему мы пишем `__name__ in "__main__"` в скрипте Python? &nbsp; &nbsp; &nbsp;<small>[Ответ](%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8B/%D0%9F%D0%BE%D1%87%D0%B5%D0%BC%D1%83%20%D0%BC%D1%8B%20%D0%BF%D0%B8%D1%88%D0%B5%D0%BC%20%60__name__%20in%20__main__%60%20%D0%B2%20%D1%81%D0%BA%D1%80%D0%B8%D0%BF%D1%82%D0%B5%20Python.md)</small>
+
+### 403. Qwerty? &nbsp; &nbsp; &nbsp;<small>[Ответ](<Ответы/Вопрос 403.md>)</small>

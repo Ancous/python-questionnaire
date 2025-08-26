@@ -11,7 +11,7 @@ from flask import session
 
 load_dotenv()
 
-NUMBER_OF_QUESTIONS = 402
+NUMBER_OF_QUESTIONS = 403
 
 POSTGRES_URL = (
     f"postgresql://"
