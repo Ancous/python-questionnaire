@@ -3,27 +3,11 @@
 Содержит классы моделей SQLAlchemy для вопросов и ответов, а также функции для парсинга и добавления данных в базу.
 """
 
-import re
-
 from sqlalchemy import create_engine, select, Column, Integer, String, ForeignKey
 from sqlalchemy.orm import sessionmaker, DeclarativeBase, relationship
 
 from app.utils.processing_data import parse_question_file
-
-POSTGRES_URL: str = "postgresql://root:1975@31.129.100.106:5432/python_interview"
-QUESTION_PATTERN: re.Pattern = re.compile(
-    r"### (?P<number_question>\d+).\s+(?P<question>.*?)"
-    r"\s+(?P<trash>&nbsp;\s*)*<small>\[Ответ](?P<link>.*)</small>",
-)
-ANSWER_LINK_PREFIX: str = "[Ответ]("
-ANSWER_LINK_SUFFIX: str = ")"
-IGNORE_LINE_PREFIXES: tuple[str, ...] = (
-    "<div",
-    "[Вернуться к вопросам]",
-    "</div",
-    "\n",
-)
-CODEBLOCK: str = "```"
+from app.config.config import POSTGRES_URL
 
 
 class Base(DeclarativeBase):

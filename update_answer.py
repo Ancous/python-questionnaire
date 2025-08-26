@@ -2,26 +2,13 @@
 Модуль для обновления ответов в базе данных на основе файлов с ответами.
 """
 
-import re
+
 from pathlib import Path
 from sqlalchemy import create_engine, select, Column, Integer, String
 from sqlalchemy.orm import sessionmaker, DeclarativeBase
 
 from app.utils.processing_data import extract_decode_answer_link, parse_answer_file
-
-POSTGRES_URL: str = "postgresql://root:1975@31.129.100.106:5432/python_interview"
-QUESTION_PATTERN: re.Pattern = re.compile(
-    r"### (?P<number_question>\d+).\s+(?P<question>.*?)"
-    r"\s+(?P<trash>&nbsp;\s*)*<small>\[Ответ](?P<link>.*)</small>",
-)
-ANSWER_LINK_PREFIX: str = "[Ответ]("
-ANSWER_LINK_SUFFIX: str = ")"
-IGNORE_LINE_PREFIXES: tuple[str, ...] = (
-    "<div",
-    "[Вернуться к вопросам]",
-    "</div",
-    "\n",
-)
+from app.config.config import POSTGRES_URL, QUESTION_PATTERN
 
 
 class Base(DeclarativeBase):

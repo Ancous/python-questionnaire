@@ -3,20 +3,12 @@
 Содержит функции для извлечения ссылок, фильтрации строк, парсинга файлов ответов и вопросов.
 """
 
-import re
 import urllib.parse
-import markdown2
 from pathlib import Path
-from typing import List, Optional, Any
+from typing import List, Optional
+import markdown2
 
-ANSWER_LINK_PREFIX = "[Ответ]("
-ANSWER_LINK_SUFFIX = ")"
-QUESTION_PATTERN = re.compile(
-    r"### (?P<number_question>\d+).\s+(?P<question>.*?)"
-    r"\s+(?P<trash>&nbsp;\s*)*<small>\[Ответ](?P<link>.*)</small>",
-)
-IGNORE_LINE_PREFIXES = ("<div", "[Вернуться к вопросам]", "</div", "\n")
-CODEBLOCK = "```"
+from app.config.config import QUESTION_PATTERN, ANSWER_LINK_PREFIX, ANSWER_LINK_SUFFIX, IGNORE_LINE_PREFIXES, CODEBLOCK
 
 
 def extract_decode_answer_link(line: str) -> str:
@@ -31,9 +23,9 @@ def extract_decode_answer_link(line: str) -> str:
     """
     start: int = line.find(ANSWER_LINK_PREFIX) + len(ANSWER_LINK_PREFIX)
     end: int = line.find(ANSWER_LINK_SUFFIX, start)
+    encoded_link: str = line[start:end]
     if start == -1 + len(ANSWER_LINK_PREFIX) or end == -1:
         raise ValueError("Невалидная строка со ссылкой ответа.")
-    encoded_link: str = line[start:end]
     return urllib.parse.unquote(encoded_link)
 
 
@@ -86,14 +78,14 @@ def parse_question_file(
     questions (List[List[Optional[str]]]): список: [номер, текст вопроса, html-ответ, код (или None)]
     """
     questions: List[List[Optional[str]]] = []
-    current: Optional[list] = None
+    current: Optional[List[Optional[str]]] = None
     code_lines: Optional[List[str]] = None
 
     with question_path.open(encoding="utf-8") as file:
         for line in file:
             match = QUESTION_PATTERN.match(line)
             if match:
-                if current:
+                if current is not None:
                     if code_lines:
                         current[3] = "\n".join(code_lines)
                         code_lines = None
@@ -117,7 +109,7 @@ def parse_question_file(
                             current_code, extras=["fenced-code-blocks"]
                         ).strip()
                         code_lines = None
-    if current:
+    if current is not None:
         if code_lines:
             current[3] = "\n".join(code_lines)
         questions.append(current)
